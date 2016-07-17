@@ -27,7 +27,7 @@ Example
 ```php
 class HelpControl extends \JK\BookComponent\BookControl {
   function __construct() {
-    parent::__construct(":Front:Help", "help");
+    parent::__construct(":Front:Help", __DIR__ . "/help");
   }
   
   function renderIntroduction() {
