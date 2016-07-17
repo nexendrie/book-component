@@ -1,6 +1,8 @@
 Book Component
 ==============
 
+[![Total Downloads](https://poser.pugx.org/konecnyjakub/book-component/downloads)](https://packagist.org/packages/konecnyjakub/book-component) [![Latest Stable Version](https://poser.pugx.org/konecnyjakub/book-component/v/stable)](https://packagist.org/packages/konecnyjakub/book-component) [![Latest Unstable Version](https://poser.pugx.org/konecnyjakub/book-component/v/unstable)](https://packagist.org/packages/konecnyjakub/book-component) [![License](https://poser.pugx.org/konecnyjakub/book-component/license)](https://packagist.org/packages/konecnyjakub/book-component)
+
 This package will help you create a book in Nette Framework. It has a list of chapters/pages with links to the chapters/pages, from each chapter/page you can also jump to previous and next one.
 
 Installation
