@@ -6,12 +6,12 @@ use Tester\Assert;
 require __DIR__ . "/../../../bootstrap.php";
 
 /**
- * BookPageTest
+ * BookPagesStorageTest
  *
  * @author Jakub Konečný
  * @testCase
  */
-class BookPageStorageTest extends \Tester\TestCase {
+class BookPagesStorageTest extends \Tester\TestCase {
   private $storage;
   
   function setUp() {
@@ -47,6 +47,6 @@ class BookPageStorageTest extends \Tester\TestCase {
   }
 }
 
-$test = new BookPageStorageTest;
+$test = new BookPagesStorageTest;
 $test->run();
 ?>
