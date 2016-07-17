@@ -18,8 +18,8 @@
         "latte/latte": "~2.3"
     },
     "autoload": {
-        "psr-0": {
-            "JK\\BookComponent": "src/"
+        "psr-4": {
+            "JK\\BookComponent\\": "src/"
         }
     },
     "extra": {
