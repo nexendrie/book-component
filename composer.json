@@ -17,6 +17,11 @@
         "nette/utils": "~2.3",
         "latte/latte": "~2.3"
     },
+    "require-dev": {
+        "mrtnzlml/testbench": "^2.2",
+        "nette/robot-loader": "^2.4",
+        "tracy/tracy": "^2.4"
+    },
     "autoload": {
         "psr-4": {
             "JK\\BookComponent\\": "src/"
