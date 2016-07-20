@@ -29,22 +29,21 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @return void
    */
   function render($page) {
-    $template = $this->template;
-    $template->presenterName = $this->presenterName;
-    $template->folder = $this->folder;
+    $this->template->presenterName = $this->presenterName;
+    $this->template->folder = $this->folder;
     $pages = $this->getPages();
     if(!$pages->hasPage($page)) $page = "index";
     if($page === "index") {
-      $template->setFile(__DIR__ . "/bookIndex.latte");
+      $this->template->setFile(__DIR__ . "/bookIndex.latte");
     } else {
-      $template->setFile(__DIR__ . "/bookPage.latte");
-      $template->index = $pages->getIndex($page);
-      $template->current = $pages[$template->index];
+      $this->template->setFile(__DIR__ . "/bookPage.latte");
+      $this->template->index = $pages->getIndex($page);
+      $this->template->current = $pages[$this->template->index];
     }
-    $template->pages = $pages;
+    $this->template->pages = $pages;
     $method = "render" . ucfirst($page);
     if(method_exists($this, $method)) call_user_func([$this, $method]);
-    $template->render();
+    $this->template->render();
   }
 }
 ?>
