@@ -4,7 +4,10 @@ php:
     - 5.6
     - 7.0
     - 7.1
-  
+
+notifications:
+    email: false
+
 env:
     - TESTER_PHP_BIN="php-cgi"
   
