@@ -13,9 +13,9 @@ class BookControl extends Book\BookControl {
   
   function getPages() {
     $storage = new Book\BookPagesStorage;
-    $storage[] = new \JK\BookComponent\BookPage("slug1", "title1");
-    $storage[] = new \JK\BookComponent\BookPage("slug2", "title2");
-    $storage[] = new \JK\BookComponent\BookPage("slug3", "title3");
+    $storage[] = new Book\BookPage("slug1", "title1");
+    $storage[] = new Book\BookPage("slug2", "title2");
+    $storage[] = new Book\BookPage("slug3", "title3");
     return $storage;
   }
   
@@ -36,7 +36,7 @@ class BookControlTest extends \Tester\TestCase {
   use \Testbench\TComponent;
   
   protected function checkRenderOutput(IComponent $control, $expected, $page = "index") {
-	if(!$control->getParent()) {
+    if(!$control->getParent()) {
       $this->attachToPresenter($control);
     }
     ob_start();
