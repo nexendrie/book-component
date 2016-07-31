@@ -1,4 +1,6 @@
 /nbproject/
 /vendor/
 /tests/_temp/
+output/
+*.actual
 composer.lock
