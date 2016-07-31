@@ -28,7 +28,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @param string $page
    * @return void
    */
-  function render($page) {
+  function render($page = "index") {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     $pages = $this->getPages();
