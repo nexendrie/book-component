@@ -9,7 +9,12 @@ notifications:
     email: false
 
 env:
-    - TESTER_PHP_BIN="php-cgi"
+    - TESTER_PHP_BIN="php"
+
+matrix:
+    include:
+        - php: 7.0
+          env: coverage="--coverage ./coverage.xml --coverage-src ./src" TESTER_PHP_BIN=phpdbg
   
 before_install:
     - composer self-update
@@ -18,7 +23,13 @@ install:
     - composer install --no-interaction --prefer-source
   
 script:
-    - ./vendor/bin/run-tests
+    - ./vendor/bin/run-tests -p $TESTER_PHP_BIN tests -s $coverage
+
+after_script:
+    - if [ "$coverage" != "" ]; then
+      wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
+      && php coveralls.phar --verbose --config tests/.coveralls.yml
+      || true; fi
     
 after_failure:
     - for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
