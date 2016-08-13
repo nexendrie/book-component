@@ -53,10 +53,19 @@ class BookControlTest extends \Tester\TestCase {
     $this->attachToPresenter($this->control);
   }
   
-  function testRender() {
+  function testRenderI() {
     $this->checkRenderOutput($this->control, __DIR__ . "/bookIndexExpected.latte");
+  }
+  
+  function testRenderP1() {
     $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected1.latte", "slug1");
+  }
+  
+  function testRenderP2() {
     $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected2.latte", "slug2");
+  }
+  
+  function testRenderP3() {
     $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected3.latte", "slug3");
   }
 }
