@@ -2,7 +2,9 @@
 namespace JK\BookComponent\Tests;
 
 use JK\BookComponent as Book,
-    Nette\ComponentModel\IComponent;
+    Nette\ComponentModel\IComponent,
+    JK\BookComponent\Translator,
+    Tester\Assert;
 
 require __DIR__ . "/../../../bootstrap.php";
 
@@ -53,8 +55,20 @@ class BookControlTest extends \Tester\TestCase {
     $this->attachToPresenter($this->control);
   }
   
+  function testTranslator() {
+    $this->control->translator = new Translator;
+    Assert::same("en", $this->control->translator->lang);
+    Assert::type("string", $this->control->translator->translate("book.content"));
+    Assert::same("Content", $this->control->translator->translate("book.content"));
+    $this->control->translator->lang = "cs";
+    Assert::type("string", $this->control->translator->translate("book.content"));
+    Assert::same("Obsah", $this->control->translator->translate("book.content"));
+  }
+  
   function testRenderI() {
+    Assert::type("null", $this->control->translator);
     $this->checkRenderOutput($this->control, __DIR__ . "/bookIndexExpected.latte");
+    Assert::type(Translator::class, $this->control->translator);
   }
   
   function testRenderP1() {
