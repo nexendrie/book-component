@@ -6,6 +6,7 @@ namespace JK\BookComponent;
  *
  * @author Jakub Konečný
  * @property \Nette\Localization\ITranslator $translator
+ * @property string $lang
  */
 abstract class BookControl extends \Nette\Application\UI\Control {
   /** @var string */
@@ -14,6 +15,8 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   private $folder;
   /** @var \Nette\Localization\ITranslator */
   protected $translator;
+  /** @var string */
+  protected $lang;
   
   /**
    * @param string $presenterName
@@ -49,6 +52,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) $this->translator = new Translator;
+    if($this->lang) $this->translator->lang = $this->lang;
     $this->template->setTranslator($this->translator);
     $pages = $this->getPages();
     if(!$pages->hasPage($page)) $page = "index";
