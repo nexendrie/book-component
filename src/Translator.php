@@ -15,6 +15,8 @@ class Translator implements \Nette\Localization\ITranslator {
   
   /** @var string */
   protected $lang = "en";
+  /** @var array */
+  protected $texts = null;
   
   /**
    * @return string
@@ -28,6 +30,7 @@ class Translator implements \Nette\Localization\ITranslator {
    */
   function setLang($lang) {
     $this->lang = $lang;
+    $this->texts = $this->loadTexts();
   }
   
   /**
@@ -49,8 +52,8 @@ class Translator implements \Nette\Localization\ITranslator {
    */
   function translate($message, $count = 0) {
     if(substr($message, 0, 5) != "book.") return "";
-    $texts = $this->loadTexts();
-    return Arrays::get($texts, substr($message, 5), "");
+    if(is_null($this->texts)) $this->texts = $this->loadTexts();
+    return Arrays::get($this->texts, substr($message, 5), "");
   }
 }
 ?>
