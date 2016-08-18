@@ -30,19 +30,21 @@ class Translator implements \Nette\Localization\ITranslator {
    */
   function setLang($lang) {
     $this->lang = $lang;
-    $this->texts = $this->loadTexts();
+    $this->texts = null;
+    $this->loadTexts();
   }
   
   /**
    * @return array
    */
   protected function loadTexts() {
+    if(!is_null($this->texts)) return;
     $default = Neon::decode(file_get_contents(__DIR__ . "/lang/en.neon"));
     $lang = [];
     if($this->lang != "en" AND is_file(__DIR__ . "/lang/{$this->lang}.neon")) {
       $lang = Neon::decode(file_get_contents(__DIR__ . "/lang/{$this->lang}.neon"));
     }
-    return array_merge($default, $lang);
+    $this->texts = array_merge($default, $lang);
   }
   
   /**
@@ -52,7 +54,7 @@ class Translator implements \Nette\Localization\ITranslator {
    */
   function translate($message, $count = 0) {
     if(substr($message, 0, 5) != "book.") return "";
-    if(is_null($this->texts)) $this->texts = $this->loadTexts();
+    $this->loadTexts();
     return Arrays::get($this->texts, substr($message, 5), "");
   }
 }
