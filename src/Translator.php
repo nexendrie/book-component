@@ -35,7 +35,7 @@ class Translator implements \Nette\Localization\ITranslator {
   }
   
   /**
-   * @return array
+   * @return void
    */
   protected function loadTexts() {
     if(!is_null($this->texts)) return;
