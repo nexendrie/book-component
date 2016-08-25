@@ -26,6 +26,7 @@ install:
     - composer install --no-interaction --prefer-source
   
 script:
+    - if [ "$TESTER_PHP_BIN" = "php" ]; then ./vendor/bin/parallel-lint src tests -e php,phpt; fi
     - ./vendor/bin/run-tests -p $TESTER_PHP_BIN tests -s $coverage
 
 after_script:
