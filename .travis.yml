@@ -17,6 +17,8 @@ matrix:
           env: coverage="--coverage ./coverage.xml --coverage-src ./src" TESTER_PHP_BIN=phpdbg
     allow_failures:
         - php: 7.1
+        - php: 7.0
+          env: coverage="--coverage ./coverage.xml --coverage-src ./src" TESTER_PHP_BIN=phpdbg
   
 before_install:
     - if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then phpenv config-rm xdebug.ini; fi
