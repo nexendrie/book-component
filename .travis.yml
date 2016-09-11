@@ -25,7 +25,7 @@ before_install:
     - composer self-update
 
 install:
-    - composer install --no-interaction --prefer-source
+    - composer update --no-interaction --prefer-source -a
   
 script:
     - if [ "$TESTER_PHP_BIN" = "php" ]; then ./vendor/bin/parallel-lint src tests -e php,phpt; fi
