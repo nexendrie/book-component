@@ -33,11 +33,19 @@ class BookControl extends Book\BookControl {
  * @testCase
  */
 class BookControlTest extends \Tester\TestCase {
+  /** @var  Book\BookControl */
   private $control;
   
   use \Testbench\TComponent;
   
+  /**
+   * @param IComponent $control
+   * @param $expected
+   * @param string $page
+   * @return void
+   */
   protected function checkRenderOutput(IComponent $control, $expected, $page = "index") {
+    /** @var Book\BookControl $control */
     if(!$control->getParent()) {
       $this->attachToPresenter($control);
     }

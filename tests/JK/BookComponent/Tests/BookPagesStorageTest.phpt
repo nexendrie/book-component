@@ -12,6 +12,7 @@ require __DIR__ . "/../../../bootstrap.php";
  * @testCase
  */
 class BookPagesStorageTest extends \Tester\TestCase {
+  /** @var  \JK\BookComponent\BookPagesStorage */
   private $storage;
   
   function setUp() {
