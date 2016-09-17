@@ -9,6 +9,7 @@ use Nette\Neon\Neon,
  *
  * @author Jakub Konečný
  * @property string $lang
+ * @property string $folder
  */
 class Translator implements \Nette\Localization\ITranslator {
   use \Nette\SmartObject;
@@ -17,6 +18,8 @@ class Translator implements \Nette\Localization\ITranslator {
   protected $lang = "en";
   /** @var array */
   protected $texts = null;
+  /** @var string */
+  protected $folder = __DIR__ . "/lang";
   
   /**
    * @return string
@@ -35,14 +38,28 @@ class Translator implements \Nette\Localization\ITranslator {
   }
   
   /**
+   * @return string
+   */
+  function getFolder() {
+    return $this->folder;
+  }
+  
+  /**
+   * @param string $folder
+   */
+  function setFolder($folder) {
+    $this->folder = $folder;
+  }
+  
+  /**
    * @return void
    */
   protected function loadTexts() {
     if(!is_null($this->texts)) return;
-    $default = Neon::decode(file_get_contents(__DIR__ . "/lang/en.neon"));
+    $default = Neon::decode(file_get_contents("$this->folder/en.neon"));
     $lang = [];
-    if($this->lang != "en" AND is_file(__DIR__ . "/lang/{$this->lang}.neon")) {
-      $lang = Neon::decode(file_get_contents(__DIR__ . "/lang/{$this->lang}.neon"));
+    if($this->lang != "en" AND is_file("$this->folder/{$this->lang}.neon")) {
+      $lang = Neon::decode(file_get_contents("$this->folder/{$this->lang}.neon"));
     }
     $this->texts = array_merge($default, $lang);
   }
