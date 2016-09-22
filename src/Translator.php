@@ -32,9 +32,11 @@ class Translator implements \Nette\Localization\ITranslator {
    * @param string $lang
    */
   function setLang($lang) {
-    $this->lang = $lang;
-    $this->texts = null;
-    $this->loadTexts();
+    if($lang !== $this->lang) {
+      $this->lang = $lang;
+      $this->texts = null;
+      $this->loadTexts();
+    }
   }
   
   /**
