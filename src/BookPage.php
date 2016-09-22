@@ -6,7 +6,8 @@ namespace JK\BookComponent;
  * @property-read string $slug
  * @property-read string $title
  */
-class BookPage extends \Nette\Object {
+class BookPage {
+  use \Nette\SmartObject;
   /** @var string */
   protected $slug;
   /** @var string */
