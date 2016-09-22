@@ -21,10 +21,16 @@ class BookPage extends \Nette\Object {
     $this->title = $title;
   }
   
+  /**
+   * @return string
+   */
   function getSlug() {
     return $this->slug;
   }
-
+  
+  /**
+   * @return string
+   */
   function getTitle() {
     return $this->title;
   }
