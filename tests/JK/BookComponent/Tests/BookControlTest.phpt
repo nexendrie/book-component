@@ -52,9 +52,9 @@ class BookControlTest extends \Tester\TestCase {
     ob_start();
     $control->render($page);
     if(is_file($expected)) {
-      \Tester\Assert::matchFile($expected, ob_get_clean());
+      Assert::matchFile($expected, ob_get_clean());
     } else {
-      \Tester\Assert::match($expected, ob_get_clean());
+      Assert::match($expected, ob_get_clean());
     }
   }
   
