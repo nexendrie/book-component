@@ -1,7 +1,9 @@
 <?php
 namespace JK\BookComponent\Tests;
 
-use Tester\Assert;
+use Tester\Assert,
+    JK\BookComponent\BookPagesStorage,
+    JK\BookComponent\BookPage;
 
 require __DIR__ . "/../../../bootstrap.php";
 
@@ -12,13 +14,13 @@ require __DIR__ . "/../../../bootstrap.php";
  * @testCase
  */
 class BookPagesStorageTest extends \Tester\TestCase {
-  /** @var  \JK\BookComponent\BookPagesStorage */
+  /** @var BookPagesStorage */
   private $storage;
   
   function setUp() {
-    $this->storage = new \JK\BookComponent\BookPagesStorage;
-    $this->storage[] = new \JK\BookComponent\BookPage("slug1", "title1");
-    $this->storage[] = new \JK\BookComponent\BookPage("slug2", "title2");
+    $this->storage = new BookPagesStorage;
+    $this->storage[] = new BookPage("slug1", "title1");
+    $this->storage[] = new BookPage("slug2", "title2");
   }
   
   /**
@@ -32,7 +34,7 @@ class BookPagesStorageTest extends \Tester\TestCase {
    * @throws \RuntimeException
    */
   function testDuplicateSlug() {
-    $this->storage[] = new \JK\BookComponent\BookPage("slug2", "title2");
+    $this->storage[] = new BookPage("slug2", "title2");
   }
   
   function testHasPage() {

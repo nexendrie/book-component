@@ -1,7 +1,8 @@
 <?php
 namespace JK\BookComponent\Tests;
 
-use Tester\Assert;
+use Tester\Assert,
+     JK\BookComponent\BookPage;
 
 require __DIR__ . "/../../../bootstrap.php";
 
@@ -12,11 +13,11 @@ require __DIR__ . "/../../../bootstrap.php";
  * @testCase
  */
 class BookPageTest extends \Tester\TestCase {
-  /** @var  \JK\BookComponent\BookPage */
+  /** @var  BookPage */
   private $page;
   
   function setUp() {
-    $this->page = new \JK\BookComponent\BookPage("slug", "title");
+    $this->page = new BookPage("slug", "title");
   }
   
   function testSlug() {

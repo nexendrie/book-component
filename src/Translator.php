@@ -2,7 +2,8 @@
 namespace JK\BookComponent;
 
 use Nette\Neon\Neon,
-    Nette\Utils\Arrays;
+    Nette\Utils\Arrays,
+    Nette\Localization\ITranslator;
 
 /**
  * Basic Translator for BookControl
@@ -11,7 +12,7 @@ use Nette\Neon\Neon,
  * @property string $lang
  * @property string $folder
  */
-class Translator implements \Nette\Localization\ITranslator {
+class Translator implements ITranslator {
   use \Nette\SmartObject;
   
   /** @var string */

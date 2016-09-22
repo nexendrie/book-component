@@ -1,8 +1,8 @@
 <?php
 namespace JK\BookComponent\Tests;
 
-use JK\BookComponent\Translator;
-use Tester\Assert;
+use JK\BookComponent\Translator,
+    Tester\Assert;
 
 require __DIR__ . "/../../../bootstrap.php";
 
@@ -17,7 +17,7 @@ class TranslatorTest extends \Tester\TestCase {
   private $translator;
   
   function setUp() {
-    $this->translator = new \JK\BookComponent\Translator;
+    $this->translator = new Translator;
     $this->translator->folder = __DIR__ . "/../../../lang";
   }
   

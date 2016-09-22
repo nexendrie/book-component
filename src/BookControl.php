@@ -1,11 +1,13 @@
 <?php
 namespace JK\BookComponent;
 
+use Nette\Localization\ITranslator;
+
 /**
  * BookControl
  *
  * @author Jakub Konečný
- * @property \Nette\Localization\ITranslator $translator
+ * @property ITranslator $translator
  * @property string $lang
  */
 abstract class BookControl extends \Nette\Application\UI\Control {
@@ -13,7 +15,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   private $presenterName;
   /** @var string */
   private $folder;
-  /** @var \Nette\Localization\ITranslator */
+  /** @var ITranslator */
   protected $translator;
   /** @var string */
   protected $lang;
@@ -28,16 +30,16 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   }
   
   /**
-   * @return \Nette\Localization\ITranslator
+   * @return ITranslator
    */
   function getTranslator() {
     return $this->translator;
   }
   
   /**
-   * @param \Nette\Localization\ITranslator $translator
+   * @param ITranslator $translator
    */
-  function setTranslator(\Nette\Localization\ITranslator $translator) {
+  function setTranslator(ITranslator $translator) {
     $this->translator = $translator;
   }
   
