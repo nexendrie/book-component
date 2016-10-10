@@ -1,4 +1,4 @@
-Version 1.0+dev
+Version 1.0.1
 - allowed setting custom folder for translation
 - do logic of Translator::setLang() only if the language is differrent
 
