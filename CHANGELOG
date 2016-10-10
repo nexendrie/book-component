@@ -1,6 +1,6 @@
 Version 1.0.1
 - allowed setting custom folder for translation
-- do logic of Translator::setLang() only if the language is differrent
+- do logic of Translator::setLang() only if the language is different
 
 Version 1.0
 - added support for translations
