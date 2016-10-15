@@ -6,3 +6,4 @@ output/
 *.actual
 composer.lock
 coverage.*
+/cs-ruleset.xml
