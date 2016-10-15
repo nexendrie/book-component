@@ -1,10 +1,9 @@
 <?php
-namespace Nexendrie\BookComponent\Tests;
+namespace Nexendrie\BookComponent;
 
-use Nexendrie\BookComponent\Translator,
-    Tester\Assert;
+use Tester\Assert;
 
-require __DIR__ . "/../../../bootstrap.php";
+require __DIR__ . "/../../bootstrap.php";
 
 /**
  * TranslatorTest
@@ -18,11 +17,11 @@ class TranslatorTest extends \Tester\TestCase {
   
   function setUp() {
     $this->translator = new Translator;
-    $this->translator->folder = __DIR__ . "/../../../lang";
+    $this->translator->folder = __DIR__ . "/../../lang";
   }
   
   function testLang() {
-    Assert::same(__DIR__ . "/../../../lang", $this->translator->folder);
+    Assert::same(__DIR__ . "/../../lang", $this->translator->folder);
   }
   
   function testTranslateEn() {

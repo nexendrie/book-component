@@ -1,11 +1,9 @@
 <?php
-namespace Nexendrie\BookComponent\Tests;
+namespace Nexendrie\BookComponent;
 
-use Tester\Assert,
-    Nexendrie\BookComponent\BookPagesStorage,
-    Nexendrie\BookComponent\BookPage;
+use Tester\Assert;
 
-require __DIR__ . "/../../../bootstrap.php";
+require __DIR__ . "/../../bootstrap.php";
 
 /**
  * BookPagesStorageTest

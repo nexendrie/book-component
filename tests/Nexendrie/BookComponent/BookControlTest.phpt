@@ -1,23 +1,21 @@
 <?php
-namespace Nexendrie\BookComponent\Tests;
+namespace Nexendrie\BookComponent;
 
-use Nexendrie\BookComponent as Book,
-    Nette\ComponentModel\IComponent,
-    Nexendrie\BookComponent\Translator,
+use Nette\ComponentModel\IComponent,
     Tester\Assert;
 
-require __DIR__ . "/../../../bootstrap.php";
+require __DIR__ . "/../../bootstrap.php";
 
-class BookControl extends Book\BookControl {
+class BookControl2 extends BookControl {
   function __construct() {
     parent::__construct("Test", __DIR__);
   }
   
   function getPages() {
-    $storage = new Book\BookPagesStorage;
-    $storage[] = new Book\BookPage("slug1", "title1");
-    $storage[] = new Book\BookPage("slug2", "title2");
-    $storage[] = new Book\BookPage("slug3", "title3");
+    $storage = new BookPagesStorage;
+    $storage[] = new BookPage("slug1", "title1");
+    $storage[] = new BookPage("slug2", "title2");
+    $storage[] = new BookPage("slug3", "title3");
     return $storage;
   }
   
@@ -33,7 +31,7 @@ class BookControl extends Book\BookControl {
  * @testCase
  */
 class BookControlTest extends \Tester\TestCase {
-  /** @var  Book\BookControl */
+  /** @var BookControl */
   private $control;
   
   use \Testbench\TComponent;
@@ -45,7 +43,7 @@ class BookControlTest extends \Tester\TestCase {
    * @return void
    */
   protected function checkRenderOutput(IComponent $control, $expected, $page = "index") {
-    /** @var Book\BookControl $control */
+    /** @var BookControl $control */
     if(!$control->getParent()) {
       $this->attachToPresenter($control);
     }
@@ -59,7 +57,7 @@ class BookControlTest extends \Tester\TestCase {
   }
   
   function setUp() {
-    $this->control = new BookControl;
+    $this->control = new BookControl2;
     $this->attachToPresenter($this->control);
   }
   
