@@ -1,5 +1,5 @@
 <?php
-namespace JK\BookComponent;
+namespace Nexendrie\BookComponent;
 
 /**
  * @author Jakub Konečný

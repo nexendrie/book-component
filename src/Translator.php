@@ -1,5 +1,5 @@
 <?php
-namespace JK\BookComponent;
+namespace Nexendrie\BookComponent;
 
 use Nette\Neon\Neon,
     Nette\Utils\Arrays,

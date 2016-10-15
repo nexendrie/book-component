@@ -1,8 +1,8 @@
 <?php
-namespace JK\BookComponent\Tests;
+namespace Nexendrie\BookComponent\Tests;
 
 use Tester\Assert,
-     JK\BookComponent\BookPage;
+     Nexendrie\BookComponent\BookPage;
 
 require __DIR__ . "/../../../bootstrap.php";
 

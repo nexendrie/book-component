@@ -1,5 +1,5 @@
 {
-    "name": "konecnyjakub/book-component",
+    "name": "nexendrie/book-component",
     "description": "Simple book component with list of chapters/pages and links to previous and next chapter/page",
     "keywords": [
       "simple", "book", "component", "nette"
@@ -13,8 +13,8 @@
         }
     ],
     "support": {
-        "source": "https://github.com/konecnyjakub/book-component/",
-        "issues": "https://github.com/konecnyjakub/book-component/issues"
+        "source": "https://gitlab.com/nexendrie/book-component/",
+        "issues": "https://gitlab.com/nexendrie/book-component/issues"
     },
     "require": {
         "php": ">=5.6.0",
@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "JK\\BookComponent\\": "src/"
+            "Nexendrie\\BookComponent\\": "src/"
         }
     },
     "extra": {

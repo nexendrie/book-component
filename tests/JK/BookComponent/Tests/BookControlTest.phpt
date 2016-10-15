@@ -1,9 +1,9 @@
 <?php
-namespace JK\BookComponent\Tests;
+namespace Nexendrie\BookComponent\Tests;
 
-use JK\BookComponent as Book,
+use Nexendrie\BookComponent as Book,
     Nette\ComponentModel\IComponent,
-    JK\BookComponent\Translator,
+    Nexendrie\BookComponent\Translator,
     Tester\Assert;
 
 require __DIR__ . "/../../../bootstrap.php";

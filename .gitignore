@@ -1,6 +1,8 @@
 /nbproject/
+/.idea/
 /vendor/
 /tests/_temp/
 output/
 *.actual
 composer.lock
+coverage.*
