@@ -1,3 +1,6 @@
+Version 1.0.2
+- changed package's vendor
+
 Version 1.0.1
 - allowed setting custom folder for translation
 - do logic of Translator::setLang() only if the language is different
