@@ -9,6 +9,7 @@ class BookPagesStorage extends \Nette\Utils\ArrayList {
    * @param mixed $index
    * @param BookPage $page
    * @throws \InvalidArgumentException
+   * @throws \RuntimeException
    */
   function offsetSet($index, $page) {
     if(!$page instanceof BookPage) throw new \InvalidArgumentException("Argument must be of type HelpPage.");
