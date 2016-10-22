@@ -20,7 +20,8 @@
         "php": ">=5.6.0",
         "nette/application": "~2.3",
         "nette/utils": "~2.3",
-        "latte/latte": "~2.3"
+        "latte/latte": "~2.3",
+        "nexendrie/translation": "1.0.x@dev"
     },
     "require-dev": {
         "nette/tester": "2.0.x-dev as v1.7",

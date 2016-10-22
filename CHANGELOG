@@ -1,3 +1,7 @@
+Version 1.0.2+dev
+- added dependency on nexendrie/translation
+- moved translating feature to package nexendrie/translation
+
 Version 1.0.2
 - changed package's vendor
 

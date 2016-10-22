@@ -2,7 +2,8 @@
 namespace Nexendrie\BookComponent;
 
 use Nette\ComponentModel\IComponent,
-    Tester\Assert;
+    Tester\Assert,
+    Nexendrie\Translation\Translator;
 
 require __DIR__ . "/../../bootstrap.php";
 
@@ -63,6 +64,7 @@ class BookControlTest extends \Tester\TestCase {
   
   function testTranslator() {
     $this->control->translator = new Translator;
+    $this->control->translator->folder = __DIR__ . "/../../../src/lang";
     Assert::same("en", $this->control->translator->lang);
     Assert::type("string", $this->control->translator->translate("book.content"));
     Assert::same("Content", $this->control->translator->translate("book.content"));

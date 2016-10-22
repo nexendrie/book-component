@@ -1,7 +1,8 @@
 <?php
 namespace Nexendrie\BookComponent;
 
-use Nette\Localization\ITranslator;
+use Nette\Localization\ITranslator,
+    Nexendrie\Translation\Translator;
 
 /**
  * BookControl
@@ -53,7 +54,10 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   function render($page = "index") {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
-    if(is_null($this->translator)) $this->translator = new Translator;
+    if(is_null($this->translator)) {
+      $this->translator = new Translator;
+      $this->translator->folder = __DIR__ . "/lang";
+    }
     if($this->lang) $this->translator->lang = $this->lang;
     $this->template->setTranslator($this->translator);
     $pages = $this->getPages();
