@@ -1,6 +1,7 @@
 Version 1.0.2+dev
 - added dependency on nexendrie/translation
 - moved translating feature to package nexendrie/translation
+- require version 2.4 of Nette packages
 
 Version 1.0.2
 - changed package's vendor
