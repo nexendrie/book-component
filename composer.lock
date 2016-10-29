@@ -563,15 +563,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "792cdd5fa37007937fa5e7ff204a12ae8b7dd0de"
+                "reference": "25d9870cbe3ac6812d681cd8756dd0f8a5665998"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/792cdd5fa37007937fa5e7ff204a12ae8b7dd0de",
-                "reference": "792cdd5fa37007937fa5e7ff204a12ae8b7dd0de",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/25d9870cbe3ac6812d681cd8756dd0f8a5665998",
+                "reference": "25d9870cbe3ac6812d681cd8756dd0f8a5665998",
                 "shasum": ""
             },
             "require": {
+                "nette/finder": "^2.4",
                 "nette/neon": "^2.4",
                 "nette/utils": "^2.4",
                 "php": ">=5.6.0"
@@ -596,7 +597,10 @@
             "autoload": {
                 "psr-4": {
                     "Nexendrie\\Translation\\": "src/"
-                }
+                },
+                "classmap": [
+                    "src/exceptions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -611,13 +615,13 @@
             ],
             "description": "Easy translating of Nette applications with neon",
             "keywords": [
-                "internationalization",
+                "localization",
                 "neon",
                 "nette",
                 "translating",
                 "translation"
             ],
-            "time": "2016-10-29 13:42:42"
+            "time": "2016-10-30 16:43:41"
         }
     ],
     "packages-dev": [
