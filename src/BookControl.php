@@ -56,7 +56,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) {
       $this->translator = new Translator;
-      $this->translator->folder = __DIR__ . "/lang";
+      $this->translator->folders = __DIR__ . "/lang";
     }
     if($this->lang) $this->translator->lang = $this->lang;
     $this->template->setTranslator($this->translator);
