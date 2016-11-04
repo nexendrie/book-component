@@ -4,6 +4,7 @@ stages:
   - build
   - analyze
   - test
+  - deploy
 
 build:
   stage: build
@@ -60,3 +61,18 @@ test:cc:
     name: "Code coverage"
     paths:
     - coverage.html
+
+pages:
+  stage: deploy
+  environment: pages
+  dependencies:
+  - build
+  before_script:
+  - mkdir public
+  script:
+  - ./vendor/bin/generate-site --source=docs --output=public
+  artifacts:
+      paths:
+      - public
+  only:
+  - master@nexendrie/book-component
