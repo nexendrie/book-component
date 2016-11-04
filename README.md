@@ -59,5 +59,5 @@ class HelpControl extends Book\BookControl {
 ```
 If that translation (or some text of it) is not available, english variant is used.
 
-If you wish, you can also use your own translator. Just set property $translator in constructor. List of all texts used by the component can be seen in *src/lang/en.neon*.
+If you wish, you can also use your own translator. Just set property $translator in constructor. List of all texts used by the component can be seen in *src/lang/book.en.neon*.
 
