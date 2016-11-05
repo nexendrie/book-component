@@ -66,29 +66,35 @@ class BookControlTest extends \Tester\TestCase {
     $this->control->translator = new Translator;
     $this->control->translator->folders = [__DIR__ . "/../../../src/lang"];
     Assert::same("en", $this->control->translator->lang);
-    Assert::type("string", $this->control->translator->translate("book.content"));
-    Assert::same("Content", $this->control->translator->translate("book.content"));
+    $result = $this->control->translator->translate("book.content");
+    Assert::type("string", $result);
+    Assert::same("Content", $result);
     $this->control->translator->lang = "cs";
-    Assert::type("string", $this->control->translator->translate("book.content"));
-    Assert::same("Obsah", $this->control->translator->translate("book.content"));
+    $result = $this->control->translator->translate("book.content");
+    Assert::type("string", $result);
+    Assert::same("Obsah", $result);
   }
   
   function testRenderI() {
     Assert::type("null", $this->control->translator);
-    $this->checkRenderOutput($this->control, __DIR__ . "/bookIndexExpected.latte");
+    $filename = __DIR__ . "/bookIndexExpected.latte";
+    $this->checkRenderOutput($this->control, $filename);
     Assert::type(Translator::class, $this->control->translator);
   }
   
   function testRenderP1() {
-    $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected1.latte", "slug1");
+    $filename = __DIR__ . "/bookPageExpected1.latte";
+    $this->checkRenderOutput($this->control, $filename, "slug1");
   }
   
   function testRenderP2() {
-    $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected2.latte", "slug2");
+    $filename = __DIR__ . "/bookPageExpected2.latte";
+    $this->checkRenderOutput($this->control, $filename, "slug2");
   }
   
   function testRenderP3() {
-    $this->checkRenderOutput($this->control, __DIR__ . "/bookPageExpected3.latte", "slug3");
+    $filename = __DIR__ . "/bookPageExpected3.latte";
+    $this->checkRenderOutput($this->control, $filename, "slug3");
   }
 }
 
