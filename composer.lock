@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "881be54df3d560dfc2844aa3de455682",
+    "hash": "50522843228ef46ff67531e43fc0e959",
     "content-hash": "5062db708a580fe10a4dada7c58313c8",
     "packages": [
         {
@@ -563,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "976e58f511b8187224430cea256b215682286512"
+                "reference": "f26c3542c8f89bcf785e15a195591c6d0b86a653"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/976e58f511b8187224430cea256b215682286512",
-                "reference": "976e58f511b8187224430cea256b215682286512",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/f26c3542c8f89bcf785e15a195591c6d0b86a653",
+                "reference": "f26c3542c8f89bcf785e15a195591c6d0b86a653",
                 "shasum": ""
             },
             "require": {
@@ -616,6 +616,7 @@
                 }
             ],
             "description": "Easy translating of Nette applications with neon",
+            "homepage": "https://nexendrie.gitlab.io",
             "keywords": [
                 "localization",
                 "neon",
@@ -623,7 +624,7 @@
                 "translating",
                 "translation"
             ],
-            "time": "2016-10-31 20:59:45"
+            "time": "2016-11-05 07:09:25"
         }
     ],
     "packages-dev": [
@@ -1350,12 +1351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/site-generator.git",
-                "reference": "f5df6e24b593d7a603a23a76a66c1c4864d7027d"
+                "reference": "edf730eae2c32fa23bb73ccbdaefd1ea61f4308b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/f5df6e24b593d7a603a23a76a66c1c4864d7027d",
-                "reference": "f5df6e24b593d7a603a23a76a66c1c4864d7027d",
+                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/edf730eae2c32fa23bb73ccbdaefd1ea61f4308b",
+                "reference": "edf730eae2c32fa23bb73ccbdaefd1ea61f4308b",
                 "shasum": ""
             },
             "require": {
@@ -1397,7 +1398,7 @@
                 }
             ],
             "description": "Static site generator which turns Markdown into HTML",
-            "homepage": "https://nexendrie.gitlab.io/site-generator",
+            "homepage": "https://nexendrie.gitlab.io",
             "keywords": [
                 "generator",
                 "html",
@@ -1406,7 +1407,7 @@
                 "static",
                 "website"
             ],
-            "time": "2016-11-04 17:26:55"
+            "time": "2016-11-05 10:03:39"
         },
         {
             "name": "squizlabs/php_codesniffer",
