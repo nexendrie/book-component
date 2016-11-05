@@ -5,7 +5,7 @@
       "simple", "book", "component", "nette"
     ],
     "license": "BSD-3-Clause",
-    "homepage": "https://nexendrie.gitlab.io/book-component",
+    "homepage": "https://nexendrie.gitlab.io",
     "authors": [
         {
             "name": "Jakub Konečný",
