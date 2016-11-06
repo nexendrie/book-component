@@ -12,8 +12,11 @@ class BookPagesStorage extends \Nette\Utils\ArrayList {
    * @throws \RuntimeException
    */
   function offsetSet($index, $page) {
-    if(!$page instanceof BookPage) throw new \InvalidArgumentException("Argument must be of type HelpPage.");
-    elseif($this->hasPage($page->slug)) throw new \RuntimeException("Duplicate slug $page->slug.");
+    if(!$page instanceof BookPage) {
+      throw new \InvalidArgumentException("Argument must be of type HelpPage.");
+    } elseif($this->hasPage($page->slug)) {
+      throw new \RuntimeException("Duplicate slug $page->slug.");
+    }
     parent::offsetSet($index, $page);
   }
   
