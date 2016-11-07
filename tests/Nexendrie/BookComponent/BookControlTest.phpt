@@ -1,8 +1,7 @@
 <?php
 namespace Nexendrie\BookComponent;
 
-use Nette\ComponentModel\IComponent,
-    Tester\Assert,
+use Tester\Assert,
     Nexendrie\Translation\Translator;
 
 require __DIR__ . "/../../bootstrap.php";
@@ -37,26 +36,6 @@ class BookControlTest extends \Tester\TestCase {
   
   use \Testbench\TComponent;
   
-  /**
-   * @param IComponent $control
-   * @param $expected
-   * @param string $page
-   * @return void
-   */
-  protected function checkRenderOutput(IComponent $control, $expected, $page = "index") {
-    /** @var BookControl $control */
-    if(!$control->getParent()) {
-      $this->attachToPresenter($control);
-    }
-    ob_start();
-    $control->render($page);
-    if(is_file($expected)) {
-      Assert::matchFile($expected, ob_get_clean());
-    } else {
-      Assert::match($expected, ob_get_clean());
-    }
-  }
-  
   function setUp() {
     $this->control = new BookControl2;
     $this->attachToPresenter($this->control);
@@ -84,17 +63,17 @@ class BookControlTest extends \Tester\TestCase {
   
   function testRenderP1() {
     $filename = __DIR__ . "/bookPageExpected1.latte";
-    $this->checkRenderOutput($this->control, $filename, "slug1");
+    $this->checkRenderOutput($this->control, $filename, ["slug1"]);
   }
   
   function testRenderP2() {
     $filename = __DIR__ . "/bookPageExpected2.latte";
-    $this->checkRenderOutput($this->control, $filename, "slug2");
+    $this->checkRenderOutput($this->control, $filename, ["slug2"]);
   }
   
   function testRenderP3() {
     $filename = __DIR__ . "/bookPageExpected3.latte";
-    $this->checkRenderOutput($this->control, $filename, "slug3");
+    $this->checkRenderOutput($this->control, $filename, ["slug3"]);
   }
 }
 

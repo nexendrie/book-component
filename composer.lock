@@ -563,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "a61261aec881f9878ce48269cbe6205a632a5075"
+                "reference": "72cf370ea03c664b596752b18230a9b0f2fb3d95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/a61261aec881f9878ce48269cbe6205a632a5075",
-                "reference": "a61261aec881f9878ce48269cbe6205a632a5075",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/72cf370ea03c664b596752b18230a9b0f2fb3d95",
+                "reference": "72cf370ea03c664b596752b18230a9b0f2fb3d95",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +621,7 @@
                 "translating",
                 "translation"
             ],
-            "time": "2016-11-06 10:51:30"
+            "time": "2016-11-06 14:27:14"
         }
     ],
     "packages-dev": [
@@ -868,16 +868,16 @@
         },
         {
             "name": "mrtnzlml/testbench",
-            "version": "v2.4",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrtnzlml/testbench.git",
-                "reference": "f62bcca0130a612421ba82486eeca0da761a0aaf"
+                "reference": "7362fe750b2cc8f7fe4ced6222f21d55511edf2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrtnzlml/testbench/zipball/f62bcca0130a612421ba82486eeca0da761a0aaf",
-                "reference": "f62bcca0130a612421ba82486eeca0da761a0aaf",
+                "url": "https://api.github.com/repos/mrtnzlml/testbench/zipball/7362fe750b2cc8f7fe4ced6222f21d55511edf2f",
+                "reference": "7362fe750b2cc8f7fe4ced6222f21d55511edf2f",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +937,7 @@
                 }
             ],
             "description": "Simple integration testing tool for Nette Framework applications",
-            "time": "2016-10-12 15:56:17"
+            "time": "2016-11-07 08:58:13"
         },
         {
             "name": "nette/bootstrap",
@@ -1390,12 +1390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/site-generator.git",
-                "reference": "90ee43c80d3c87e649976d9cfbf1adf7d175cb4e"
+                "reference": "acecf5e11249832ad4bd1ee519f48335d8478870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/90ee43c80d3c87e649976d9cfbf1adf7d175cb4e",
-                "reference": "90ee43c80d3c87e649976d9cfbf1adf7d175cb4e",
+                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/acecf5e11249832ad4bd1ee519f48335d8478870",
+                "reference": "acecf5e11249832ad4bd1ee519f48335d8478870",
                 "shasum": ""
             },
             "require": {
@@ -1443,7 +1443,7 @@
                 "static",
                 "website"
             ],
-            "time": "2016-11-05 12:23:21"
+            "time": "2016-11-06 11:21:46"
         },
         {
             "name": "squizlabs/php_codesniffer",
