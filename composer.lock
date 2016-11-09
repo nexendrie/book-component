@@ -563,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "72cf370ea03c664b596752b18230a9b0f2fb3d95"
+                "reference": "1131034ab7d405b425c810b62b8aa0a33cf6868a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/72cf370ea03c664b596752b18230a9b0f2fb3d95",
-                "reference": "72cf370ea03c664b596752b18230a9b0f2fb3d95",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/1131034ab7d405b425c810b62b8aa0a33cf6868a",
+                "reference": "1131034ab7d405b425c810b62b8aa0a33cf6868a",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +621,7 @@
                 "translating",
                 "translation"
             ],
-            "time": "2016-11-06 14:27:14"
+            "time": "2016-11-09 20:45:52"
         }
     ],
     "packages-dev": [
@@ -1059,16 +1059,16 @@
         },
         {
             "name": "nette/di",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "aa40af0766b990fbe052d6efe89382d6df2ae641"
+                "reference": "54dbce99e3355e201607874bdbcde8a0b8a1e98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/aa40af0766b990fbe052d6efe89382d6df2ae641",
-                "reference": "aa40af0766b990fbe052d6efe89382d6df2ae641",
+                "url": "https://api.github.com/repos/nette/di/zipball/54dbce99e3355e201607874bdbcde8a0b8a1e98e",
+                "reference": "54dbce99e3355e201607874bdbcde8a0b8a1e98e",
                 "shasum": ""
             },
             "require": {
@@ -1115,7 +1115,7 @@
             ],
             "description": "Nette Dependency Injection Component",
             "homepage": "https://nette.org",
-            "time": "2016-09-21 16:51:11"
+            "time": "2016-10-26 16:05:47"
         },
         {
             "name": "nette/php-generator",
@@ -1390,12 +1390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/site-generator.git",
-                "reference": "acecf5e11249832ad4bd1ee519f48335d8478870"
+                "reference": "a0d0c7c826892b079b4abf1204b93a2c1a653463"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/acecf5e11249832ad4bd1ee519f48335d8478870",
-                "reference": "acecf5e11249832ad4bd1ee519f48335d8478870",
+                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/a0d0c7c826892b079b4abf1204b93a2c1a653463",
+                "reference": "a0d0c7c826892b079b4abf1204b93a2c1a653463",
                 "shasum": ""
             },
             "require": {
@@ -1443,7 +1443,7 @@
                 "static",
                 "website"
             ],
-            "time": "2016-11-06 11:21:46"
+            "time": "2016-11-09 16:30:56"
         },
         {
             "name": "squizlabs/php_codesniffer",
