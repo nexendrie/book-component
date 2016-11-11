@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d65cc7df7c9010ed9dd71c4317659708",
-    "content-hash": "2925d73ba51e97463ea5f7acd0b12ee2",
+    "hash": "55e14b1e2e0d052fe163ba76bd3e6f2b",
+    "content-hash": "5258a45ff32f690b8ab150d541cf651c",
     "packages": [
         {
             "name": "latte/latte",
@@ -559,16 +559,16 @@
         },
         {
             "name": "nexendrie/translation",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "1131034ab7d405b425c810b62b8aa0a33cf6868a"
+                "reference": "eba3e139efe5c07b33340e9addd075724fad762b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/1131034ab7d405b425c810b62b8aa0a33cf6868a",
-                "reference": "1131034ab7d405b425c810b62b8aa0a33cf6868a",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/eba3e139efe5c07b33340e9addd075724fad762b",
+                "reference": "eba3e139efe5c07b33340e9addd075724fad762b",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +621,7 @@
                 "translating",
                 "translation"
             ],
-            "time": "2016-11-09 20:45:52"
+            "time": "2016-11-10 21:09:12"
         }
     ],
     "packages-dev": [
@@ -1589,7 +1589,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "nexendrie/translation": 20,
         "nexendrie/code-quality": 20,
         "nette/tester": 20,
         "nexendrie/site-generator": 20
