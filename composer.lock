@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55e14b1e2e0d052fe163ba76bd3e6f2b",
-    "content-hash": "5258a45ff32f690b8ab150d541cf651c",
+    "hash": "5ad7a2f0345557be053ee4a1c78896f5",
+    "content-hash": "d3527a2ff891d7a1c7571ab492887b30",
     "packages": [
         {
             "name": "latte/latte",
@@ -559,16 +559,16 @@
         },
         {
             "name": "nexendrie/translation",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "eba3e139efe5c07b33340e9addd075724fad762b"
+                "reference": "14bb6be7321aa907fc45c261deacdb2c53488e20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/eba3e139efe5c07b33340e9addd075724fad762b",
-                "reference": "eba3e139efe5c07b33340e9addd075724fad762b",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/14bb6be7321aa907fc45c261deacdb2c53488e20",
+                "reference": "14bb6be7321aa907fc45c261deacdb2c53488e20",
                 "shasum": ""
             },
             "require": {
@@ -581,10 +581,13 @@
                 "nette/di": "^2.4",
                 "nette/tester": "dev-master",
                 "nexendrie/code-quality": "dev-master",
+                "symfony/yaml": "^3.1",
                 "tracy/tracy": "^2.4"
             },
             "suggest": {
+                "ext-json": "To use JsonLoader",
                 "nette/di": "To use TranslationExtension",
+                "symfony/yaml": "To use YamlLoader",
                 "tracy/tracy": "For debugger panel"
             },
             "type": "library",
@@ -612,16 +615,19 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Easy translating of Nette applications with neon",
+            "description": "Easy translating of Nette applications",
             "homepage": "https://nexendrie.gitlab.io",
             "keywords": [
+                "ini",
+                "json",
                 "localization",
                 "neon",
                 "nette",
                 "translating",
-                "translation"
+                "translation",
+                "yaml"
             ],
-            "time": "2016-11-10 21:09:12"
+            "time": "2016-11-13 11:48:47"
         }
     ],
     "packages-dev": [

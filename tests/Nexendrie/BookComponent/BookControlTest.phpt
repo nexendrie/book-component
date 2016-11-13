@@ -3,7 +3,7 @@ namespace Nexendrie\BookComponent;
 
 use Tester\Assert,
     Nexendrie\Translation\Translator,
-    Nexendrie\Translation\Loaders\NeonLoader;
+    Nexendrie\Translation\Loaders\MessagesCatalogue;
 
 require __DIR__ . "/../../bootstrap.php";
 
@@ -43,7 +43,7 @@ class BookControlTest extends \Tester\TestCase {
   }
   
   function testTranslator() {
-    $loader = new NeonLoader;
+    $loader = new MessagesCatalogue();
     $loader->folders = [__DIR__ . "/../../../src/lang"];
     $this->control->translator = new Translator($loader);
     Assert::same("en", $this->control->translator->lang);

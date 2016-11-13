@@ -3,7 +3,7 @@ namespace Nexendrie\BookComponent;
 
 use Nette\Localization\ITranslator,
     Nexendrie\Translation\Translator,
-    Nexendrie\Translation\Loaders\NeonLoader;
+    Nexendrie\Translation\Loaders\MessagesCatalogue;
 
 /**
  * BookControl
@@ -56,7 +56,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) {
-      $loader = new NeonLoader;
+      $loader = new MessagesCatalogue;
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
     }

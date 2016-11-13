@@ -1,3 +1,6 @@
+Version 1.1.1+dev
+- used message catalogue for translation by default
+
 Version 1.1.1
 - updated for nexendrie/translation 0.1
 - code cleaning
