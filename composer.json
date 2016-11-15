@@ -36,6 +36,11 @@
             "Nexendrie\\BookComponent\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Nexendrie\\BookComponent\\": "tests/"
+        }
+    },
     "replace": {
         "konecnyjakub/book-component": "~1.0"
     },
