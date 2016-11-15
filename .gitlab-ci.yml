@@ -10,7 +10,7 @@ build:
   stage: build
 
   script:
-  - composer install --prefer-dist
+  - composer install --prefer-dist -a
 
   cache:
     paths:
