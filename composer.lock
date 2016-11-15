@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ad7a2f0345557be053ee4a1c78896f5",
+    "hash": "817e83ec418fc679269fd51f3cec7454",
     "content-hash": "d3527a2ff891d7a1c7571ab492887b30",
     "packages": [
         {
@@ -559,16 +559,16 @@
         },
         {
             "name": "nexendrie/translation",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "14bb6be7321aa907fc45c261deacdb2c53488e20"
+                "reference": "3fe58bdbe6bb863d43f60c2230b1cac14880eedd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/14bb6be7321aa907fc45c261deacdb2c53488e20",
-                "reference": "14bb6be7321aa907fc45c261deacdb2c53488e20",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/3fe58bdbe6bb863d43f60c2230b1cac14880eedd",
+                "reference": "3fe58bdbe6bb863d43f60c2230b1cac14880eedd",
                 "shasum": ""
             },
             "require": {
@@ -627,7 +627,7 @@
                 "translation",
                 "yaml"
             ],
-            "time": "2016-11-13 11:48:47"
+            "time": "2016-11-15 11:46:15"
         }
     ],
     "packages-dev": [
