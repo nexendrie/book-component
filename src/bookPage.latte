@@ -1,4 +1,3 @@
   <h1>{$current->title}</h1>
   {include "$folder/{$current->slug}.latte"}
-  <p id="helpNavigation">{if $index>0}<a href="{plink "{$presenterName}:", page => $pages[$index-1]->slug}">{_}book.previous{/}</a>{/if} <a href="{plink "{$presenterName}:"}">{_}book.index{/}</a> {if $index<count($pages)-1}<a href="{plink "{$presenterName}:", page => $pages[$index+1]->slug}">{_}book.next{/}</a>{/if}</p>
-  
+  <p id="bookNavigation">{if $index>0}<a href="{plink "{$presenterName}:", page => $pages[$index-1]->slug}">{_}book.previous{/}</a>{/if} <a href="{plink "{$presenterName}:"}">{_}book.index{/}</a> {if $index<count($pages)-1}<a href="{plink "{$presenterName}:", page => $pages[$index+1]->slug}">{_}book.next{/}</a>{/if}</p>

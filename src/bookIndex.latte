@@ -1,5 +1,5 @@
   <h1>{_}book.content{/}</h1>
-  <ol id="helpPages">
+  <ol id="bookPages">
     {foreach $pages as $page}
     <li><a href="{plink "{$presenterName}:", page => $page->slug}">{$page->title}</a></li>
     {/foreach}
