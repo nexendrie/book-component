@@ -60,10 +60,14 @@ abstract class BookControl extends \Nette\Application\UI\Control {
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
     }
-    if($this->lang) $this->translator->lang = $this->lang;
+    if($this->lang) {
+      $this->translator->lang = $this->lang;
+    }
     $this->template->setTranslator($this->translator);
     $pages = $this->getPages();
-    if(!$pages->hasPage($page)) $page = "index";
+    if(!$pages->hasPage($page)) {
+      $page = "index";
+    }
     if($page === "index") {
       $this->template->setFile(__DIR__ . "/bookIndex.latte");
     } else {
@@ -73,7 +77,9 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     }
     $this->template->pages = $pages;
     $method = "render" . ucfirst($page);
-    if(method_exists($this, $method)) call_user_func([$this, $method]);
+    if(method_exists($this, $method)) {
+      call_user_func([$this, $method]);
+    }
     $this->template->render();
   }
 }
