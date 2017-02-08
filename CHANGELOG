@@ -1,6 +1,7 @@
 Version 1.1.1+dev
 - used message catalogue for translation by default
 - changed ids in templates
+- raised minimal version of PHP to 7.0
 
 Version 1.1.1
 - updated for nexendrie/translation 0.1
