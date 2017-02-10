@@ -26,7 +26,7 @@ class BookPagesStorage extends \Nette\Utils\ArrayList {
    * @param string $slug
    * @return bool
    */
-  function hasPage($slug) {
+  function hasPage(string $slug): bool {
     foreach($this as $page) {
       if($page->slug === $slug) {
         return true;
@@ -39,7 +39,7 @@ class BookPagesStorage extends \Nette\Utils\ArrayList {
    * @param string $slug
    * @return int|NULL
    */
-  function getIndex($slug) {
+  function getIndex(string $slug) {
     foreach($this as $index => $page) {
       if($page->slug === $slug) {
         return $index;

@@ -28,9 +28,9 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @param string $presenterName
    * @param string $folder
    */
-  function __construct($presenterName, $folder) {
-    $this->presenterName = (string) $presenterName;
-    $this->folder = (string) $folder;
+  function __construct(string $presenterName, string $folder) {
+    $this->presenterName = $presenterName;
+    $this->folder = $folder;
   }
   
   /**
@@ -54,7 +54,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @param string $page
    * @return void
    */
-  function render($page = "index") {
+  function render(string $page = "index") {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) {
