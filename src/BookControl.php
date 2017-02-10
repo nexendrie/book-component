@@ -13,13 +13,14 @@ use Nette\Localization\ITranslator,
  * @author Jakub Konečný
  * @property ITranslator $translator
  * @property string $lang
+ * @property \Nette\Bridges\ApplicationLatte\Template $template
  */
 abstract class BookControl extends \Nette\Application\UI\Control {
   /** @var string */
   private $presenterName;
   /** @var string */
   private $folder;
-  /** @var ITranslator */
+  /** @var ITranslator|Translator */
   protected $translator;
   /** @var string */
   protected $lang;
@@ -29,6 +30,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @param string $folder
    */
   function __construct(string $presenterName, string $folder) {
+    parent::__construct();
     $this->presenterName = $presenterName;
     $this->folder = $folder;
   }
@@ -57,7 +59,11 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   function render(string $page = "index") {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
+    $polluteTranslator = false;
     if(is_null($this->translator)) {
+      $polluteTranslator = true;
+    }
+    if($polluteTranslator) {
       $loader = new MessagesCatalogue;
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);

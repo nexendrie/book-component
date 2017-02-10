@@ -1,0 +1,10 @@
+includes:
+    - vendor/phpstan/phpstan-nette/extension.neon
+parameters:
+    excludes_analyse:
+        - %rootDir%/../../../tests/_temp/*
+    fileExtensions:
+        - php
+        - phpt
+    autoload_directories:
+        - %rootDir%/../../../tests

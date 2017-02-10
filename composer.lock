@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "153611d24972150d6b2a98d99b8bf9a2",
+    "content-hash": "770f958c19c299ab75dcf1152fd38a57",
     "packages": [
         {
             "name": "latte/latte",
@@ -1125,6 +1125,66 @@
             "time": "2017-01-15T14:08:41+00:00"
         },
         {
+            "name": "nette/forms",
+            "version": "v2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/forms.git",
+                "reference": "c2618a144a7cd0a1f41143e18387d9c48cef91cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/forms/zipball/c2618a144a7cd0a1f41143e18387d9c48cef91cb",
+                "reference": "c2618a144a7cd0a1f41143e18387d9c48cef91cb",
+                "shasum": ""
+            },
+            "require": {
+                "nette/component-model": "~2.3",
+                "nette/http": "~2.2",
+                "nette/utils": "~2.4",
+                "php": ">=5.6.0"
+            },
+            "conflict": {
+                "nette/nette": "<2.2"
+            },
+            "require-dev": {
+                "latte/latte": "~2.4",
+                "nette/di": "~2.4",
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Forms: greatly facilitates web forms",
+            "homepage": "https://nette.org",
+            "time": "2016-12-20T23:49:37+00:00"
+        },
+        {
             "name": "nette/php-generator",
             "version": "v2.5.0",
             "source": {
@@ -1455,7 +1515,7 @@
                 "quality",
                 "testing"
             ],
-            "time": "2017-02-10T08:08:28+00:00"
+            "time": "2017-02-10 08:08:28"
         },
         {
             "name": "nexendrie/site-generator",
@@ -1623,6 +1683,48 @@
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
             "time": "2017-01-30T23:13:17+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-nette",
+            "version": "0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-nette.git",
+                "reference": "76cbb53b3d8ca2f1ec006a2889ad5adb9b5b0383"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-nette/zipball/76cbb53b3d8ca2f1ec006a2889ad5adb9b5b0383",
+                "reference": "76cbb53b3d8ca2f1ec006a2889ad5adb9b5b0383",
+                "shasum": ""
+            },
+            "require": {
+                "nette/component-model": "^2.3.0",
+                "nette/di": "^2.3.0",
+                "nette/forms": "^2.3.0",
+                "nette/utils": "^2.3.0",
+                "php": "~7.0",
+                "phpstan/phpstan": "^0.6"
+            },
+            "require-dev": {
+                "consistence/coding-standard": "~0.12.0",
+                "phing/phing": "^2.13.0",
+                "phpunit/phpunit": "^5.3",
+                "satooshi/php-coveralls": "^1.0",
+                "slevomat/coding-standard": "dev-php7#961090ac32"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Nette Framework class reflection extension for PHPStan",
+            "time": "2017-01-30T20:44:33+00:00"
         },
         {
             "name": "psr/log",
