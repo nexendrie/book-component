@@ -23,7 +23,7 @@
         "nette/application": "^2.4",
         "nette/utils": "^2.4",
         "latte/latte": "^2.4",
-        "nexendrie/translation": "^0.2"
+        "nexendrie/translation": "^0.3"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "770f958c19c299ab75dcf1152fd38a57",
+    "content-hash": "34977738ca9380a25effb33bb740ce0e",
     "packages": [
         {
             "name": "latte/latte",
@@ -383,60 +383,6 @@
             "time": "2017-01-18T03:03:04+00:00"
         },
         {
-            "name": "nette/neon",
-            "version": "v2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nette/neon.git",
-                "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nette/neon/zipball/1a78ff64b1e161ebccc03bdf9366450a69365f5b",
-                "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-iconv": "*",
-                "ext-json": "*",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "nette/tester": "~2.0",
-                "tracy/tracy": "^2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause",
-                "GPL-2.0",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "David Grudl",
-                    "homepage": "https://davidgrudl.com"
-                },
-                {
-                    "name": "Nette Community",
-                    "homepage": "https://nette.org/contributors"
-                }
-            ],
-            "description": "Nette NEON: parser & generator for Nette Object Notation",
-            "homepage": "http://ne-on.org",
-            "time": "2017-01-13T08:00:19+00:00"
-        },
-        {
             "name": "nette/reflection",
             "version": "v2.4.1",
             "source": {
@@ -560,26 +506,26 @@
         },
         {
             "name": "nexendrie/translation",
-            "version": "0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "3fe58bdbe6bb863d43f60c2230b1cac14880eedd"
+                "reference": "b2ba4df9f6598fff4607362bf8d9da4039657ad7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/3fe58bdbe6bb863d43f60c2230b1cac14880eedd",
-                "reference": "3fe58bdbe6bb863d43f60c2230b1cac14880eedd",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/b2ba4df9f6598fff4607362bf8d9da4039657ad7",
+                "reference": "b2ba4df9f6598fff4607362bf8d9da4039657ad7",
                 "shasum": ""
             },
             "require": {
                 "nette/finder": "^2.4",
-                "nette/neon": "^2.4",
                 "nette/utils": "^2.4",
                 "php": ">=5.6.0"
             },
             "require-dev": {
                 "nette/di": "^2.4",
+                "nette/neon": "^2.4",
                 "nette/tester": "dev-master",
                 "nexendrie/code-quality": "dev-master",
                 "symfony/yaml": "^3.1",
@@ -588,6 +534,7 @@
             "suggest": {
                 "ext-json": "To use JsonLoader",
                 "nette/di": "To use TranslationExtension",
+                "nette/neon": "To use NeonLoader",
                 "symfony/yaml": "To use YamlLoader",
                 "tracy/tracy": "For debugger panel"
             },
@@ -616,7 +563,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Easy translating of Nette applications",
+            "description": "Easy translating of PHP applications",
             "homepage": "https://nexendrie.gitlab.io",
             "keywords": [
                 "ini",
@@ -628,7 +575,7 @@
                 "translation",
                 "yaml"
             ],
-            "time": "2016-11-15T11:46:15+00:00"
+            "time": "2017-02-09T13:12:57+00:00"
         }
     ],
     "packages-dev": [
@@ -1185,6 +1132,60 @@
             "time": "2016-12-20T23:49:37+00:00"
         },
         {
+            "name": "nette/neon",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/neon.git",
+                "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/neon/zipball/1a78ff64b1e161ebccc03bdf9366450a69365f5b",
+                "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette NEON: parser & generator for Nette Object Notation",
+            "homepage": "http://ne-on.org",
+            "time": "2017-01-13T08:00:19+00:00"
+        },
+        {
             "name": "nette/php-generator",
             "version": "v2.5.0",
             "source": {
@@ -1515,7 +1516,7 @@
                 "quality",
                 "testing"
             ],
-            "time": "2017-02-16T11:37:21+00:00"
+            "time": "2017-02-16 11:37:21"
         },
         {
             "name": "nexendrie/site-generator",
@@ -1578,7 +1579,7 @@
                 "static",
                 "website"
             ],
-            "time": "2017-02-16T11:43:34+00:00"
+            "time": "2017-02-16 11:43:34"
         },
         {
             "name": "nikic/php-parser",
