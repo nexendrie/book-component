@@ -20,7 +20,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   private $presenterName;
   /** @var string */
   private $folder;
-  /** @var ITranslator|Translator */
+  /** @var ITranslator|Translator|NULL */
   protected $translator;
   /** @var string */
   protected $lang;
@@ -36,7 +36,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   }
   
   /**
-   * @return ITranslator
+   * @return ITranslator|NULL
    */
   function getTranslator() {
     return $this->translator;
@@ -50,7 +50,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   }
   
   /** @return BookPagesStorage */
-  abstract function getPages();
+  abstract function getPages(): BookPagesStorage;
   
   /**
    * @param string $page

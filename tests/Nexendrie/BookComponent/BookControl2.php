@@ -11,7 +11,7 @@ class BookControl2 extends BookControl {
   /**
    * @return BookPagesStorage
    */
-  function getPages() {
+  function getPages(): BookPagesStorage {
     $storage = new BookPagesStorage;
     $storage[] = new BookPage("slug1", "title1");
     $storage[] = new BookPage("slug2", "title2");
