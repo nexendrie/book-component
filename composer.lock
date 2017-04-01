@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "34977738ca9380a25effb33bb740ce0e",
+    "content-hash": "316c89a7a8945a5105ab5e9d8ae00f46",
     "packages": [
         {
             "name": "latte/latte",
@@ -1529,12 +1529,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tester.git",
-                "reference": "97ff2e80849c773355f4e58eeb1045bf310f5575"
+                "reference": "676174fc6b8f822f5b6043fb37d7b92edc8cb263"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tester/zipball/97ff2e80849c773355f4e58eeb1045bf310f5575",
-                "reference": "97ff2e80849c773355f4e58eeb1045bf310f5575",
+                "url": "https://api.github.com/repos/nette/tester/zipball/676174fc6b8f822f5b6043fb37d7b92edc8cb263",
+                "reference": "676174fc6b8f822f5b6043fb37d7b92edc8cb263",
                 "shasum": ""
             },
             "require": {
@@ -1583,7 +1583,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2017-02-09 19:50:19"
+            "time": "2017-04-01T15:58:00+00:00"
         },
         {
             "name": "nexendrie/code-quality",
@@ -1626,7 +1626,7 @@
                 "quality",
                 "testing"
             ],
-            "time": "2017-04-01T14:16:21+00:00"
+            "time": "2017-04-01 14:16:21"
         },
         {
             "name": "nexendrie/site-generator",
@@ -1689,7 +1689,7 @@
                 "static",
                 "website"
             ],
-            "time": "2017-04-01T14:24:00+00:00"
+            "time": "2017-04-01 14:24:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2592,7 +2592,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0.0"
+        "php": ">=7.1.0"
     },
     "platform-dev": []
 }
