@@ -39,7 +39,7 @@ class BookPagesStorage extends \Nette\Utils\ArrayList {
    * @param string $slug
    * @return int|NULL
    */
-  function getIndex(string $slug) {
+  function getIndex(string $slug): ?int {
     foreach($this as $index => $page) {
       if($page->slug === $slug) {
         return $index;

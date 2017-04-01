@@ -38,7 +38,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   /**
    * @return ITranslator|NULL
    */
-  function getTranslator() {
+  function getTranslator(): ?ITranslator {
     return $this->translator;
   }
   
@@ -56,7 +56,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
    * @param string $page
    * @return void
    */
-  function render(string $page = "index") {
+  function render(string $page = "index"): void {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     $polluteTranslator = false;
