@@ -16,9 +16,9 @@ The best way to install it is via Composer. Just add **nexendrie/book-component*
 
 Usage
 -----
-After installation, you need to define a class that extends Nexendrie\BookComponent\BookControl. It has to define at least method **getPages**, in constructor you have to fill properties **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determine where templates with your chapter/pages are stored.
+After installation, you need to define a class which extends Nexendrie\BookComponent\BookControl. It has to define at least method **getPages**, in constructor you have to fill properties **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored.
 
-Method getPages has to return object of Nexendrie\BookComponent\BookPagesStorage which represents a list of pages. Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which name must be *slug*.latte.
+Method getPages has to return object of Nexendrie\BookComponent\BookPagesStorage which represents a list of pages. Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
 
 If you need to pass any variables to your page, you can do that in method renderSlug. Just use
 
@@ -41,7 +41,7 @@ class HelpControl extends Book\BookControl {
     $this->template->myVariable = 13;
   }
   
-  function getPages() {
+  function getPages(): Book\BookPagesStorage {
     $storage = new Book\BookPagesStorage;
     $storage[] = new Book\BookPage("introduction", "Úvod");
     return $storage;
@@ -51,7 +51,7 @@ class HelpControl extends Book\BookControl {
 
 Translations
 ------------
-The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language them, preferably in constructor. Example:
+The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language, preferably in constructor. Example:
 ```php
 use Nexendrie\BookComponent as Book;
 
