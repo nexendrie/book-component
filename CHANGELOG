@@ -1,4 +1,4 @@
-Version 1.1.1+dev
+Version 1.2.0
 - used message catalogue for translation by default
 - changed ids in templates
 - raised minimal version of PHP to 7.1
