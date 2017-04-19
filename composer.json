@@ -42,6 +42,9 @@
             "Nexendrie\\BookComponent\\": "tests/"
         }
     },
+    "config": {
+        "classmap-authoritative": true
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.2.x-dev"
