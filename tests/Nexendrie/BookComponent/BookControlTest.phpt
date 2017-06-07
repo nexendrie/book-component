@@ -26,6 +26,11 @@ class BookControlTest extends \Tester\TestCase {
     $this->attachToPresenter($this->control);
   }
   
+  function testLang() {
+    $this->control->lang = "cs";
+    Assert::same("cs", $this->control->lang);
+  }
+  
   function testTranslator() {
     $loader = new MessagesCatalogue();
     $loader->folders = [__DIR__ . "/../../../src/lang"];
@@ -42,6 +47,7 @@ class BookControlTest extends \Tester\TestCase {
   
   function testRenderI() {
     Assert::type("null", $this->control->translator);
+    $this->control->lang = "en";
     $filename = __DIR__ . "/bookIndexExpected.latte";
     $this->checkRenderOutput($this->control, $filename);
     Assert::type(Translator::class, $this->control->translator);

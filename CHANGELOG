@@ -1,3 +1,6 @@
+Version 1.2.0+dev
+- added missing getter and setter for BookControl::$lang
+
 Version 1.2.0
 - used message catalogue for translation by default
 - changed ids in templates

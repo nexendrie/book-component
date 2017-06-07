@@ -49,6 +49,20 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     $this->translator = $translator;
   }
   
+  /**
+   * @return string
+   */
+  function getLang(): string {
+    return $this->lang;
+  }
+  
+  /**
+   * @param string $lang
+   */
+  function setLang(string $lang) {
+    $this->lang = $lang;
+  }
+  
   /** @return BookPagesStorage */
   abstract function getPages(): BookPagesStorage;
   
