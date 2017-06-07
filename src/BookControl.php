@@ -25,14 +25,11 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   /** @var string */
   protected $lang;
   
-  /**
-   * @param string $presenterName
-   * @param string $folder
-   */
-  function __construct(string $presenterName, string $folder) {
+  function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
     parent::__construct();
     $this->presenterName = $presenterName;
     $this->folder = $folder;
+    $this->translator = $translator;
   }
   
   /**

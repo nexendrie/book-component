@@ -1,5 +1,6 @@
 Version 1.2.0+dev
 - added missing getter and setter for BookControl::$lang
+- made it possible to pass translator to BookControl via constructor (it is optional)
 
 Version 1.2.0
 - used message catalogue for translation by default
