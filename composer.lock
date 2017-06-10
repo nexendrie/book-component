@@ -506,16 +506,16 @@
         },
         {
             "name": "nexendrie/translation",
-            "version": "1.0.0-rc1",
+            "version": "1.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/translation.git",
-                "reference": "f8a38f9ceea495909813519f227e3c77c8720009"
+                "reference": "f5791a7167a272efbc320501c8dd9fc77e002f6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/translation/zipball/f8a38f9ceea495909813519f227e3c77c8720009",
-                "reference": "f8a38f9ceea495909813519f227e3c77c8720009",
+                "url": "https://api.github.com/repos/nexendrie/translation/zipball/f5791a7167a272efbc320501c8dd9fc77e002f6f",
+                "reference": "f5791a7167a272efbc320501c8dd9fc77e002f6f",
                 "shasum": ""
             },
             "require": {
@@ -577,7 +577,7 @@
                 "translation",
                 "yaml"
             ],
-            "time": "2017-06-07T12:07:20+00:00"
+            "time": "2017-06-09T10:25:11+00:00"
         },
         {
             "name": "nexendrie/utils",
@@ -1688,12 +1688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexendrie/site-generator.git",
-                "reference": "790dc5cf472ab7366fbc8c766db64a67d6271c20"
+                "reference": "ef7500340a8ae0ab3ac629fb224ebbc074b8b49f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/790dc5cf472ab7366fbc8c766db64a67d6271c20",
-                "reference": "790dc5cf472ab7366fbc8c766db64a67d6271c20",
+                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/ef7500340a8ae0ab3ac629fb224ebbc074b8b49f",
+                "reference": "ef7500340a8ae0ab3ac629fb224ebbc074b8b49f",
                 "shasum": ""
             },
             "require": {
@@ -1705,7 +1705,6 @@
                 "php": ">=7.1.0"
             },
             "require-dev": {
-                "nette/tester": "dev-master",
                 "nexendrie/code-quality": "dev-master"
             },
             "bin": [
@@ -1743,7 +1742,7 @@
                 "static",
                 "website"
             ],
-            "time": "2017-05-20 08:20:00"
+            "time": "2017-06-10T10:27:35+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2399,16 +2398,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
                 "shasum": ""
             },
             "require": {
@@ -2420,7 +2419,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -2454,7 +2453,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/stopwatch",
