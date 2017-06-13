@@ -70,11 +70,7 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   function render(string $page = "index"): void {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
-    $polluteTranslator = false;
     if(is_null($this->translator)) {
-      $polluteTranslator = true;
-    }
-    if($polluteTranslator) {
       $loader = new MessagesCatalogue;
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
