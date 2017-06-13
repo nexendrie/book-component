@@ -57,6 +57,26 @@ class HelpControl extends Book\BookControl {
 }
 ```
 
+Alternatively, you can set the variables in onRender event:
+
+```php
+use Nexendrie\BookComponent as Book;
+
+$control = new BookControl(":Front:Help", __DIR__ . "/help");
+$control->pages = function() {
+  $storage = new Book\BookPagesStorage;
+  $storage[] = new Book\BookPage("introduction", "Úvod");
+  return $storage;
+};
+$control->onRender[] = function(Book\BookControl $book, string $page) {
+  if($page === "introduction") {
+    $book->template->myVariable = 13;
+  }
+};
+```
+
+.
+
 Translations
 ------------
 The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language, preferably in constructor. Example:

@@ -15,6 +15,7 @@ use Nette\Localization\ITranslator,
  * @property string $lang
  * @property callable|BookPagesStorage $pages
  * @property \Nette\Bridges\ApplicationLatte\Template $template
+ * @method void onRender(BookControl $book, string $page)
  */
 class BookControl extends \Nette\Application\UI\Control {
   /** @var string */
@@ -27,6 +28,8 @@ class BookControl extends \Nette\Application\UI\Control {
   protected $lang;
   /** @var callable */
   protected $pages;
+  /** @var callable[] */
+  public $onRender = [];
   
   function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
     parent::__construct();
@@ -115,6 +118,7 @@ class BookControl extends \Nette\Application\UI\Control {
     }
     $this->template->pages = $pages;
     $method = "render" . ucfirst($page);
+    $this->onRender($this, $page);
     if(method_exists($this, $method)) {
       call_user_func([$this, $method]);
     }

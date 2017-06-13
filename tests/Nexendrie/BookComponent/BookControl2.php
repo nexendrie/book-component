@@ -13,13 +13,18 @@ class BookControl2 extends BookControl {
       $storage[] = new BookPage("slug3", "title3");
       return $storage;
     };
+    $this->onRender[] = function(BookControl $book, string $page) {
+      if($page === "slug1") {
+        $book->template->var2 = "Dota.";
+      }
+    };
   }
   
   /**
    * @return void
    */
   function renderSlug1() {
-    $this->template->var = "Lorem Ipsum.";
+    $this->template->var1 = "Lorem Ipsum.";
   }
 }
 ?>
