@@ -16,18 +16,27 @@ The best way to install it is via Composer. Just add **nexendrie/book-component*
 
 Usage
 -----
-After installation, you need to define a class which extends Nexendrie\BookComponent\BookControl. It has to define at least method **getPages**, in constructor you have to fill properties **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored.
 
-Method getPages has to return object of Nexendrie\BookComponent\BookPagesStorage which represents a list of pages. Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
+Create new instance of Nexendrie\BookComponent\BookControl. The constructor requires 2 parameters: **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored. You can also pass a translator as third parameter.
 
-If you need to pass any variables to your page, you can do that in method renderSlug. Just use
+After that, you have to tell the component about pages. Just assign to property $pages a callback which returns Nexendrie\BookComponent\BookPagesStorage. It represents a list of pages.  Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
+
+Example:
 
 ```php
-$this->template->variable = whatever();
+use Nexendrie\BookComponent as Book;
+
+$control = new BookControl(":Front:Help", __DIR__ . "/help");
+$control->pages = function() {
+  $storage = new Book\BookPagesStorage;
+  $storage[] = new Book\BookPage("introduction", "Úvod");
+  return $storage;
+};
 ```
 
-Example
--------
+If you need to pass any variables to your page, you have to extend the BookControl class and define method renderSlug() which is called when page slug is shown.
+
+Example:
 
 ```php
 use Nexendrie\BookComponent as Book;
@@ -35,16 +44,15 @@ use Nexendrie\BookComponent as Book;
 class HelpControl extends Book\BookControl {
   function __construct() {
     parent::__construct(":Front:Help", __DIR__ . "/help");
+    $this->pages = function() {
+      $storage = new Book\BookPagesStorage;
+      $storage[] = new Book\BookPage("introduction", "Úvod");
+      return $storage;
+    };
   }
   
   function renderIntroduction() {
     $this->template->myVariable = 13;
-  }
-  
-  function getPages(): Book\BookPagesStorage {
-    $storage = new Book\BookPagesStorage;
-    $storage[] = new Book\BookPage("introduction", "Úvod");
-    return $storage;
   }
 }
 ```

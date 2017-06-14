@@ -26,6 +26,22 @@ class BookControlTest extends \Tester\TestCase {
     $this->attachToPresenter($this->control);
   }
   
+  function testEmptyPages() {
+    $pages = (new BookControl("Book", "book"))->pages;
+    Assert::type(BookPagesStorage::class, $pages);
+    Assert::count(0, $pages);
+  }
+  
+  /**
+   * @throws \InvalidArgumentException
+   */
+  function testInvalidPages() {
+    $this->control->pages = function() {
+      return [];
+    };
+    $this->control->render();
+  }
+  
   function testLang() {
     $this->control->lang = "cs";
     Assert::same("cs", $this->control->lang);

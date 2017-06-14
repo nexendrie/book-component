@@ -13,9 +13,10 @@ use Nette\Localization\ITranslator,
  * @author Jakub Konečný
  * @property ITranslator $translator
  * @property string $lang
+ * @property callable|BookPagesStorage $pages
  * @property \Nette\Bridges\ApplicationLatte\Template $template
  */
-abstract class BookControl extends \Nette\Application\UI\Control {
+class BookControl extends \Nette\Application\UI\Control {
   /** @var string */
   private $presenterName;
   /** @var string */
@@ -24,6 +25,8 @@ abstract class BookControl extends \Nette\Application\UI\Control {
   protected $translator;
   /** @var string */
   protected $lang;
+  /** @var callable */
+  protected $pages;
   
   function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
     parent::__construct();
@@ -60,12 +63,32 @@ abstract class BookControl extends \Nette\Application\UI\Control {
     $this->lang = $lang;
   }
   
-  /** @return BookPagesStorage */
-  abstract function getPages(): BookPagesStorage;
+  /**
+   * @return BookPagesStorage
+   * @throws \InvalidArgumentException
+   */
+  function getPages(): BookPagesStorage {
+    if(is_null($this->pages)) {
+      return new BookPagesStorage;
+    }
+    $pages = call_user_func($this->pages);
+    if(!$pages instanceof BookPagesStorage) {
+      throw new \InvalidArgumentException("Callback for pages for BookControl has to return " . BookPagesStorage::class . ".");
+    }
+    return $pages;
+  }
+  
+  /**
+   * @param callable $pages
+   */
+  function setPages(callable $pages) {
+    $this->pages = $pages;
+  }
   
   /**
    * @param string $page
    * @return void
+   * @throws \InvalidArgumentException
    */
   function render(string $page = "index"): void {
     $this->template->presenterName = $this->presenterName;
