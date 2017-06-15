@@ -109,9 +109,8 @@ class BookControl extends \Nette\Application\UI\Control {
     if(!$pages->hasPage($page)) {
       $page = "index";
     }
-    if($page === "index") {
-      $this->template->setFile(__DIR__ . "/bookIndex.latte");
-    } else {
+    $this->template->setFile(__DIR__ . "/bookIndex.latte");
+    if($page !== "index") {
       $this->template->setFile(__DIR__ . "/bookPage.latte");
       $this->template->index = $pages->getIndex($page);
       $this->template->current = $pages[$this->template->index];
