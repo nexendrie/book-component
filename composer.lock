@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c52933e492d87b0b3dccfa3f931943a",
+    "content-hash": "81b96889769fb5db9139df455eac057b",
     "packages": [
         {
             "name": "latte/latte",
@@ -581,16 +581,16 @@
         },
         {
             "name": "nexendrie/utils",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/nexendrie/utils.git",
-                "reference": "dbbec3c9e693576d82261762d84ed8444f06371a"
+                "reference": "738bb06063d41045fb0e1a835e89cd662455053f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/utils/zipball/dbbec3c9e693576d82261762d84ed8444f06371a",
-                "reference": "dbbec3c9e693576d82261762d84ed8444f06371a",
+                "url": "https://gitlab.com/api/v3/projects/nexendrie%2Futils/repository/archive.zip?sha=738bb06063d41045fb0e1a835e89cd662455053f",
+                "reference": "738bb06063d41045fb0e1a835e89cd662455053f",
                 "shasum": ""
             },
             "require": {
@@ -631,7 +631,7 @@
                 "intervals",
                 "utils"
             ],
-            "time": "2017-06-07T10:30:42+00:00"
+            "time": "2017-06-16T10:04:25+00:00"
         }
     ],
     "packages-dev": [
@@ -1683,7 +1683,7 @@
                 "quality",
                 "testing"
             ],
-            "time": "2017-06-14T08:49:22+00:00"
+            "time": "2017-06-14 06:49:22"
         },
         {
             "name": "nexendrie/site-generator",
@@ -1691,12 +1691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/nexendrie/site-generator.git",
-                "reference": "6341a289970d98b9e6bceb7e9bc44d9e00111415"
+                "reference": "ac973f516d087c286c4648ef379de8b5de1a3992"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexendrie/site-generator/zipball/6341a289970d98b9e6bceb7e9bc44d9e00111415",
-                "reference": "6341a289970d98b9e6bceb7e9bc44d9e00111415",
+                "url": "https://gitlab.com/api/v3/projects/nexendrie%2Fsite-generator/repository/archive.zip?sha=ac973f516d087c286c4648ef379de8b5de1a3992",
+                "reference": "ac973f516d087c286c4648ef379de8b5de1a3992",
                 "shasum": ""
             },
             "require": {
@@ -1745,7 +1745,7 @@
                 "static",
                 "website"
             ],
-            "time": "2017-06-10 13:37:18"
+            "time": "2017-06-15T12:17:18+00:00"
         },
         {
             "name": "nikic/php-parser",

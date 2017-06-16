@@ -3,6 +3,8 @@ Version 1.2.0+dev
 - made it possible to pass translator to BookControl via constructor (it is optional)
 - made BookControl non-abstract, added real property $pages
 - added event onRender for BookControl
+- added dependency on nexendrie/utils
+- BookPagesStorage now extends Nexendrie\Utils\Collection
 
 Version 1.2.0
 - used message catalogue for translation by default
