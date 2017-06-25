@@ -26,7 +26,7 @@ class BookControl extends \Nette\Application\UI\Control {
   protected $translator;
   /** @var string */
   protected $lang;
-  /** @var callable */
+  /** @var callable|BookPagesStorage */
   protected $pages;
   /** @var callable[] */
   public $onRender = [];
@@ -36,6 +36,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->presenterName = $presenterName;
     $this->folder = $folder;
     $this->translator = $translator;
+    $this->pages = new BookPagesStorage;
   }
   
   /**
@@ -71,8 +72,8 @@ class BookControl extends \Nette\Application\UI\Control {
    * @throws \InvalidArgumentException
    */
   function getPages(): BookPagesStorage {
-    if(is_null($this->pages)) {
-      return new BookPagesStorage;
+    if($this->pages instanceof BookPagesStorage) {
+      return $this->pages;
     }
     $pages = call_user_func($this->pages);
     if(!$pages instanceof BookPagesStorage) {

@@ -19,14 +19,24 @@ Usage
 
 Create new instance of Nexendrie\BookComponent\BookControl. The constructor requires 2 parameters: **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored. You can also pass a translator as third parameter.
 
-After that, you have to tell the component about pages. Just assign to property $pages a callback which returns Nexendrie\BookComponent\BookPagesStorage. It represents a list of pages.  Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
+After that, you have to tell the component about pages. Just add them as elements of array to property $pages. Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
 
 Example:
 
 ```php
 use Nexendrie\BookComponent as Book;
 
-$control = new BookControl(":Front:Help", __DIR__ . "/help");
+$control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
+$control->pages[] = new Book\BookPage("introduction", "Úvod");
+};
+```
+
+It is possible to assign a callback to property $pages which returns Nexendrie\BookComponent\BookPagesStorage. It is a collection of pages.
+
+```php
+use Nexendrie\BookComponent as Book;
+
+$control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
 $control->pages = function() {
   $storage = new Book\BookPagesStorage;
   $storage[] = new Book\BookPage("introduction", "Úvod");
@@ -44,10 +54,7 @@ use Nexendrie\BookComponent as Book;
 class HelpControl extends Book\BookControl {
   function __construct() {
     parent::__construct(":Front:Help", __DIR__ . "/help");
-    $this->pages = function() {
-      $storage = new Book\BookPagesStorage;
-      $storage[] = new Book\BookPage("introduction", "Úvod");
-      return $storage;
+    $this->pages[] = new Book\BookPage("introduction", "Úvod");
     };
   }
   
@@ -62,11 +69,8 @@ Alternatively, you can set the variables in onRender event:
 ```php
 use Nexendrie\BookComponent as Book;
 
-$control = new BookControl(":Front:Help", __DIR__ . "/help");
-$control->pages = function() {
-  $storage = new Book\BookPagesStorage;
-  $storage[] = new Book\BookPage("introduction", "Úvod");
-  return $storage;
+$control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
+$control->pages[] = new Book\BookPage("introduction", "Úvod");
 };
 $control->onRender[] = function(Book\BookControl $book, string $page) {
   if($page === "introduction") {

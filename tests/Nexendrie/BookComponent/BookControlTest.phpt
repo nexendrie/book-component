@@ -27,9 +27,9 @@ class BookControlTest extends \Tester\TestCase {
   }
   
   function testEmptyPages() {
-    $pages = (new BookControl("Book", "book"))->pages;
-    Assert::type(BookPagesStorage::class, $pages);
-    Assert::count(0, $pages);
+    $control = new BookControl("Book", "book");
+    Assert::type(BookPagesStorage::class, $control->pages);
+    Assert::count(0, $control->pages);
   }
   
   /**
