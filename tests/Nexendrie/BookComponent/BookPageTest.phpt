@@ -17,16 +17,16 @@ class BookPageTest extends \Tester\TestCase {
   /** @var  BookPage */
   private $page;
   
-  function setUp() {
+  protected function setUp() {
     $this->page = new BookPage("slug", "title");
   }
   
-  function testSlug() {
+  public function testSlug() {
     Assert::type("string", $this->page->slug);
     Assert::same("slug", $this->page->slug);
   }
   
-  function testTitle() {
+  public function testTitle() {
     Assert::type("string", $this->page->title);
     Assert::same("title", $this->page->title);
   }

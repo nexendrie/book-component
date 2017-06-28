@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Nexendrie\BookComponent;
 
 class BookControl2 extends BookControl {
-  function __construct() {
+  public function __construct() {
     parent::__construct("Test", __DIR__);
     $this->pages = function() {
       $storage = new BookPagesStorage;
@@ -23,7 +23,7 @@ class BookControl2 extends BookControl {
   /**
    * @return void
    */
-  function renderSlug1() {
+  public function renderSlug1() {
     $this->template->var1 = "Lorem Ipsum.";
   }
 }

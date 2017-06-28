@@ -19,7 +19,7 @@ class BookPage {
    * @param string $slug
    * @param string $title
    */
-  function __construct(string $slug, string $title) {
+  public function __construct(string $slug, string $title) {
     $this->slug = $slug;
     $this->title = $title;
   }
@@ -27,14 +27,14 @@ class BookPage {
   /**
    * @return string
    */
-  function getSlug(): string {
+  public function getSlug(): string {
     return $this->slug;
   }
   
   /**
    * @return string
    */
-  function getTitle(): string {
+  public function getTitle(): string {
     return $this->title;
   }
 }

@@ -21,12 +21,12 @@ class BookControlTest extends \Tester\TestCase {
   
   use \Testbench\TComponent;
   
-  function setUp() {
+  protected function setUp() {
     $this->control = new BookControl2;
     $this->attachToPresenter($this->control);
   }
   
-  function testEmptyPages() {
+  public function testEmptyPages() {
     $control = new BookControl("Book", "book");
     Assert::type(BookPagesStorage::class, $control->pages);
     Assert::count(0, $control->pages);
@@ -35,19 +35,19 @@ class BookControlTest extends \Tester\TestCase {
   /**
    * @throws \InvalidArgumentException
    */
-  function testInvalidPages() {
+  public function testInvalidPages() {
     $this->control->pages = function() {
       return [];
     };
     $this->control->render();
   }
   
-  function testLang() {
+  public function testLang() {
     $this->control->lang = "cs";
     Assert::same("cs", $this->control->lang);
   }
   
-  function testTranslator() {
+  public function testTranslator() {
     $loader = new MessagesCatalogue();
     $loader->folders = [__DIR__ . "/../../../src/lang"];
     $this->control->translator = new Translator($loader);
@@ -61,7 +61,7 @@ class BookControlTest extends \Tester\TestCase {
     Assert::same("Obsah", $result);
   }
   
-  function testRenderI() {
+  public function testRenderI() {
     Assert::type("null", $this->control->translator);
     $this->control->lang = "en";
     $filename = __DIR__ . "/bookIndexExpected.latte";
@@ -69,17 +69,17 @@ class BookControlTest extends \Tester\TestCase {
     Assert::type(Translator::class, $this->control->translator);
   }
   
-  function testRenderP1() {
+  public function testRenderP1() {
     $filename = __DIR__ . "/bookPageExpected1.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug1"]);
   }
   
-  function testRenderP2() {
+  public function testRenderP2() {
     $filename = __DIR__ . "/bookPageExpected2.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug2"]);
   }
   
-  function testRenderP3() {
+  public function testRenderP3() {
     $filename = __DIR__ . "/bookPageExpected3.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug3"]);
   }

@@ -31,7 +31,7 @@ class BookControl extends \Nette\Application\UI\Control {
   /** @var callable[] */
   public $onRender = [];
   
-  function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
+  public function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
     parent::__construct();
     $this->presenterName = $presenterName;
     $this->folder = $folder;
@@ -42,28 +42,28 @@ class BookControl extends \Nette\Application\UI\Control {
   /**
    * @return ITranslator|NULL
    */
-  function getTranslator(): ?ITranslator {
+  public function getTranslator(): ?ITranslator {
     return $this->translator;
   }
   
   /**
    * @param ITranslator $translator
    */
-  function setTranslator(ITranslator $translator) {
+  public function setTranslator(ITranslator $translator) {
     $this->translator = $translator;
   }
   
   /**
    * @return string
    */
-  function getLang(): string {
+  public function getLang(): string {
     return $this->lang;
   }
   
   /**
    * @param string $lang
    */
-  function setLang(string $lang) {
+  public function setLang(string $lang) {
     $this->lang = $lang;
   }
   
@@ -71,7 +71,7 @@ class BookControl extends \Nette\Application\UI\Control {
    * @return BookPagesStorage
    * @throws \InvalidArgumentException
    */
-  function getPages(): BookPagesStorage {
+  public function getPages(): BookPagesStorage {
     if($this->pages instanceof BookPagesStorage) {
       return $this->pages;
     }
@@ -85,7 +85,7 @@ class BookControl extends \Nette\Application\UI\Control {
   /**
    * @param callable $pages
    */
-  function setPages(callable $pages) {
+  public function setPages(callable $pages) {
     $this->pages = $pages;
   }
   
@@ -94,7 +94,7 @@ class BookControl extends \Nette\Application\UI\Control {
    * @return void
    * @throws \InvalidArgumentException
    */
-  function render(string $page = "index"): void {
+  public function render(string $page = "index"): void {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) {
