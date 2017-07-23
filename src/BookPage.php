@@ -15,25 +15,15 @@ class BookPage {
   /** @var string */
   protected $title;
   
-  /**
-   * @param string $slug
-   * @param string $title
-   */
   public function __construct(string $slug, string $title) {
     $this->slug = $slug;
     $this->title = $title;
   }
   
-  /**
-   * @return string
-   */
   public function getSlug(): string {
     return $this->slug;
   }
   
-  /**
-   * @return string
-   */
   public function getTitle(): string {
     return $this->title;
   }

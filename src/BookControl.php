@@ -39,36 +39,23 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->pages = new BookPagesStorage;
   }
   
-  /**
-   * @return ITranslator|NULL
-   */
   public function getTranslator(): ?ITranslator {
     return $this->translator;
   }
   
-  /**
-   * @param ITranslator $translator
-   */
   public function setTranslator(ITranslator $translator) {
     $this->translator = $translator;
   }
   
-  /**
-   * @return string
-   */
   public function getLang(): string {
     return $this->lang;
   }
   
-  /**
-   * @param string $lang
-   */
   public function setLang(string $lang) {
     $this->lang = $lang;
   }
   
   /**
-   * @return BookPagesStorage
    * @throws \InvalidArgumentException
    */
   public function getPages(): BookPagesStorage {
@@ -82,16 +69,11 @@ class BookControl extends \Nette\Application\UI\Control {
     return $pages;
   }
   
-  /**
-   * @param callable $pages
-   */
   public function setPages(callable $pages) {
     $this->pages = $pages;
   }
   
   /**
-   * @param string $page
-   * @return void
    * @throws \InvalidArgumentException
    */
   public function render(string $page = "index"): void {

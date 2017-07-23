@@ -20,10 +20,7 @@ class BookControl2 extends BookControl {
     };
   }
   
-  /**
-   * @return void
-   */
-  public function renderSlug1() {
+  public function renderSlug1(): void {
     $this->template->var1 = "Lorem Ipsum.";
   }
 }
