@@ -85,6 +85,6 @@ class BookControlTest extends \Tester\TestCase {
   }
 }
 
-$test = new BookControlTest;
+$test = new BookControlTest();
 $test->run();
 ?>

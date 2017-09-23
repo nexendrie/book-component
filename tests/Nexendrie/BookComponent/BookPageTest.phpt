@@ -32,6 +32,6 @@ class BookPageTest extends \Tester\TestCase {
   }
 }
 
-$test = new BookPageTest;
+$test = new BookPageTest();
 $test->run();
 ?>

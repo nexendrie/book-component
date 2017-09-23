@@ -18,7 +18,7 @@ class BookPagesStorageTest extends \Tester\TestCase {
   private $storage;
   
   protected function setUp() {
-    $this->storage = new BookPagesStorage;
+    $this->storage = new BookPagesStorage();
     $this->storage[] = new BookPage("slug1", "title1");
     $this->storage[] = new BookPage("slug2", "title2");
   }
@@ -50,6 +50,6 @@ class BookPagesStorageTest extends \Tester\TestCase {
   }
 }
 
-$test = new BookPagesStorageTest;
+$test = new BookPagesStorageTest();
 $test->run();
 ?>

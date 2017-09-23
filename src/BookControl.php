@@ -36,7 +36,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->presenterName = $presenterName;
     $this->folder = $folder;
     $this->translator = $translator;
-    $this->pages = new BookPagesStorage;
+    $this->pages = new BookPagesStorage();
   }
   
   public function getTranslator(): ?ITranslator {
@@ -80,7 +80,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
     if(is_null($this->translator)) {
-      $loader = new MessagesCatalogue;
+      $loader = new MessagesCatalogue();
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
     }
