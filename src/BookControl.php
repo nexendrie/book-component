@@ -25,7 +25,7 @@ class BookControl extends \Nette\Application\UI\Control {
   /** @var ITranslator|Translator|NULL */
   protected $translator;
   /** @var string */
-  protected $lang;
+  protected $lang = "";
   /** @var callable|BookPagesStorage */
   protected $pages;
   /** @var callable[] */
@@ -84,7 +84,7 @@ class BookControl extends \Nette\Application\UI\Control {
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
     }
-    if($this->lang) {
+    if($this->lang !== "") {
       $this->translator->lang = $this->lang;
     }
     $this->template->setTranslator($this->translator);
