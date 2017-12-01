@@ -2,5 +2,6 @@ includes:
     - vendor/nexendrie/code-quality/phpstan.neon
 parameters:
     ignoreErrors:
+        - '#Access to an undefined property Nette\\Localization\\ITranslator::\$lang#'
     universalObjectCratesClasses:
         - Nette\Bridges\ApplicationLatte\Template
