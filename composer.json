@@ -38,7 +38,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Nexendrie\\BookComponent\\": "tests/"
+            "Nexendrie\\BookComponent\\": "tests/Nexendrie/BookComponent/"
         }
     },
     "config": {
