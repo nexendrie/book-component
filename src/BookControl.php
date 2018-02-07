@@ -73,12 +73,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->pages = $pages;
   }
   
-  /**
-   * @throws \InvalidArgumentException
-   */
-  public function render(string $page = "index"): void {
-    $this->template->presenterName = $this->presenterName;
-    $this->template->folder = $this->folder;
+  protected function setupTranslator(): void {
     if(is_null($this->translator)) {
       $loader = new MessagesCatalogue();
       $loader->folders = [__DIR__ . "/lang"];
@@ -88,6 +83,15 @@ class BookControl extends \Nette\Application\UI\Control {
       $this->translator->lang = $this->lang;
     }
     $this->template->setTranslator($this->translator);
+  }
+  
+  /**
+   * @throws \InvalidArgumentException
+   */
+  public function render(string $page = "index"): void {
+    $this->template->presenterName = $this->presenterName;
+    $this->template->folder = $this->folder;
+    $this->setupTranslator();
     $pages = $this->getPages();
     if(!$pages->hasPage($page)) {
       $page = "index";
