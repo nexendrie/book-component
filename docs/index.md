@@ -24,16 +24,18 @@ After that, you have to tell the component about pages. Just add them as element
 Example:
 
 ```php
+<?php
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
 $control->pages[] = new Book\BookPage("introduction", "Úvod");
-};
+?>
 ```
 
 It is possible to assign a callback to property $pages which returns Nexendrie\BookComponent\BookPagesStorage. It is a collection of pages.
 
 ```php
+<?php
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
@@ -42,6 +44,7 @@ $control->pages = function() {
   $storage[] = new Book\BookPage("introduction", "Úvod");
   return $storage;
 };
+?>
 ```
 
 If you need to pass any variables to your page, you have to extend the BookControl class and define method renderSlug() which is called when page slug is shown.
@@ -49,34 +52,36 @@ If you need to pass any variables to your page, you have to extend the BookContr
 Example:
 
 ```php
+<?php
 use Nexendrie\BookComponent as Book;
 
 class HelpControl extends Book\BookControl {
   function __construct() {
     parent::__construct(":Front:Help", __DIR__ . "/help");
     $this->pages[] = new Book\BookPage("introduction", "Úvod");
-    };
   }
   
   function renderIntroduction() {
     $this->template->myVariable = 13;
   }
 }
+?>
 ```
 
 Alternatively, you can set the variables in onRender event:
 
 ```php
+<?php
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
 $control->pages[] = new Book\BookPage("introduction", "Úvod");
-};
 $control->onRender[] = function(Book\BookControl $book, string $page) {
   if($page === "introduction") {
     $book->template->myVariable = 13;
   }
 };
+?>
 ```
 
 .
@@ -85,6 +90,7 @@ Translations
 ------------
 The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language, preferably in constructor. Example:
 ```php
+<?php
 use Nexendrie\BookComponent as Book;
 
 class HelpControl extends Book\BookControl {
@@ -93,6 +99,7 @@ class HelpControl extends Book\BookControl {
     parent::__construct(":Front:Help", __DIR__ . "/help");
   }
 }
+?>
 ```
 If that translation (or some text of it) is not available, english variant is used.
 
