@@ -101,6 +101,22 @@ class HelpControl extends Book\BookControl {
 }
 ?>
 ```
+
 If that translation (or some text of it) is not available, english variant is used.
 
 If you wish, you can also use your own translator. Just set property $translator in constructor. List of all texts used by the component can be seen in *src/lang/book.en.neon*.
+
+Custom templates
+----------------
+
+It is possible to use own templates for book index and pages. Just set the following properties of BookControl.
+
+```php
+<?php
+use Nexendrie\BookComponent as Book;
+
+$control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
+$control->indexTemplate = __DIR__ . "/customIndex.latte";
+$control->pageTemplate = __DIR__ . "/customPage.latte";
+?>
+```

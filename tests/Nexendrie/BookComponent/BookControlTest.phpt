@@ -61,6 +61,31 @@ class BookControlTest extends \Tester\TestCase {
     Assert::same("Obsah", $result);
   }
   
+  public function testInvalidCustomTemplates() {
+    Assert::exception(function() {
+      $this->control->indexTemplate = "abc.latte";
+    }, \RuntimeException::class);
+    Assert::exception(function() {
+      $this->control->pageTemplate = "abc.latte";
+    }, \RuntimeException::class);
+  }
+  
+  public function testCustomIndexTemplate() {
+    $templateFile = __DIR__ . "/bookIndexCustom.latte";
+    $this->control->indexTemplate = $templateFile;
+    Assert::same($templateFile, $this->control->indexTemplate);
+    $filename = __DIR__ . "/bookIndexCustomExpected.latte";
+    $this->checkRenderOutput($this->control, $filename);
+  }
+  
+  public function testCustomPageTemplate() {
+    $templateFile = __DIR__ . "/bookPageCustom.latte";
+    $this->control->pageTemplate = $templateFile;
+    Assert::same($templateFile, $this->control->pageTemplate);
+    $filename = __DIR__ . "/bookPageCustomExpected.latte";
+    $this->checkRenderOutput($this->control, $filename, ["slug1"]);
+  }
+  
   public function testRenderI() {
     Assert::type("null", $this->control->translator);
     $this->control->lang = "en";

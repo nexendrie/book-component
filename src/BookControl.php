@@ -14,6 +14,8 @@ use Nette\Localization\ITranslator,
  * @property ITranslator $translator
  * @property string $lang
  * @property callable|BookPagesStorage $pages
+ * @property string $indexTemplate
+ * @property string $pageTemplate
  * @property \Nette\Bridges\ApplicationLatte\Template $template
  * @method void onRender(BookControl $book, string $page)
  */
@@ -28,6 +30,10 @@ class BookControl extends \Nette\Application\UI\Control {
   protected $lang = "";
   /** @var callable|BookPagesStorage */
   protected $pages;
+  /** @var string */
+  protected $indexTemplate = __DIR__ . "/bookIndex.latte";
+  /** @var string */
+  protected $pageTemplate = __DIR__ . "/bookPage.latte";
   /** @var callable[] */
   public $onRender = [];
   
@@ -73,6 +79,33 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->pages = $pages;
   }
   
+  /**
+   * @throws \RuntimeException
+   */
+  protected function checkTemplatePath(string $path): void {
+    if(!is_file($path)) {
+      throw new \RuntimeException("File $path does not exist.");
+    }
+  }
+  
+  public function getIndexTemplate(): string {
+    return $this->indexTemplate;
+  }
+  
+  public function setIndexTemplate(string $indexTemplate) {
+    $this->checkTemplatePath($indexTemplate);
+    $this->indexTemplate = $indexTemplate;
+  }
+  
+  public function getPageTemplate(): string {
+    return $this->pageTemplate;
+  }
+  
+  public function setPageTemplate(string $pageTemplate) {
+    $this->checkTemplatePath($pageTemplate);
+    $this->pageTemplate = $pageTemplate;
+  }
+  
   protected function setupTranslator(): void {
     if(is_null($this->translator)) {
       $loader = new MessagesCatalogue();
@@ -96,9 +129,9 @@ class BookControl extends \Nette\Application\UI\Control {
     if(!$pages->hasPage($page)) {
       $page = "index";
     }
-    $this->template->setFile(__DIR__ . "/bookIndex.latte");
+    $this->template->setFile($this->indexTemplate);
     if($page !== "index") {
-      $this->template->setFile(__DIR__ . "/bookPage.latte");
+      $this->template->setFile($this->pageTemplate);
       $this->template->index = $pages->getIndex($page);
       $this->template->current = $pages[$this->template->index];
     }

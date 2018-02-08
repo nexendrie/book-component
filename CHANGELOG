@@ -1,3 +1,6 @@
+Version 1.4.0-dev
+- allowed customization of index and page templates
+
 Version 1.3.0
 - added missing getter and setter for BookControl::$lang
 - made it possible to pass translator to BookControl via constructor (it is optional)

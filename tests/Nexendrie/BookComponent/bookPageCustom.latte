@@ -1,0 +1,3 @@
+  <h2>{$current->title}</h2>
+  {include "$folder/{$current->slug}.latte"}
+  <p id="bookNavigation">{if $index>0}<a href="{plink "{$presenterName}:", page => $pages[$index-1]->slug}">{_"book.previous"|noescape}</a>{/if} <a href="{plink "{$presenterName}:"}">{_"book.index"}</a> {if $index<count($pages)-1}<a href="{plink "{$presenterName}:", page => $pages[$index+1]->slug}">{_"book.next"|noescape}</a>{/if}</p>
