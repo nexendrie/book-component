@@ -72,6 +72,8 @@ class BookControl extends \Nette\Application\UI\Control {
     if(!$pages instanceof BookPagesStorage) {
       throw new \InvalidArgumentException("Callback for pages for BookControl has to return " . BookPagesStorage::class . ".");
     }
+    /** @var BookPagesStorage $pages */
+    $pages = BookPagesStorage::fromArray($pages->getAllowedItems());
     return $pages;
   }
   

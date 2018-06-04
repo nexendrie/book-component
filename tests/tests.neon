@@ -2,3 +2,9 @@ application:
     scanDirs: false
 services:
     testbench.presenterMock: Testbench\Mocks\PresenterMock
+    - Nexendrie\BookComponent\Authenticator
+    - Nexendrie\BookComponent\Authorizator
+    - Nexendrie\BookComponent\ConditionCallback
+    - Nexendrie\BookComponent\ConditionPermission
+    - Nexendrie\BookComponent\ConditionUserInRole
+    - Nexendrie\BookComponent\ConditionUserLoggedIn

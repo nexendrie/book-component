@@ -13,7 +13,7 @@ class BookPagesStorage extends Collection {
   protected $uniqueProperty = "slug";
   
   public function hasPage(string $slug): bool {
-    foreach($this as $page) {
+    foreach($this->getAllowedItems() as $page) {
       if($page->slug === $slug) {
         return true;
       }
@@ -28,6 +28,15 @@ class BookPagesStorage extends Collection {
       }
     }
     return NULL;
+  }
+  
+  /**
+   * @return BookPage[]
+   */
+  public function getAllowedItems(): array {
+    return array_values(array_filter($this->items, function(BookPage $item) {
+      return $item->isAllowed();
+    }));
   }
 }
 ?>

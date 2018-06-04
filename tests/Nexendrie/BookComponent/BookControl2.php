@@ -11,6 +11,13 @@ class BookControl2 extends BookControl {
       $storage[] = new BookPage("slug1", "title1");
       $storage[] = new BookPage("slug2", "title2");
       $storage[] = new BookPage("slug3", "title3");
+      $conditionalPage = new BookPage("slug4", "title4");
+      $conditionalPage->addCondition(new class() implements IBookPageCondition {
+        public function isAllowed($parameter = NULL): bool {
+          return false;
+        }
+      }, NULL);
+      $storage[] = $conditionalPage;
       return $storage;
     };
     $this->onRender[] = function(BookControl $book, string $page) {

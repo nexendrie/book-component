@@ -30,6 +30,16 @@ class BookPageTest extends \Tester\TestCase {
     Assert::type("string", $this->page->title);
     Assert::same("title", $this->page->title);
   }
+  
+  public function testConditions() {
+    Assert::true($this->page->allowed);
+    $this->page->addCondition(new class() implements IBookPageCondition {
+      public function isAllowed($param = NULL): bool {
+        return (bool) ($param);
+      }
+    }, false);
+    Assert::false($this->page->allowed);
+  }
 }
 
 $test = new BookPageTest();

@@ -41,6 +41,9 @@
             "Nexendrie\\BookComponent\\": "tests/Nexendrie/BookComponent/"
         }
     },
+    "suggest": {
+        "nette/security": "To use book page conditions related to user"
+    },
     "config": {
         "classmap-authoritative": true
     },

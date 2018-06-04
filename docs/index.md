@@ -132,3 +132,10 @@ $control->indexTemplate = __DIR__ . "/customIndex.latte";
 $control->pageTemplate = __DIR__ . "/customPage.latte";
 ?>
 ```
+
+Conditional pages
+-----------------
+
+Sometimes, you want to show certain pages only if a conditions is met. Defining conditions is easy, just use method addCondition on a page. The method takes two arguments, first is object implementing interface Nexendrie\BookComponent\IBookPageCondition, the second is additional parameter. Each condition is evaluated during template rendering and only if all of them are met, the page is shown (either in list of pages or the page itself).
+
+There are a few default condition types: callback (the callback is passed as additional parameter), current user's permission (in format resource:privilege), current user's role and login status (logged in = true/logged out = false).

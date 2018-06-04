@@ -1,5 +1,6 @@
 Version 1.4.0-dev
 - allowed customization of index and page templates
+- added conditional book pages
 
 Version 1.3.0
 - added missing getter and setter for BookControl::$lang
