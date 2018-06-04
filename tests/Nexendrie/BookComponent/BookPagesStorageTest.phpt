@@ -13,7 +13,7 @@ require __DIR__ . "/../../bootstrap.php";
  * @author Jakub Konečný
  * @testCase
  */
-class BookPagesStorageTest extends \Tester\TestCase {
+final class BookPagesStorageTest extends \Tester\TestCase {
   /** @var BookPagesStorage */
   private $storage;
   

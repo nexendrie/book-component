@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-class BookControl2 extends BookControl {
+final class BookControl2 extends BookControl {
   public function __construct() {
     parent::__construct("Test", __DIR__);
     $this->pages = function() {

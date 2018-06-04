@@ -15,7 +15,7 @@ require __DIR__ . "/../../bootstrap.php";
  * @author Jakub Konečný
  * @testCase
  */
-class BookControlTest extends \Tester\TestCase {
+final class BookControlTest extends \Tester\TestCase {
   /** @var BookControl */
   private $control;
   
