@@ -25,6 +25,8 @@ Example:
 
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
@@ -36,6 +38,8 @@ It is possible to assign a callback to property $pages which returns Nexendrie\B
 
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
@@ -53,6 +57,8 @@ Example:
 
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 class HelpControl extends Book\BookControl {
@@ -72,6 +78,8 @@ Alternatively, you can set the variables in onRender event:
 
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
@@ -91,6 +99,8 @@ Translations
 The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language, preferably in constructor. Example:
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 class HelpControl extends Book\BookControl {
@@ -113,6 +123,8 @@ It is possible to use own templates for book index and pages. Just set the follo
 
 ```php
 <?php
+declare(strict_types=1);
+
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
