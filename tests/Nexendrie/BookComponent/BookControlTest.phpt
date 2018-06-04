@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert,
-    Nexendrie\Translation\Translator,
-    Nexendrie\Translation\Loaders\MessagesCatalogue;
+use Tester\Assert;
+use Nexendrie\Translation\Translator;
+use Nexendrie\Translation\Loaders\MessagesCatalogue;
 
 require __DIR__ . "/../../bootstrap.php";
 

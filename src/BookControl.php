@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Nette\Localization\ITranslator,
-    Nexendrie\Translation\Translator,
-    Nexendrie\Translation\Loaders\MessagesCatalogue;
+use Nette\Localization\ITranslator;
+use Nexendrie\Translation\Translator;
+use Nexendrie\Translation\Loaders\MessagesCatalogue;
 
 /**
  * BookControl
