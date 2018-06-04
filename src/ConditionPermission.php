@@ -24,7 +24,7 @@ final class ConditionPermission implements IBookPageCondition {
    * @throws \InvalidArgumentException
    * @throws \OutOfBoundsException
    */
-  public function isAllowed($parameter = NULL): bool {
+  public function isAllowed($parameter = null): bool {
     if(!is_string($parameter)) {
       throw new \InvalidArgumentException("Method " . __METHOD__ . " expects string as parameter.");
     } elseif(!Strings::contains($parameter, ":")) {

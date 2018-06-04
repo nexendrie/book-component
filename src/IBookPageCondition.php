@@ -9,6 +9,6 @@ namespace Nexendrie\BookComponent;
  * @author Jakub Konečný
  */
 interface IBookPageCondition {
-  public function isAllowed($parameter = NULL): bool;
+  public function isAllowed($parameter = null): bool;
 }
 ?>

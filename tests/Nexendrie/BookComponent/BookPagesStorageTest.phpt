@@ -46,7 +46,7 @@ final class BookPagesStorageTest extends \Tester\TestCase {
   public function testGetIndex() {
     Assert::same(0, $this->storage->getIndex("slug1"));
     Assert::same(1, $this->storage->getIndex("slug2"));
-    Assert::same(NULL, $this->storage->getIndex("slug3"));
+    Assert::same(null, $this->storage->getIndex("slug3"));
   }
 }
 

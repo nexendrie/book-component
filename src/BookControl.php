@@ -24,7 +24,7 @@ class BookControl extends \Nette\Application\UI\Control {
   private $presenterName;
   /** @var string */
   private $folder;
-  /** @var ITranslator|Translator|NULL */
+  /** @var ITranslator|Translator|null */
   protected $translator;
   /** @var string */
   protected $lang = "";
@@ -37,7 +37,7 @@ class BookControl extends \Nette\Application\UI\Control {
   /** @var callable[] */
   public $onRender = [];
   
-  public function __construct(string $presenterName, string $folder, ITranslator $translator = NULL) {
+  public function __construct(string $presenterName, string $folder, ITranslator $translator = null) {
     parent::__construct();
     $this->presenterName = $presenterName;
     $this->folder = $folder;

@@ -27,7 +27,7 @@ class BookPagesStorage extends Collection {
         return $index;
       }
     }
-    return NULL;
+    return null;
   }
   
   /**

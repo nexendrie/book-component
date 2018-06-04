@@ -13,10 +13,10 @@ final class BookControl2 extends BookControl {
       $storage[] = new BookPage("slug3", "title3");
       $conditionalPage = new BookPage("slug4", "title4");
       $conditionalPage->addCondition(new class() implements IBookPageCondition {
-        public function isAllowed($parameter = NULL): bool {
+        public function isAllowed($parameter = null): bool {
           return false;
         }
-      }, NULL);
+      }, null);
       $storage[] = $conditionalPage;
       return $storage;
     };
