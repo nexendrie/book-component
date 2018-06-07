@@ -35,6 +35,6 @@ final class ConditionCallbackTest extends \Tester\TestCase {
   }
 }
 
-$test = new ConditionCallbackTest;
+$test = new ConditionCallbackTest();
 $test->run();
 ?>

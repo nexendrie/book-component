@@ -27,7 +27,7 @@ final class BookPagesStorageTest extends \Tester\TestCase {
    * @throws \InvalidArgumentException
    */
   public function testInvalidArgument() {
-    $this->storage[] = new \stdClass;
+    $this->storage[] = new \stdClass();
   }
   
   /**

@@ -30,6 +30,6 @@ final class ConditionUserInRoleTest extends \Tester\TestCase {
   }
 }
 
-$test = new ConditionUserInRoleTest;
+$test = new ConditionUserInRoleTest();
 $test->run();
 ?>

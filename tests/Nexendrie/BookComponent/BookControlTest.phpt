@@ -22,7 +22,7 @@ final class BookControlTest extends \Tester\TestCase {
   use \Testbench\TComponent;
   
   protected function setUp() {
-    $this->control = new BookControl2;
+    $this->control = new BookControl2();
     $this->attachToPresenter($this->control);
   }
   
