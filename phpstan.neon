@@ -7,5 +7,6 @@ parameters:
         - '#Method Nexendrie\\BookComponent\\[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) has no return typehint specified#'
         - '#Parameter \#1 \$function of function call_user_func expects callable, array\(\$this\(Nexendrie\\BookComponent\\BookControl\), string\) given#'
         - '#Method Nexendrie\\BookComponent\\BookPagesStorage::getIndex\(\) should return int\|null but returns int\|string|false#'
+        - '#Method class@anonymous/tests/Nexendrie/BookComponent/BookControl2.php:15::isAllowed\(\) has parameter \$parameter with no typehint specified#'
     universalObjectCratesClasses:
         - Nette\Bridges\ApplicationLatte\Template
