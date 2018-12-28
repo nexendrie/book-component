@@ -19,7 +19,7 @@
         "docs": "https://nexendrie.gitlab.io/book-component"
     },
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.2.0",
         "nette/application": "^2.4",
         "nette/utils": "^2.4",
         "latte/latte": "^2.4",

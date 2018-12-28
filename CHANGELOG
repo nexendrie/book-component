@@ -1,3 +1,6 @@
+Version 2.0.0-dev
+- raised minimal version of PHP to 7.2
+
 Version 1.4.0
 - allowed customization of index and page templates
 - added conditional book pages
