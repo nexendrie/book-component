@@ -49,7 +49,7 @@ class BookControl extends \Nette\Application\UI\Control {
     return $this->translator;
   }
   
-  public function setTranslator(ITranslator $translator) {
+  public function setTranslator(ITranslator $translator): void {
     $this->translator = $translator;
   }
   
@@ -57,7 +57,7 @@ class BookControl extends \Nette\Application\UI\Control {
     return $this->lang;
   }
   
-  public function setLang(string $lang) {
+  public function setLang(string $lang): void {
     $this->lang = $lang;
   }
   
@@ -77,7 +77,7 @@ class BookControl extends \Nette\Application\UI\Control {
     return $pages;
   }
   
-  public function setPages(callable $pages) {
+  public function setPages(callable $pages): void {
     $this->pages = $pages;
   }
   
@@ -94,7 +94,7 @@ class BookControl extends \Nette\Application\UI\Control {
     return $this->indexTemplate;
   }
   
-  public function setIndexTemplate(string $indexTemplate) {
+  public function setIndexTemplate(string $indexTemplate): void {
     $this->checkTemplatePath($indexTemplate);
     $this->indexTemplate = $indexTemplate;
   }
@@ -103,7 +103,7 @@ class BookControl extends \Nette\Application\UI\Control {
     return $this->pageTemplate;
   }
   
-  public function setPageTemplate(string $pageTemplate) {
+  public function setPageTemplate(string $pageTemplate): void {
     $this->checkTemplatePath($pageTemplate);
     $this->pageTemplate = $pageTemplate;
   }
