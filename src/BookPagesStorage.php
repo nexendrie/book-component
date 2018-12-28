@@ -8,7 +8,7 @@ use Nexendrie\Utils\Collection;
 /**
  * @author Jakub Konečný
  */
-class BookPagesStorage extends Collection {
+final class BookPagesStorage extends Collection {
   /** @var string */
   protected $class = BookPage::class;
   /** @var string */
