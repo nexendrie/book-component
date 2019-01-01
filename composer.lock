@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d2dfa5d9dfe6a60e82197a8435c7e8d",
+    "content-hash": "f69f874de6a96559ddf35ddc5a7cb73c",
     "packages": [
         {
             "name": "latte/latte",
@@ -651,30 +651,30 @@
         },
         {
             "name": "nexendrie/utils",
-            "version": "1.4.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/nexendrie/utils.git",
-                "reference": "7fbbb4b71cb3fd7c546f576ba4bfbccdb7f163eb"
+                "reference": "86e3373ddc7ee7a47ec9e626ee2f7924f094e9db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/nexendrie%2Futils/repository/archive.zip?sha=7fbbb4b71cb3fd7c546f576ba4bfbccdb7f163eb",
-                "reference": "7fbbb4b71cb3fd7c546f576ba4bfbccdb7f163eb",
+                "url": "https://gitlab.com/api/v4/projects/nexendrie%2Futils/repository/archive.zip?sha=86e3373ddc7ee7a47ec9e626ee2f7924f094e9db",
+                "reference": "86e3373ddc7ee7a47ec9e626ee2f7924f094e9db",
                 "shasum": ""
             },
             "require": {
                 "nette/utils": "^2.4",
-                "php": ">=7.1.0"
+                "php": ">=7.2.0"
             },
             "require-dev": {
                 "nexendrie/code-quality": "dev-master",
-                "nexendrie/site-generator": "1.0.x-dev"
+                "nexendrie/site-generator": "^1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -703,7 +703,7 @@
                 "range",
                 "utils"
             ],
-            "time": "2018-04-13T13:50:05+00:00"
+            "time": "2019-01-01T10:09:12+00:00"
         }
     ],
     "packages-dev": [

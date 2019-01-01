@@ -18,15 +18,6 @@ final class BookPagesStorage extends Collection {
     return $this->hasItems(["slug" => $slug]);
   }
   
-  public function getIndex(string $slug): ?int {
-    foreach($this as $index => $page) {
-      if($page->slug === $slug) {
-        return $index;
-      }
-    }
-    return null;
-  }
-  
   /**
    * @return BookPage[]
    */

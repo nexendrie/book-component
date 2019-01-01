@@ -134,7 +134,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->template->setFile($this->indexTemplate);
     if($page !== "index") {
       $this->template->setFile($this->pageTemplate);
-      $this->template->index = $pages->getIndex($page);
+      $this->template->index = $pages->getIndex(["slug" => $page]);
       $this->template->current = $pages[$this->template->index];
     }
     $this->template->pages = $pages;
