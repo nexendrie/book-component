@@ -4,6 +4,7 @@ includes:
 parameters:
     ignoreErrors:
         - '#Access to an undefined property Nette\\Localization\\ITranslator::\$lang#'
-        - '#Parameter \#1 \$function of function call_user_func expects callable, array\(\$this\(Nexendrie\\BookComponent\\BookControl\), string\) given#'
+        - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
+        - '#Parameter \#1 \$parameter \((\(callable\)|string|bool)\|null\) of method Nexendrie\\BookComponent\\Condition[a-zA-Z]+::isAllowed\(\) should be contravariant with parameter \$parameter \(mixed\) of method Nexendrie\\BookComponent\\IBookPageCondition::isAllowed\(\)#'
     universalObjectCratesClasses:
         - Nette\Bridges\ApplicationLatte\Template

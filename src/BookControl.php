@@ -141,7 +141,7 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->onRender($this, $page);
     $method = "render" . ucfirst($page);
     if(method_exists($this, $method)) {
-      call_user_func([$this, $method]);
+      $this->$method();
     }
     $this->template->render();
   }
