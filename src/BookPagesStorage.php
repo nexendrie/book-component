@@ -15,7 +15,7 @@ final class BookPagesStorage extends Collection {
   protected $uniqueProperty = "slug";
   
   public function hasPage(string $slug): bool {
-    return $this->hasItems(["slug" => $slug]);
+    return $this->hasItems(["slug" => $slug, "allowed" => true]);
   }
   
   /**
