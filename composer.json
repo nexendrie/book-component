@@ -29,7 +29,8 @@
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
         "tracy/tracy": "^2.4",
-        "nexendrie/site-generator": "^1.0"
+        "nexendrie/site-generator": "^1.0",
+        "nette/security": "^2.4"
     },
     "autoload": {
         "psr-4": {
