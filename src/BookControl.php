@@ -38,7 +38,6 @@ class BookControl extends \Nette\Application\UI\Control {
   public $onRender = [];
   
   public function __construct(string $presenterName, string $folder, ITranslator $translator = null) {
-    parent::__construct();
     $this->presenterName = $presenterName;
     $this->folder = $folder;
     $this->translator = $translator;
