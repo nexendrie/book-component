@@ -42,11 +42,6 @@ final class BookControlTest extends \Tester\TestCase {
     $this->control->render();
   }
   
-  public function testLang() {
-    $this->control->lang = "cs";
-    Assert::same("cs", $this->control->lang);
-  }
-  
   public function testTranslator() {
     $loader = new MessagesCatalogue();
     $loader->folders = [__DIR__ . "/../../../src/lang"];
@@ -88,7 +83,6 @@ final class BookControlTest extends \Tester\TestCase {
   
   public function testRenderI() {
     Assert::type("null", $this->control->translator);
-    $this->control->lang = "en";
     $filename = __DIR__ . "/bookIndexExpected.latte";
     $this->checkRenderOutput($this->control, $filename);
     Assert::type(Translator::class, $this->control->translator);

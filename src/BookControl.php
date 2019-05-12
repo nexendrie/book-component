@@ -12,7 +12,6 @@ use Nexendrie\Translation\Loaders\MessagesCatalogue;
  *
  * @author Jakub Konečný
  * @property ITranslator $translator
- * @property string $lang
  * @property callable|BookPagesStorage $pages
  * @property string $indexTemplate
  * @property string $pageTemplate
@@ -26,8 +25,6 @@ class BookControl extends \Nette\Application\UI\Control {
   private $folder;
   /** @var ITranslator|Translator|null */
   protected $translator;
-  /** @var string */
-  protected $lang = "";
   /** @var callable|BookPagesStorage */
   protected $pages;
   /** @var string */
@@ -50,14 +47,6 @@ class BookControl extends \Nette\Application\UI\Control {
   
   public function setTranslator(ITranslator $translator): void {
     $this->translator = $translator;
-  }
-  
-  public function getLang(): string {
-    return $this->lang;
-  }
-  
-  public function setLang(string $lang): void {
-    $this->lang = $lang;
   }
   
   /**
@@ -112,9 +101,6 @@ class BookControl extends \Nette\Application\UI\Control {
       $loader = new MessagesCatalogue();
       $loader->folders = [__DIR__ . "/lang"];
       $this->translator = new Translator($loader);
-    }
-    if($this->lang !== "") {
-      $this->translator->lang = $this->lang;
     }
     $this->template->setTranslator($this->translator);
   }

@@ -96,23 +96,8 @@ $control->onRender[] = function(Book\BookControl $book, string $page) {
 
 Translations
 ------------
-The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If translation to your language of choice is shipped, you just need to set property $lang to abbreviation of the language, preferably in constructor. Example:
-```php
-<?php
-declare(strict_types=1);
 
-use Nexendrie\BookComponent as Book;
-
-class HelpControl extends Book\BookControl {
-  function __construct() {
-    $this->lang = "cs";
-    parent::__construct(":Front:Help", __DIR__ . "/help");
-  }
-}
-?>
-```
-
-If that translation (or some text of it) is not available, english variant is used.
+The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If that translation (or some text of it) is not available, english variant is used.
 
 If you wish, you can also use your own translator. Just set property $translator in constructor. List of all texts used by the component can be seen in *src/lang/book.en.neon*.
 
