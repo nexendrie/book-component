@@ -1,4 +1,4 @@
-Version 2.0.0-dev
+Version 2.0.0
 - raised minimal version of PHP to 7.2
 - marked BookPagesStorage as final
 - BC break: changed parameters of method BookPagesStorage::getIndex
