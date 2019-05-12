@@ -3,7 +3,6 @@ includes:
     - vendor/phpstan/phpstan-strict-rules/rules.neon
 parameters:
     ignoreErrors:
-        - '#Access to an undefined property Nette\\Localization\\ITranslator::\$lang#'
         - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
         - '#Parameter \#1 \$parameter \((\(callable\)|string|bool)\|null\) of method Nexendrie\\BookComponent\\Condition[a-zA-Z]+::isAllowed\(\) should be contravariant with parameter \$parameter \(mixed\) of method Nexendrie\\BookComponent\\IBookPageCondition::isAllowed\(\)#'
         - '#Call to function is_bool\(\) with bool will always evaluate to true#'
