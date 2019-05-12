@@ -4,6 +4,8 @@ Version 2.0.0-dev
 - BC break: changed parameters of method BookPagesStorage::getIndex
 - allowed Nette 3
 - BC break: removed property BookControl::$lang
+- removed dependency on nexendrie/translation, now it is just suggested
+- BC break: BookControl uses translator registered to Latte
 
 Version 1.4.0
 - allowed customization of index and page templates

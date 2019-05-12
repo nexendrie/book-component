@@ -3,15 +3,10 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Nette\Localization\ITranslator;
-use Nexendrie\Translation\Translator;
-use Nexendrie\Translation\Loaders\MessagesCatalogue;
-
 /**
  * BookControl
  *
  * @author Jakub Konečný
- * @property ITranslator $translator
  * @property callable|BookPagesStorage $pages
  * @property string $indexTemplate
  * @property string $pageTemplate
@@ -23,8 +18,6 @@ class BookControl extends \Nette\Application\UI\Control {
   private $presenterName;
   /** @var string */
   private $folder;
-  /** @var ITranslator|Translator|null */
-  protected $translator;
   /** @var callable|BookPagesStorage */
   protected $pages;
   /** @var string */
@@ -34,19 +27,10 @@ class BookControl extends \Nette\Application\UI\Control {
   /** @var callable[] */
   public $onRender = [];
   
-  public function __construct(string $presenterName, string $folder, ITranslator $translator = null) {
+  public function __construct(string $presenterName, string $folder) {
     $this->presenterName = $presenterName;
     $this->folder = $folder;
-    $this->translator = $translator;
     $this->pages = new BookPagesStorage();
-  }
-  
-  public function getTranslator(): ?ITranslator {
-    return $this->translator;
-  }
-  
-  public function setTranslator(ITranslator $translator): void {
-    $this->translator = $translator;
   }
   
   /**
@@ -96,22 +80,12 @@ class BookControl extends \Nette\Application\UI\Control {
     $this->pageTemplate = $pageTemplate;
   }
   
-  protected function setupTranslator(): void {
-    if(is_null($this->translator)) {
-      $loader = new MessagesCatalogue();
-      $loader->folders = [__DIR__ . "/lang"];
-      $this->translator = new Translator($loader);
-    }
-    $this->template->setTranslator($this->translator);
-  }
-  
   /**
    * @throws \InvalidArgumentException
    */
   public function render(string $page = "index"): void {
     $this->template->presenterName = $this->presenterName;
     $this->template->folder = $this->folder;
-    $this->setupTranslator();
     $pages = $this->getPages();
     if(!$pages->hasPage($page)) {
       $page = "index";

@@ -23,13 +23,13 @@
         "nette/application": "^2.4 || ^3.0",
         "nette/utils": "^2.4 || ^3.0",
         "latte/latte": "^2.4 || ^3.0",
-        "nexendrie/translation": "^1.1.1 || ^2.0.1",
         "nexendrie/utils": "^1.6.1"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
         "tracy/tracy": "^2.4 || ^3.0",
         "nexendrie/site-generator": "^1.0",
+        "nexendrie/translation": "^1.1.1 || ^2.0.1",
         "nette/http": "^2.4.7 || ^3.0",
         "nette/caching": "^2.5 || ^3.0"
     },
@@ -44,7 +44,8 @@
         }
     },
     "suggest": {
-        "nette/security": "To use book page conditions related to user"
+        "nette/security": "To use book page conditions related to user",
+        "nexendrie/translation": "Translator"
     },
     "config": {
         "classmap-authoritative": true

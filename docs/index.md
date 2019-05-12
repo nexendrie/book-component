@@ -97,9 +97,9 @@ $control->onRender[] = function(Book\BookControl $book, string $page) {
 Translations
 ------------
 
-The (few) texts used by the component are in english but you can have them translated into another language if you prefer. If that translation (or some text of it) is not available, english variant is used.
+This component contains a few texts that need to be translated. This package (or any of its direct dependencies) does not contain a translator, you need to register one into Latte. We recommend package **nexendrie/translation**. 
 
-If you wish, you can also use your own translator. Just set property $translator in constructor. List of all texts used by the component can be seen in *src/lang/book.en.neon*.
+This package though contains English and Czech translation in neon and PHP messages catalogue format. They can be found in folder *src/lang*. Default templates of this component do not use messages in default language but message ids in form book.*string*.
 
 Custom templates
 ----------------

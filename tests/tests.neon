@@ -8,3 +8,12 @@ services:
     - Nexendrie\BookComponent\ConditionPermission
     - Nexendrie\BookComponent\ConditionUserInRole
     - Nexendrie\BookComponent\ConditionUserLoggedIn
+extensions:
+    translation: Nexendrie\Translation\Bridges\NetteDI\TranslationExtension
+translation:
+    default: en
+    localeResolver: manual
+    loader:
+        name: catalogue
+        folders!:
+            - %appDir%/../src/lang

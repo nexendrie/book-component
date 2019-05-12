@@ -5,7 +5,6 @@ namespace Nexendrie\BookComponent;
 
 use Tester\Assert;
 use Nexendrie\Translation\Translator;
-use Nexendrie\Translation\Loaders\MessagesCatalogue;
 
 require __DIR__ . "/../../bootstrap.php";
 
@@ -20,6 +19,7 @@ final class BookControlTest extends \Tester\TestCase {
   private $control;
   
   use \Testbench\TComponent;
+  use \Testbench\TCompiledContainer;
   
   protected function setUp() {
     $this->control = new BookControl2();
@@ -43,19 +43,13 @@ final class BookControlTest extends \Tester\TestCase {
   }
   
   public function testTranslator() {
-    $loader = new MessagesCatalogue();
-    $loader->folders = [__DIR__ . "/../../../src/lang"];
-    $this->control->translator = new Translator($loader);
-    Assert::same("en", $this->control->translator->lang);
-    $result = $this->control->translator->translate("book.content");
-    Assert::type("string", $result);
-    Assert::same("Content", $result);
-    $this->control->translator->lang = "cs";
-    $result = $this->control->translator->translate("book.content");
-    Assert::type("string", $result);
-    Assert::same("Obsah", $result);
+    /** @var Translator $translator */
+    $translator = $this->getService(Translator::class);
+    Assert::same("Content", $translator->translate("book.content"));
+    $translator->lang = "cs";
+    Assert::same("Obsah", $translator->translate("book.content"));
   }
-  
+
   public function testInvalidCustomTemplates() {
     Assert::exception(function() {
       $this->control->indexTemplate = "abc.latte";
@@ -82,10 +76,8 @@ final class BookControlTest extends \Tester\TestCase {
   }
   
   public function testRenderI() {
-    Assert::type("null", $this->control->translator);
     $filename = __DIR__ . "/bookIndexExpected.latte";
     $this->checkRenderOutput($this->control, $filename);
-    Assert::type(Translator::class, $this->control->translator);
   }
   
   public function testRenderP1() {
