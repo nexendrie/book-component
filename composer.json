@@ -29,10 +29,7 @@
         "nexendrie/code-quality": "dev-master",
         "phpstan/phpstan": "^0.11.3",
         "nexendrie/site-generator": "^1.0",
-        "nexendrie/translation": "^2.0.1",
-        "nette/http": "^3.0",
-        "nette/caching": "^3.0",
-        "nette/di": "^3.0"
+        "nexendrie/translation": "^2.0.1"
     },
     "autoload": {
         "psr-4": {
