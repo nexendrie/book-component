@@ -2,6 +2,7 @@
 /.idea/
 /vendor/
 /tests/_temp/
+/public/
 output/
 *.actual
 coverage.*
