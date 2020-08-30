@@ -18,39 +18,7 @@ class BookPage
     {
     }
 
-    /**
-     * @deprecated Access the property directly
-     */
-    public function getSlug(): string
-    {
-        return $this->slug;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    protected function setSlug(string $slug): void
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    protected function setTitle(string $title): void
-    {
-        $this->title = $title;
-    }
-
-    /**
+  /**
      * @param mixed $parameter
      */
     public function addCondition(BookPageCondition $condition, $parameter): void
