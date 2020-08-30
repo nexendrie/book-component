@@ -17,7 +17,7 @@ The best way to install it is via Composer. Just add **nexendrie/book-component*
 Usage
 -----
 
-Create new instance of Nexendrie\BookComponent\BookControl. The constructor requires 2 parameters: **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored. You can also pass a translator as third parameter.
+Create a new instance of Nexendrie\BookComponent\BookControl. The constructor requires 2 parameters: **presenterName** and **folder**. Property presenterName tells which presenter is responsible for rendering the component, folder determines where templates with your chapter/pages are stored. You can also pass a translator as third parameter.
 
 After that, you have to tell the component about pages. Just add them as elements of array to property $pages. Each page has a slug (which is used to form its url) and name (which is shown in the list of pages and the top of the page itself). The page also needs a template which must be named *slug*.latte.
 
@@ -121,6 +121,6 @@ $control->pageTemplate = __DIR__ . "/customPage.latte";
 Conditional pages
 -----------------
 
-Sometimes, you want to show certain pages only if a conditions is met. Defining conditions is easy, just use method addCondition on a page. The method takes two arguments, first is object implementing interface Nexendrie\BookComponent\IBookPageCondition, the second is additional parameter. Each condition is evaluated during template rendering and only if all of them are met, the page is shown (either in list of pages or the page itself).
+Sometimes, you want to show certain pages only if a condition is met. Defining conditions is easy, just use method addCondition on a page. The method takes two arguments, first is an object implementing interface Nexendrie\BookComponent\IBookPageCondition, the second is additional parameter. Each condition is evaluated during template rendering and only if all of them are met, the page is shown (either in list of pages or the page itself).
 
 There are a few default condition types: callback (the callback is passed as additional parameter), current user's permission (in format resource:privilege), current user's role and login status (logged in = true/logged out = false).
