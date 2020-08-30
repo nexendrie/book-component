@@ -11,12 +11,10 @@ namespace Nexendrie\BookComponent;
  */
 class BookPage {
   use \Nette\SmartObject;
-  /** @var string */
-  protected $slug;
-  /** @var string */
-  protected $title;
+  protected string $slug;
+  protected string $title;
   /** @var array of [IBookPageCondition, string] */
-  protected $conditions = [];
+  protected array $conditions = [];
   
   public function __construct(string $slug, string $title) {
     $this->slug = $slug;

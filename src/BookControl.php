@@ -14,18 +14,14 @@ namespace Nexendrie\BookComponent;
  * @method void onRender(BookControl $book, string $page)
  */
 class BookControl extends \Nette\Application\UI\Control {
-  /** @var string */
-  private $presenterName;
-  /** @var string */
-  private $folder;
+  private string $presenterName;
+  private string $folder;
   /** @var callable|BookPagesStorage */
   protected $pages;
-  /** @var string */
-  protected $indexTemplate = __DIR__ . "/bookIndex.latte";
-  /** @var string */
-  protected $pageTemplate = __DIR__ . "/bookPage.latte";
+  protected string $indexTemplate = __DIR__ . "/bookIndex.latte";
+  protected string $pageTemplate = __DIR__ . "/bookPage.latte";
   /** @var callable[] */
-  public $onRender = [];
+  public array $onRender = [];
   
   public function __construct(string $presenterName, string $folder) {
     $this->presenterName = $presenterName;

@@ -14,8 +14,7 @@ require __DIR__ . "/../../bootstrap.php";
  * @testCase
  */
 final class BookPagesStorageTest extends \Tester\TestCase {
-  /** @var BookPagesStorage */
-  private $storage;
+  private BookPagesStorage $storage;
   
   protected function setUp() {
     $this->storage = new BookPagesStorage();

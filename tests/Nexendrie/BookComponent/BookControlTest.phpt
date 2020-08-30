@@ -15,8 +15,7 @@ require __DIR__ . "/../../bootstrap.php";
  * @testCase
  */
 final class BookControlTest extends \Tester\TestCase {
-  /** @var BookControl */
-  private $control;
+  private BookControl $control;
   
   use \Testbench\TComponent;
   use \Testbench\TCompiledContainer;

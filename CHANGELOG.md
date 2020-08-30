@@ -1,5 +1,6 @@
 Version 2.3.0-dev
 - raised minimal version of PHP to 7.4
+- used typed properties (possible BC break)
 
 Version 2.2.0
 - raised minimal version of PHP to 7.3

@@ -14,8 +14,7 @@ require __DIR__ . "/../../bootstrap.php";
  * @testCase
  */
 final class BookPageTest extends \Tester\TestCase {
-  /** @var BookPage */
-  private $page;
+  private BookPage $page;
   
   protected function setUp() {
     $this->page = new BookPage("slug", "title");
