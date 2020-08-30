@@ -5,8 +5,8 @@ namespace Nexendrie\BookComponent;
 
 /**
  * @author Jakub Konečný
- * @property-read string $slug
- * @property-read string $title
+ * @property string $slug
+ * @property string $title
  * @property-read bool $allowed
  */
 class BookPage {
@@ -30,11 +30,19 @@ class BookPage {
     return $this->slug;
   }
 
+  protected function setSlug(string $slug): void {
+    $this->slug = $slug;
+  }
+
   /**
    * @deprecated Access the property directly
    */
   public function getTitle(): string {
     return $this->title;
+  }
+
+  protected function setTitle(string $title): void {
+    $this->title = $title;
   }
   
   /**

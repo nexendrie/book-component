@@ -22,13 +22,15 @@ final class BookPageTest extends \Tester\TestCase {
   }
   
   public function testSlug() {
-    Assert::type("string", $this->page->slug);
     Assert::same("slug", $this->page->slug);
+    $this->page->slug = "abc";
+    Assert::same("abc", $this->page->slug);
   }
   
   public function testTitle() {
-    Assert::type("string", $this->page->title);
     Assert::same("title", $this->page->title);
+    $this->page->title = "abc";
+    Assert::same("abc", $this->page->title);
   }
   
   public function testConditions() {
