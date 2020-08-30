@@ -19,7 +19,7 @@ final class BookPageTest extends \Tester\TestCase {
   protected function setUp() {
     $this->page = new BookPage("slug", "title");
   }
-  
+
   public function testConditions() {
     Assert::true($this->page->allowed);
     $this->page->addCondition(new class() implements IBookPageCondition {
