@@ -16,8 +16,8 @@ namespace Nexendrie\BookComponent;
 class BookControl extends \Nette\Application\UI\Control {
   /** @var callable|BookPagesStorage */
   protected $pages;
-  protected string $indexTemplate = __DIR__ . "/bookIndex.latte";
-  protected string $pageTemplate = __DIR__ . "/bookPage.latte";
+  private string $indexTemplate = __DIR__ . "/bookIndex.latte";
+  private string $pageTemplate = __DIR__ . "/bookPage.latte";
   /** @var callable[] */
   public array $onRender = [];
   
@@ -55,31 +55,31 @@ class BookControl extends \Nette\Application\UI\Control {
   }
 
   /**
-   * @deprecated Access the property directly
+   * @internal
    */
-  public function getIndexTemplate(): string {
+  protected function getIndexTemplate(): string {
     return $this->indexTemplate;
   }
 
   /**
-   * @deprecated Access the property directly
+   * @internal
    */
-  public function setIndexTemplate(string $indexTemplate): void {
+  protected function setIndexTemplate(string $indexTemplate): void {
     $this->checkTemplatePath($indexTemplate);
     $this->indexTemplate = $indexTemplate;
   }
 
   /**
-   * @deprecated Access the property directly
+   * @internal
    */
-  public function getPageTemplate(): string {
+  protected function getPageTemplate(): string {
     return $this->pageTemplate;
   }
 
   /**
-   * @deprecated Access the property directly
+   * @internal
    */
-  public function setPageTemplate(string $pageTemplate): void {
+  protected function setPageTemplate(string $pageTemplate): void {
     $this->checkTemplatePath($pageTemplate);
     $this->pageTemplate = $pageTemplate;
   }
