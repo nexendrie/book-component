@@ -1,10 +1,8 @@
 includes:
-    - vendor/nexendrie/code-quality/phpstan.neon
     - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/nexendrie/code-quality/phpstan.neon
 parameters:
     ignoreErrors:
         - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
-        - '#Parameter \#1 \$parameter \((\(callable\)|string|bool)\|null\) of method Nexendrie\\BookComponent\\Condition[a-zA-Z]+::isAllowed\(\) should be contravariant with parameter \$parameter \(mixed\) of method Nexendrie\\BookComponent\\IBookPageCondition::isAllowed\(\)#'
-        - '#Call to function is_bool\(\) with bool will always evaluate to true#'
     universalObjectCratesClasses:
         - Nette\Bridges\ApplicationLatte\Template
