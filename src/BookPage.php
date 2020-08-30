@@ -22,11 +22,17 @@ class BookPage {
     $this->slug = $slug;
     $this->title = $title;
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function getSlug(): string {
     return $this->slug;
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function getTitle(): string {
     return $this->title;
   }
@@ -37,7 +43,10 @@ class BookPage {
   public function addCondition(IBookPageCondition $condition, $parameter): void {
     $this->conditions[] = [$condition, $parameter];
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function isAllowed(): bool {
     foreach($this->conditions as $condition) {
       if(!$condition[0]->isAllowed($condition[1])) {

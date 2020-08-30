@@ -61,20 +61,32 @@ class BookControl extends \Nette\Application\UI\Control {
       throw new \RuntimeException("File $path does not exist.");
     }
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function getIndexTemplate(): string {
     return $this->indexTemplate;
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function setIndexTemplate(string $indexTemplate): void {
     $this->checkTemplatePath($indexTemplate);
     $this->indexTemplate = $indexTemplate;
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function getPageTemplate(): string {
     return $this->pageTemplate;
   }
-  
+
+  /**
+   * @deprecated Access the property directly
+   */
   public function setPageTemplate(string $pageTemplate): void {
     $this->checkTemplatePath($pageTemplate);
     $this->pageTemplate = $pageTemplate;
