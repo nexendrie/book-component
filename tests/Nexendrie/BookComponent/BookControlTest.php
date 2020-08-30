@@ -59,16 +59,6 @@ final class BookControlTest extends \MyTester\TestCase
         $this->assertSame("Obsah", $translator->translate("book.content"));
     }
 
-    public function testInvalidCustomTemplates(): void
-    {
-        $this->assertThrowsException(function () {
-            $this->control->indexTemplate = "abc.latte";
-        }, \RuntimeException::class);
-        $this->assertThrowsException(function () {
-            $this->control->pageTemplate = "abc.latte";
-        }, \RuntimeException::class);
-    }
-
     public function testCustomIndexTemplate(): void
     {
         $templateFile = __DIR__ . "/bookIndexCustom.latte";

@@ -11,8 +11,6 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  *
  * @author Jakub Konečný
  * @property callable|BookPagesStorage $pages
- * @property string $indexTemplate
- * @property string $pageTemplate
  * @property \Nette\Bridges\ApplicationLatte\DefaultTemplate $template
  * @method void onRender(BookControl $book, string $page)
  */
@@ -20,8 +18,8 @@ class BookControl extends \Nette\Application\UI\Control
 {
     /** @var callable|BookPagesStorage */
     protected $pages;
-    protected string $indexTemplate = __DIR__ . "/bookIndex.latte";
-    protected string $pageTemplate = __DIR__ . "/bookPage.latte";
+    public string $indexTemplate = __DIR__ . "/bookIndex.latte";
+    public string $pageTemplate = __DIR__ . "/bookPage.latte";
     /**
      * @var callable[]
      * @deprecated Use a PSR-14 event dispatcher
@@ -60,51 +58,6 @@ class BookControl extends \Nette\Application\UI\Control
     public function setPages(callable $pages): void
     {
         $this->pages = $pages;
-    }
-
-    /**
-     * @deprecated
-     * @throws \RuntimeException
-     */
-    protected function checkTemplatePath(string $path): void
-    {
-        if (!is_file($path)) {
-            throw new \RuntimeException("File $path does not exist.");
-        }
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    public function getIndexTemplate(): string
-    {
-        return $this->indexTemplate;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    public function setIndexTemplate(string $indexTemplate): void
-    {
-        $this->checkTemplatePath($indexTemplate);
-        $this->indexTemplate = $indexTemplate;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    public function getPageTemplate(): string
-    {
-        return $this->pageTemplate;
-    }
-
-    /**
-     * @deprecated Access the property directly
-     */
-    public function setPageTemplate(string $pageTemplate): void
-    {
-        $this->checkTemplatePath($pageTemplate);
-        $this->pageTemplate = $pageTemplate;
     }
 
     /**
