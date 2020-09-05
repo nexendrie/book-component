@@ -5,14 +5,12 @@ namespace Nexendrie\BookComponent;
 
 /**
  * @author Jakub Konečný
- * @property string $slug
- * @property string $title
  * @property-read bool $allowed
  */
 class BookPage {
   use \Nette\SmartObject;
-  protected string $slug;
-  protected string $title;
+  public string $slug;
+  public string $title;
   /** @var array of [IBookPageCondition, string] */
   protected array $conditions = [];
   
@@ -28,6 +26,9 @@ class BookPage {
     return $this->slug;
   }
 
+  /**
+   * @deprecated Access the property directly
+   */
   protected function setSlug(string $slug): void {
     $this->slug = $slug;
   }
@@ -39,6 +40,9 @@ class BookPage {
     return $this->title;
   }
 
+  /**
+   * @deprecated Access the property directly
+   */
   protected function setTitle(string $title): void {
     $this->title = $title;
   }

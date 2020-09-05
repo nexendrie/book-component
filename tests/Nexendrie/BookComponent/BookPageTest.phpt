@@ -20,18 +20,6 @@ final class BookPageTest extends \Tester\TestCase {
     $this->page = new BookPage("slug", "title");
   }
   
-  public function testSlug() {
-    Assert::same("slug", $this->page->slug);
-    $this->page->slug = "abc";
-    Assert::same("abc", $this->page->slug);
-  }
-  
-  public function testTitle() {
-    Assert::same("title", $this->page->title);
-    $this->page->title = "abc";
-    Assert::same("abc", $this->page->title);
-  }
-  
   public function testConditions() {
     Assert::true($this->page->allowed);
     $this->page->addCondition(new class() implements IBookPageCondition {
