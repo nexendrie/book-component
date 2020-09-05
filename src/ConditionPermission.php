@@ -27,7 +27,7 @@ final class ConditionPermission implements IBookPageCondition {
   public function isAllowed($parameter = null): bool {
     if(!is_string($parameter)) {
       throw new \InvalidArgumentException("Method " . __METHOD__ . " expects string as parameter.");
-    } elseif(!Strings::contains($parameter, ":")) {
+    } elseif(!str_contains($parameter, ":")) {
       throw new \OutOfBoundsException("Method " . __METHOD__ . " expects parameter in format resource:privilege.");
     }
     return $this->user->isAllowed(Strings::before($parameter, ":"), Strings::after($parameter, ":"));
