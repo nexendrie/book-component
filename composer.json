@@ -29,7 +29,7 @@
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
         "nexendrie/site-generator": "^0.6",
-        "nexendrie/translation": "^2.0.1"
+        "nexendrie/translation": "^2.2"
     },
     "autoload": {
         "psr-4": {
