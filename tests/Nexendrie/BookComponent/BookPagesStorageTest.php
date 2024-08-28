@@ -16,7 +16,7 @@ require __DIR__ . "/../../bootstrap.php";
 final class BookPagesStorageTest extends \Tester\TestCase {
   private BookPagesStorage $storage;
   
-  protected function setUp() {
+  protected function setUp(): void {
     $this->storage = new BookPagesStorage();
     $this->storage[] = new BookPage("slug1", "title1");
     $this->storage[] = new BookPage("slug2", "title2");
@@ -25,18 +25,18 @@ final class BookPagesStorageTest extends \Tester\TestCase {
   /**
    * @throws \InvalidArgumentException
    */
-  public function testInvalidArgument() {
+  public function testInvalidArgument(): void {
     $this->storage[] = new \stdClass();
   }
   
   /**
    * @throws \RuntimeException
    */
-  public function testDuplicateSlug() {
+  public function testDuplicateSlug(): void {
     $this->storage[] = new BookPage("slug2", "title2");
   }
   
-  public function testHasPage() {
+  public function testHasPage(): void {
     Assert::true($this->storage->hasPage("slug1"));
     Assert::true($this->storage->hasPage("slug2"));
     Assert::false($this->storage->hasPage("slug3"));

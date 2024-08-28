@@ -16,11 +16,11 @@ require __DIR__ . "/../../bootstrap.php";
 final class BookPageTest extends \Tester\TestCase {
   private BookPage $page;
   
-  protected function setUp() {
+  protected function setUp(): void {
     $this->page = new BookPage("slug", "title");
   }
   
-  public function testConditions() {
+  public function testConditions(): void {
     Assert::true($this->page->allowed);
     $this->page->addCondition(new class() implements IBookPageCondition {
       public function isAllowed($param = null): bool {

@@ -20,28 +20,30 @@ final class BookControlTest extends \Tester\TestCase {
   use \Testbench\TComponent;
   use \Testbench\TCompiledContainer;
   
-  protected function setUp() {
+  protected function setUp(): void {
     $this->control = new BookControl2();
     $this->attachToPresenter($this->control);
   }
   
-  public function testEmptyPages() {
+  public function testEmptyPages(): void {
     $control = new BookControl("Book", "book");
-    Assert::type(BookPagesStorage::class, $control->pages);
-    Assert::count(0, $control->pages);
+    /** @var BookPagesStorage $pages */
+    $pages = $control->pages;
+    Assert::type(BookPagesStorage::class, $pages);
+    Assert::count(0, $pages);
   }
   
   /**
    * @throws \InvalidArgumentException
    */
-  public function testInvalidPages() {
+  public function testInvalidPages(): void {
     $this->control->pages = function() {
       return [];
     };
     $this->control->render();
   }
   
-  public function testTranslator() {
+  public function testTranslator(): void {
     /** @var Translator $translator */
     $translator = $this->getService(Translator::class);
     Assert::same("Content", $translator->translate("book.content"));
@@ -49,7 +51,7 @@ final class BookControlTest extends \Tester\TestCase {
     Assert::same("Obsah", $translator->translate("book.content"));
   }
 
-  public function testInvalidCustomTemplates() {
+  public function testInvalidCustomTemplates(): void {
     Assert::exception(function() {
       $this->control->indexTemplate = "abc.latte";
     }, \RuntimeException::class);
@@ -58,7 +60,7 @@ final class BookControlTest extends \Tester\TestCase {
     }, \RuntimeException::class);
   }
   
-  public function testCustomIndexTemplate() {
+  public function testCustomIndexTemplate(): void {
     $templateFile = __DIR__ . "/bookIndexCustom.latte";
     $this->control->indexTemplate = $templateFile;
     Assert::same($templateFile, $this->control->indexTemplate);
@@ -66,7 +68,7 @@ final class BookControlTest extends \Tester\TestCase {
     $this->checkRenderOutput($this->control, $filename);
   }
   
-  public function testCustomPageTemplate() {
+  public function testCustomPageTemplate(): void {
     $templateFile = __DIR__ . "/bookPageCustom.latte";
     $this->control->pageTemplate = $templateFile;
     Assert::same($templateFile, $this->control->pageTemplate);
@@ -74,22 +76,22 @@ final class BookControlTest extends \Tester\TestCase {
     $this->checkRenderOutput($this->control, $filename, ["slug1"]);
   }
   
-  public function testRenderI() {
+  public function testRenderI(): void {
     $filename = __DIR__ . "/bookIndexExpected.latte";
     $this->checkRenderOutput($this->control, $filename);
   }
   
-  public function testRenderP1() {
+  public function testRenderP1(): void {
     $filename = __DIR__ . "/bookPageExpected1.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug1"]);
   }
   
-  public function testRenderP2() {
+  public function testRenderP2(): void {
     $filename = __DIR__ . "/bookPageExpected2.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug2"]);
   }
   
-  public function testRenderP3() {
+  public function testRenderP3(): void {
     $filename = __DIR__ . "/bookPageExpected3.latte";
     $this->checkRenderOutput($this->control, $filename, ["slug3"]);
   }
