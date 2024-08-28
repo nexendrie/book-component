@@ -9,7 +9,7 @@ cache:
   - vendor/
 
 before_script:
-  - composer update --prefer-dist --no-progress --no-suggest --no-interaction
+  - composer update --prefer-dist --no-progress --no-interaction
 
 .job_template: &test_job
   stage: test
