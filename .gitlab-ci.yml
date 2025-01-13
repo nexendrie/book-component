@@ -16,6 +16,7 @@ before_script:
 
 test:php7.4:
   <<: *test_job
+  image: nexendrie/php:7.4
 
 test:php8.0:
   <<: *test_job
