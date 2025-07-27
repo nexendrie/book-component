@@ -23,11 +23,11 @@
         "nette/application": "^3.1.2",
         "nette/utils": "^3.2.2",
         "latte/latte": "^2.5",
-        "nexendrie/utils": "^1.8"
+        "nexendrie/utils": "^1.9"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
-        "nexendrie/site-generator": "^0.7",
+        "nexendrie/site-generator": "^0.8",
         "nexendrie/translation": "^2.3.1",
         "nette/http": "3.1.2"
     },
