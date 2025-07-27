@@ -14,8 +14,6 @@
         }
     ],
     "support": {
-        "source": "https://gitlab.com/nexendrie/book-component/",
-        "issues": "https://gitlab.com/nexendrie/book-component/issues",
         "docs": "https://nexendrie.gitlab.io/book-component"
     },
     "require": {
