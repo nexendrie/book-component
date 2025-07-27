@@ -1,4 +1,5 @@
-Version 2.4.0-dev
+Version 2.4.0
+- removed support for Latte 3
 - raised minimal version of PHP to 8.1
 - deprecated IBookPageCondition in favor of new BookPageCondition
 
