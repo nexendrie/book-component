@@ -1,5 +1,3 @@
-A new version of Book Component is out. It requires PHP 8.1 and uses some of its new features.
-
-Interface IBookPageCondition is deprecated, use new BookPageCondition instead. The former will be removed in next major version.
+A new version of Book Component is out.
 
 For complete list of changes since previous version, see CHANGELOG.md.
