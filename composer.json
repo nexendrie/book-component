@@ -19,12 +19,11 @@
         "docs": "https://nexendrie.gitlab.io/book-component"
     },
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.1.0",
         "nette/application": "^3.1.2",
         "nette/utils": "^3.2.2",
         "latte/latte": "^2.5",
-        "nexendrie/utils": "^1.8",
-        "symfony/polyfill-php80": "^1.22.1"
+        "nexendrie/utils": "^1.8"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
@@ -51,7 +50,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.3.x-dev"
+            "dev-master": "2.4.x-dev"
         }
     },
     "minimum-stability": "dev",
