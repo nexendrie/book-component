@@ -14,8 +14,6 @@ namespace Nexendrie\BookComponent;
  * @method void onRender(BookControl $book, string $page)
  */
 class BookControl extends \Nette\Application\UI\Control {
-  private string $presenterName;
-  private string $folder;
   /** @var callable|BookPagesStorage */
   protected $pages;
   protected string $indexTemplate = __DIR__ . "/bookIndex.latte";
@@ -23,9 +21,7 @@ class BookControl extends \Nette\Application\UI\Control {
   /** @var callable[] */
   public array $onRender = [];
   
-  public function __construct(string $presenterName, string $folder) {
-    $this->presenterName = $presenterName;
-    $this->folder = $folder;
+  public function __construct(private readonly string $presenterName, private readonly string $folder) {
     $this->pages = new BookPagesStorage();
   }
   

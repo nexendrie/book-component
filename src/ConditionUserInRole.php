@@ -11,11 +11,7 @@ use Nette\Security\User;
  * @author Jakub Konečný
  */
 final class ConditionUserInRole implements IBookPageCondition {
-  /** @var User */
-  protected $user;
-  
-  public function __construct(User $user) {
-    $this->user = $user;
+  public function __construct(private readonly User $user) {
   }
   
   /**

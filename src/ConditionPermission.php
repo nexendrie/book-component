@@ -12,11 +12,7 @@ use Nette\Utils\Strings;
  * @author Jakub Konečný
  */
 final class ConditionPermission implements IBookPageCondition {
-  /** @var User */
-  protected $user;
-  
-  public function __construct(User $user) {
-    $this->user = $user;
+  public function __construct(private readonly User $user) {
   }
   
   /**
