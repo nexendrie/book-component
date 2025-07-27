@@ -3,15 +3,11 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-/**
- * IBookPageCondition
- *
- * @author Jakub Konečný
- */
-interface IBookPageCondition {
-  /**
-   * @param mixed $parameter
-   */
-  public function isAllowed($parameter = null): bool;
+if(false) { // @phpstan-ignore if.alwaysFalse
+  /** @deprecated Use BookPageCondition */
+  interface IBookPageCondition extends BookPageCondition {
+  }
+} elseif(!interface_exists(IBookPageCondition::class)) {
+  class_alias(BookPageCondition::class, IBookPageCondition::class);
 }
 ?>

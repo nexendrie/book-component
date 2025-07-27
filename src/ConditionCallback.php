@@ -8,7 +8,7 @@ namespace Nexendrie\BookComponent;
  *
  * @author Jakub Konečný
  */
-final class ConditionCallback implements IBookPageCondition {
+final class ConditionCallback implements BookPageCondition {
   /**
    * @param callable $parameter
    * @throws \InvalidArgumentException

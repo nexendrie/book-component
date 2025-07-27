@@ -3,6 +3,8 @@ includes:
     - vendor/nexendrie/code-quality/phpstan.neon
     - vendor/phpstan/phpstan-deprecation-rules/rules.neon
 parameters:
+    excludePaths:
+        - %rootDir%/../../../src/IBookPageCondition.php
     ignoreErrors:
         - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
     universalObjectCratesClasses:

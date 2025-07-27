@@ -12,7 +12,7 @@ final class BookControl2 extends BookControl {
       $storage[] = new BookPage("slug2", "title2");
       $storage[] = new BookPage("slug3", "title3");
       $conditionalPage = new BookPage("slug4", "title4");
-      $conditionalPage->addCondition(new class() implements IBookPageCondition {
+      $conditionalPage->addCondition(new class() implements BookPageCondition {
         /**
          * @param mixed $parameter
          */

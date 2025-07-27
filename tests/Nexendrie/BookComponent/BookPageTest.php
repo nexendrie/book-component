@@ -22,7 +22,7 @@ final class BookPageTest extends \Tester\TestCase {
   
   public function testConditions(): void {
     Assert::true($this->page->allowed);
-    $this->page->addCondition(new class() implements IBookPageCondition {
+    $this->page->addCondition(new class() implements BookPageCondition {
       public function isAllowed($param = null): bool {
         return (bool) ($param);
       }

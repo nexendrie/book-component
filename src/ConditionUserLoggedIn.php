@@ -10,7 +10,7 @@ use Nette\Security\User;
  *
  * @author Jakub Konečný
  */
-final class ConditionUserLoggedIn implements IBookPageCondition {
+final class ConditionUserLoggedIn implements BookPageCondition {
   public function __construct(private readonly User $user) {
   }
   

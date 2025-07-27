@@ -11,7 +11,7 @@ use Nette\Utils\Strings;
  *
  * @author Jakub Konečný
  */
-final class ConditionPermission implements IBookPageCondition {
+final class ConditionPermission implements BookPageCondition {
   public function __construct(private readonly User $user) {
   }
   
