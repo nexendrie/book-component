@@ -26,9 +26,9 @@ final class BookPageTest extends \Tester\TestCase
     {
         Assert::true($this->page->allowed);
         $this->page->addCondition(new class () implements BookPageCondition {
-            public function isAllowed($param = null): bool
+            public function isAllowed($parameter = null): bool
             {
-                return (bool) ($param);
+                return (bool) ($parameter);
             }
         }, false);
         Assert::false($this->page->allowed);
