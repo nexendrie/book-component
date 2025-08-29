@@ -8,12 +8,13 @@ namespace Nexendrie\BookComponent;
  *
  * @author Jakub Konečný
  */
-final class Authorizator extends \Nette\Security\Permission {
-  public function __construct() {
-    $this->addRole("guest");
-    $this->addRole("abc", "guest");
-    $this->addResource("resource");
-    $this->allow("guest", "resource", "privilege");
-  }
+final class Authorizator extends \Nette\Security\Permission
+{
+    public function __construct()
+    {
+        $this->addRole("guest");
+        $this->addRole("abc", "guest");
+        $this->addResource("resource");
+        $this->allow("guest", "resource", "privilege");
+    }
 }
-?>

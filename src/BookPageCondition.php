@@ -8,10 +8,10 @@ namespace Nexendrie\BookComponent;
  *
  * @author Jakub Konečný
  */
-interface BookPageCondition {
-  /**
-   * @param mixed $parameter
-   */
-  public function isAllowed($parameter = null): bool;
+interface BookPageCondition
+{
+    /**
+     * @param mixed $parameter
+     */
+    public function isAllowed($parameter = null): bool;
 }
-?>

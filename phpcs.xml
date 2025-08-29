@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="Nexendrie Standard">
+    <rule ref="./vendor/nexendrie/code-quality/phpcs.xml"/>
+    <exclude-pattern>*/src/IBookPageCondition.php</exclude-pattern>
+</ruleset>

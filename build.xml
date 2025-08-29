@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="Nexendrie Book Component" basedir="." default="test">
+  <property name="phpcs_standard" value="phpcs.xml"/>
   <import file="vendor/nexendrie/code-quality/build.xml"/>
   <target name="test" depends="lint,cs,phpstan,tests"/>
   <target name="ci-coverage">

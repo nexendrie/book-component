@@ -13,24 +13,27 @@ require __DIR__ . "/../../bootstrap.php";
  * @author Jakub Konečný
  * @testCase
  */
-final class BookPageTest extends \Tester\TestCase {
-  private BookPage $page;
-  
-  protected function setUp(): void {
-    $this->page = new BookPage("slug", "title");
-  }
+final class BookPageTest extends \Tester\TestCase
+{
+    private BookPage $page;
 
-  public function testConditions(): void {
-    Assert::true($this->page->allowed);
-    $this->page->addCondition(new class() implements BookPageCondition {
-      public function isAllowed($param = null): bool {
-        return (bool) ($param);
-      }
-    }, false);
-    Assert::false($this->page->allowed);
-  }
+    protected function setUp(): void
+    {
+        $this->page = new BookPage("slug", "title");
+    }
+
+    public function testConditions(): void
+    {
+        Assert::true($this->page->allowed);
+        $this->page->addCondition(new class () implements BookPageCondition {
+            public function isAllowed($param = null): bool
+            {
+                return (bool) ($param);
+            }
+        }, false);
+        Assert::false($this->page->allowed);
+    }
 }
 
 $test = new BookPageTest();
 $test->run();
-?>
