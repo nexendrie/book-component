@@ -37,7 +37,9 @@ class BookControl extends \Nette\Application\UI\Control
         }
         $pages = call_user_func($this->pages);
         if (!$pages instanceof BookPagesStorage) {
-            throw new \InvalidArgumentException("Callback for pages for BookControl has to return " . BookPagesStorage::class . ".");
+            throw new \InvalidArgumentException(
+                "Callback for pages for BookControl has to return " . BookPagesStorage::class . "."
+            );
         }
         /** @var BookPagesStorage $pages */
         $pages = BookPagesStorage::fromArray($pages->getAllowedItems());
