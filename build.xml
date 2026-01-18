@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="Nexendrie Book Component" basedir="." default="test">
-  <property name="phpcs_standard" value="phpcs.xml"/>
-  <import file="vendor/nexendrie/code-quality/build.xml"/>
-  <target name="test" depends="lint,cs,phpstan,tests"/>
-  <target name="ci-coverage">
-    <exec executable="vendor/bin/run-tests" logoutput="true" passthru="true" checkreturn="true">
-      <arg value="-p"/>
-      <arg value="php"/>
-      <arg path="tests"/>
-      <arg value="--coverage"/>
-      <arg path="./coverage.xml"/>
-      <arg value="--coverage-src"/>
-      <arg path="./src"/>
-    </exec>
-  </target>
-  <target name="documentation">
-    <exec executable="vendor/bin/generate-site" logoutput="true" passthru="true" checkreturn="true">
-      <arg value="--source=docs"/>
-      <arg value="--output=public"/>
-    </exec>
-  </target>
+    <property name="phpcs_standard" value="phpcs.xml"/>
+    <import file="vendor/nexendrie/code-quality/build.xml"/>
+    <target name="test" depends="lint,cs,phpstan,tests"/>
+    <target name="ci-coverage">
+        <exec executable="vendor/bin/run-tests" logoutput="true" passthru="true" checkreturn="true">
+            <arg value="-p"/>
+            <arg value="php"/>
+            <arg path="tests"/>
+            <arg value="--coverage"/>
+            <arg path="./coverage.xml"/>
+            <arg value="--coverage-src"/>
+            <arg path="./src"/>
+        </exec>
+    </target>
+    <target name="documentation">
+        <exec executable="vendor/bin/generate-site" logoutput="true" passthru="true" checkreturn="true">
+            <arg value="--source=docs"/>
+            <arg value="--output=public"/>
+        </exec>
+    </target>
 </project>
