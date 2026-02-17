@@ -14,10 +14,4 @@
             <arg path="./src"/>
         </exec>
     </target>
-    <target name="documentation">
-        <exec executable="vendor/bin/generate-site" logoutput="true" passthru="true" checkreturn="true">
-            <arg value="--source=docs"/>
-            <arg value="--output=public"/>
-        </exec>
-    </target>
 </project>

@@ -27,10 +27,9 @@ pages:
         name: documentation
         url: https://nexendrie.gitlab.io/book-component
     image: nexendrie/php:8.1
-    before_script:
-        - composer update --prefer-dist --no-progress --no-interaction
     script:
-        - phing documentation
+        - composer create-project --no-dev nexendrie/site-generator
+        - site-generator/bin/generate-site --source=docs --output=public
     cache:
         paths:
             - vendor/
