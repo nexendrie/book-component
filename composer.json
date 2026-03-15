@@ -21,7 +21,7 @@
         "nette/application": "^3.1.2",
         "nette/utils": "^3.2.2",
         "latte/latte": "^2.5 || ^3.0",
-        "nexendrie/utils": "^1.9"
+        "nexendrie/utils": "^1.9.1"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
