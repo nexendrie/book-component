@@ -1,4 +1,4 @@
-Version 2.4.0+dev
+Version 2.4.1
 - re-added support for Latte 3
 
 Version 2.4.0
