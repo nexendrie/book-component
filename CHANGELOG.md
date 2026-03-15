@@ -1,3 +1,6 @@
+Version 2.4.0+dev
+- re-added support for Latte 3
+
 Version 2.4.0
 - removed support for Latte 3
 - raised minimal version of PHP to 8.1

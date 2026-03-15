@@ -20,12 +20,12 @@
         "php": ">=8.1.0",
         "nette/application": "^3.1.2",
         "nette/utils": "^3.2.2",
-        "latte/latte": "^2.5",
+        "latte/latte": "^2.5 || ^3.0",
         "nexendrie/utils": "^1.9"
     },
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
-        "nexendrie/translation": "^2.4",
+        "nexendrie/translation": "^2.5",
         "nette/http": "3.1.2"
     },
     "autoload": {
