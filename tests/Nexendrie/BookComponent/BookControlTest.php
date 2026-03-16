@@ -36,15 +36,14 @@ final class BookControlTest extends \Tester\TestCase
         Assert::count(0, $pages);
     }
 
-    /**
-     * @throws \InvalidArgumentException
-     */
     public function testInvalidPages(): void
     {
-        $this->control->pages = function () {
-            return [];
-        };
-        $this->control->render();
+        Assert::exception(function () {
+            $this->control->pages = function () {
+                return [];
+            };
+            $this->control->render();
+        }, \InvalidArgumentException::class);
     }
 
     public function testTranslator(): void

@@ -24,20 +24,18 @@ final class BookPagesStorageTest extends \Tester\TestCase
         $this->storage[] = new BookPage("slug2", "title2");
     }
 
-    /**
-     * @throws \InvalidArgumentException
-     */
     public function testInvalidArgument(): void
     {
-        $this->storage[] = new \stdClass();
+        Assert::exception(function () {
+            $this->storage[] = new \stdClass();
+        }, \InvalidArgumentException::class);
     }
 
-    /**
-     * @throws \RuntimeException
-     */
     public function testDuplicateSlug(): void
     {
-        $this->storage[] = new BookPage("slug2", "title2");
+        Assert::exception(function () {
+            $this->storage[] = new BookPage("slug2", "title2");
+        }, \RuntimeException::class);
     }
 
     public function testHasPage(): void
