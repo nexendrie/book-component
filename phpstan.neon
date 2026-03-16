@@ -5,7 +5,7 @@ includes:
 parameters:
     excludePaths:
         - %rootDir%/../../../src/IBookPageCondition.php
-    ignoreErrors:
+    ignoreErrors!:
         - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
     universalObjectCratesClasses:
         - Nette\Bridges\ApplicationLatte\Template

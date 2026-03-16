@@ -11,7 +11,7 @@ class BookPage
 {
     use \Nette\SmartObject;
 
-    /** @var array of [IBookPageCondition, string] */
+    /** @var array<int, array{0: BookPageCondition, 1: mixed}> */
     protected array $conditions = [];
 
     public function __construct(public string $slug, public string $title)
