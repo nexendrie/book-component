@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Nexendrie\BookComponent;
 
 use Nette\Security\User;
-use Nette\Utils\Strings;
 
 /**
  * ConditionPermission
@@ -31,6 +30,6 @@ final class ConditionPermission implements BookPageCondition
                 "Method " . __METHOD__ . " expects parameter in format resource:privilege."
             );
         }
-        return $this->user->isAllowed(Strings::before($parameter, ":"), Strings::after($parameter, ":"));
+        return $this->user->isAllowed(...explode(":", $parameter, 2));
     }
 }
