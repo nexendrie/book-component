@@ -18,9 +18,17 @@ test:php8.1:
     <<: *test_job
     image: nexendrie/php:8.1
 
+test:php8.2:
+    <<: *test_job
+    image: nexendrie/php:8.2
+
+test:php8.3:
+    <<: *test_job
+    image: nexendrie/php:8.3
+
 test:cc:
     <<: *test_job
-    image: nexendrie/php:8.1
+    image: nexendrie/php:8.3
     coverage: '/(\d+\%) covered/'
 
 pages:
@@ -28,7 +36,7 @@ pages:
     environment:
         name: documentation
         url: https://nexendrie.gitlab.io/book-component
-    image: nexendrie/php:8.1
+    image: nexendrie/php:8.3
     script:
         - composer create-project --no-dev nexendrie/site-generator
         - site-generator/bin/generate-site --source=docs --output=public
