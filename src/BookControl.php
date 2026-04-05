@@ -10,7 +10,7 @@ namespace Nexendrie\BookComponent;
  * @property callable|BookPagesStorage $pages
  * @property string $indexTemplate
  * @property string $pageTemplate
- * @property \Nette\Bridges\ApplicationLatte\Template $template
+ * @property \Nette\Bridges\ApplicationLatte\DefaultTemplate $template
  * @method void onRender(BookControl $book, string $page)
  */
 class BookControl extends \Nette\Application\UI\Control
