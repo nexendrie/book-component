@@ -6,6 +6,8 @@ stages:
     stage: test
     before_script:
         - composer update --prefer-dist --no-progress --no-interaction
+        - chmod +x tests/apply-dev-patches.sh
+        - ./tests/apply-dev-patches.sh
     script:
         - phing test
     cache:

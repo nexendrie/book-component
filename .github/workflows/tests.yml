@@ -19,4 +19,6 @@ jobs:
           tools: composer, phing
           coverage: pcov
       - run: composer update --prefer-dist --no-progress --no-interaction
+      - run: chmod +x tests/apply-dev-patches.sh
+      - run: ./tests/apply-dev-patches.sh
       - run: phing test

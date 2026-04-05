@@ -7,3 +7,4 @@ build.xml           export-ignore
 /RELEASE_NOTES      export-ignore
 phpcs.xml           export-ignore
 .editorconfig       export-ignore
+/patches/           export-ignore
