@@ -1,3 +1,7 @@
 A new version of Book Component is out. It requires PHP 8.3 and uses some of its new features.
 
+Method BookControl::checkTemplatePath is deprecated and will be removed in the next major version. Whether those files exist will be checked by Latte itself, that will allow use to removed some getters and setters.
+
+Methods BookControl::setPages and getPages are deprecated and will be removed in the next major version.
+
 For complete list of changes since previous version, see CHANGELOG.md.
