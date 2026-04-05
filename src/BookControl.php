@@ -12,7 +12,6 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  * @author Jakub Konečný
  * @property callable|BookPagesStorage $pages
  * @property \Nette\Bridges\ApplicationLatte\DefaultTemplate $template
- * @method void onRender(BookControl $book, string $page)
  */
 class BookControl extends \Nette\Application\UI\Control
 {
@@ -20,11 +19,6 @@ class BookControl extends \Nette\Application\UI\Control
     protected $pages;
     public string $indexTemplate = __DIR__ . "/bookIndex.latte";
     public string $pageTemplate = __DIR__ . "/bookPage.latte";
-    /**
-     * @var callable[]
-     * @deprecated Use a PSR-14 event dispatcher
-     */
-    public array $onRender = [];
 
     public function __construct(
         private readonly string $presenterName,
@@ -79,7 +73,6 @@ class BookControl extends \Nette\Application\UI\Control
         }
         $this->template->pages = $pages;
         $this->eventDispatcher?->dispatch(new BookPageRendered($this, $page));
-        $this->onRender($this, $page);
         $method = "render" . ucfirst($page);
         if (method_exists($this, $method)) {
             $this->$method();
