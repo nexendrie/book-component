@@ -5,7 +5,5 @@ includes:
     - vendor/phpstan/phpstan-nette/extension.neon
     - vendor/phpstan/phpstan-nette/rules.neon
 parameters:
-    excludePaths:
-        - %rootDir%/../../../src/IBookPageCondition.php
     ignoreErrors!:
         - '#Variable method call on \$this\(Nexendrie\\BookComponent\\BookControl\)#'
