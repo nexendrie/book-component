@@ -10,9 +10,9 @@ use Nette\Security\User;
  *
  * @author Jakub Konečný
  */
-final class ConditionUserLoggedIn implements BookPageCondition
+final readonly class ConditionUserLoggedIn implements BookPageCondition
 {
-    public function __construct(private readonly User $user)
+    public function __construct(private User $user)
     {
     }
 
