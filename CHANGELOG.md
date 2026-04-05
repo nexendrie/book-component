@@ -1,3 +1,6 @@
+Version 2.5.0-dev
+- raised minimal version of PHP to 8.3
+
 Version 2.4.1
 - re-added support for Latte 3
 
