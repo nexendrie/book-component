@@ -24,9 +24,9 @@ class BookPage
     }
 
     /**
-     * @deprecated Access the property directly
+     * @internal
      */
-    public function isAllowed(): bool
+    protected function isAllowed(): bool
     {
         foreach ($this->conditions as $condition) {
             if (!$condition[0]->isAllowed($condition[1])) {
