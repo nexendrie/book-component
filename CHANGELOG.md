@@ -1,4 +1,4 @@
-Version 2.5.0-dev
+Version 2.5.0
 - raised minimal version of PHP to 8.3
 - deprecated methods BookControl::checkTemplatePath, getPages and setPages
 - added support for PSR-14 event dispatcher
