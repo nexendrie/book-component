@@ -6,6 +6,7 @@ namespace Nexendrie\BookComponent;
 use MyTester\Attributes\BeforeTest;
 use MyTester\Attributes\Group;
 use MyTester\Attributes\TestSuite;
+use TypeError;
 
 #[TestSuite("ConditionCallback")]
 #[Group("conditions")]
@@ -25,7 +26,7 @@ final class ConditionCallbackTest extends \MyTester\TestCase
     {
         $this->assertThrowsException(function () {
             $this->condition->isAllowed(null);
-        }, \InvalidArgumentException::class);
+        }, TypeError::class);
         $this->assertThrowsException(function () {
             $this->condition->isAllowed(function () {
                 return null;

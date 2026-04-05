@@ -8,6 +8,7 @@ use MyTester\Attributes\BeforeTest;
 use MyTester\Attributes\BeforeTestSuite;
 use MyTester\Attributes\Group;
 use MyTester\Attributes\TestSuite;
+use TypeError;
 
 #[TestSuite("ConditionPermission")]
 #[Group("conditions")]
@@ -35,7 +36,7 @@ final class ConditionPermissionTest extends \MyTester\TestCase
     {
         $this->assertThrowsException(function () {
             $this->condition->isAllowed();
-        }, \InvalidArgumentException::class);
+        }, TypeError::class);
         $this->assertThrowsException(function () {
             $this->condition->isAllowed("test");
         }, \OutOfBoundsException::class);

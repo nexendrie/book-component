@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Nexendrie\BookComponent;
 
 use Nette\Security\User;
+use TypeError;
 
 /**
  * ConditionPermission
@@ -18,13 +19,13 @@ final readonly class ConditionPermission implements BookPageCondition
 
     /**
      * @param string $parameter
-     * @throws \InvalidArgumentException
+     * @throws TypeError
      * @throws \OutOfBoundsException
      */
     public function isAllowed($parameter = null): bool
     {
         if (!is_string($parameter)) {
-            throw new \InvalidArgumentException("Method " . __METHOD__ . " expects string as parameter.");
+            throw new TypeError("Method " . __METHOD__ . " expects string as parameter.");
         } elseif (!str_contains($parameter, ":")) {
             throw new \OutOfBoundsException(
                 "Method " . __METHOD__ . " expects parameter in format resource:privilege."

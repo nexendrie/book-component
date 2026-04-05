@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Nexendrie\BookComponent;
 
 use Nette\Security\User;
+use TypeError;
 
 /**
  * ConditionUserInRole
@@ -18,12 +19,12 @@ final readonly class ConditionUserInRole implements BookPageCondition
 
     /**
      * @param string $parameter Role
-     * @throws \InvalidArgumentException
+     * @throws TypeError
      */
     public function isAllowed($parameter = null): bool
     {
         if (!is_string($parameter)) {
-            throw new \InvalidArgumentException("Method " . __METHOD__ . " expects string as parameter.");
+            throw new TypeError("Method " . __METHOD__ . " expects string as parameter.");
         }
         return $this->user->isInRole($parameter);
     }

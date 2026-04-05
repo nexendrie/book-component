@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Nexendrie\BookComponent;
 
 use Nette\Security\User;
+use TypeError;
 
 /**
  * ConditionUserLoggedIn
@@ -18,14 +19,14 @@ final readonly class ConditionUserLoggedIn implements BookPageCondition
 
     /**
      * @param bool|null $parameter
-     * @throws \InvalidArgumentException
+     * @throws TypeError
      */
     public function isAllowed($parameter = null): bool
     {
         if ($parameter === null) {
             return true;
         } elseif (!is_bool($parameter)) {
-            throw new \InvalidArgumentException("Method " . __METHOD__ . " expects boolean as parameter.");
+            throw new TypeError("Method " . __METHOD__ . " expects boolean as parameter.");
         }
         return ($parameter === $this->user->isLoggedIn());
     }

@@ -9,6 +9,7 @@ use MyTester\Attributes\BeforeTestSuite;
 use MyTester\Attributes\Group;
 use MyTester\Attributes\TestSuite;
 use Nette\Security\User;
+use TypeError;
 
 #[TestSuite("ConditionUserInRole")]
 #[Group("conditions")]
@@ -36,7 +37,7 @@ final class ConditionUserInRoleTest extends \MyTester\TestCase
     {
         $this->assertThrowsException(function () {
             $this->condition->isAllowed();
-        }, \InvalidArgumentException::class);
+        }, TypeError::class);
         $this->assertFalse($this->condition->isAllowed("abc"));
         /** @var User $user */
         $user = $this->getService(User::class);

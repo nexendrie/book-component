@@ -8,6 +8,7 @@ use MyTester\Attributes\BeforeTest;
 use MyTester\Attributes\BeforeTestSuite;
 use MyTester\Attributes\Group;
 use MyTester\Attributes\TestSuite;
+use TypeError;
 
 #[TestSuite("ConditionUserLoggedIn")]
 #[Group("conditions")]
@@ -36,7 +37,7 @@ final class ConditionUserLoggedInTest extends \MyTester\TestCase
         $this->assertTrue($this->condition->isAllowed());
         $this->assertThrowsException(function () {
             $this->condition->isAllowed("yes"); // @phpstan-ignore argument.type
-        }, \InvalidArgumentException::class);
+        }, TypeError::class);
         $this->assertFalse($this->condition->isAllowed(true));
         $this->assertTrue($this->condition->isAllowed(false));
     }
