@@ -10,8 +10,12 @@ use Nexendrie\Utils\Collection;
  */
 final class BookPagesStorage extends Collection
 {
-    protected string $class = BookPage::class;
-    protected ?string $uniqueProperty = "slug";
+    public function __construct()
+    {
+        parent::__construct();
+        $this->class = BookPage::class;
+        $this->uniqueProperty = "slug";
+    }
 
     public function hasPage(string $slug): bool
     {
