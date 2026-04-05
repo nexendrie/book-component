@@ -18,6 +18,7 @@
     },
     "require": {
         "php": ">=8.3.0",
+        "psr/event-dispatcher": "^1.0",
         "nette/application": "^3.1.2",
         "nette/utils": "^3.2.2 || ^4.0",
         "latte/latte": "^2.5 || ^3.0",
@@ -26,7 +27,8 @@
     "require-dev": {
         "nexendrie/code-quality": "dev-master",
         "phpstan/phpstan-nette": "^2.0",
-        "nexendrie/translation": "^2.5"
+        "nexendrie/translation": "^2.5",
+        "konecnyjakub/event-dispatcher": "^2.2"
     },
     "autoload": {
         "psr-4": {

@@ -3,11 +3,22 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
+use Konecnyjakub\EventDispatcher\AutoListenerProvider;
+use Konecnyjakub\EventDispatcher\EventDispatcher;
+use Nexendrie\BookComponent\Events\BookPageRendered;
+
 final class BookControl2 extends BookControl
 {
     public function __construct()
     {
-        parent::__construct("Test", __DIR__);
+        $listenerProvider = new AutoListenerProvider();
+        $listenerProvider->addListener(static function (BookPageRendered $event): void {
+            if ($event->page === "slug1") {
+                $event->book->template->var2 = "Dota.";
+            }
+        });
+        $eventDispatcher = new EventDispatcher($listenerProvider);
+        parent::__construct("Test", __DIR__, $eventDispatcher);
         $this->pages = function (): BookPagesStorage {
             $storage = new BookPagesStorage();
             $storage[] = new BookPage("slug1", "title1");
@@ -25,11 +36,6 @@ final class BookControl2 extends BookControl
             }, null);
             $storage[] = $conditionalPage;
             return $storage;
-        };
-        $this->onRender[] = function (BookControl $book, string $page): void {
-            if ($page === "slug1") {
-                $book->template->var2 = "Dota.";
-            }
         };
     }
 

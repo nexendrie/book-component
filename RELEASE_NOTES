@@ -4,4 +4,6 @@ Method BookControl::checkTemplatePath is deprecated and will be removed in the n
 
 Methods BookControl::setPages and getPages are deprecated and will be removed in the next major version.
 
+BookControl now supports PSR-14 event dispatcher. Nette style events are deprecated and support for them will be removed in the next major version.
+
 For complete list of changes since previous version, see CHANGELOG.md.

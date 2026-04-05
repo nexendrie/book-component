@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
+use Nexendrie\BookComponent\Events\BookPageRendered;
+use Psr\EventDispatcher\EventDispatcherInterface;
+
 /**
  * BookControl
  *
@@ -19,11 +22,17 @@ class BookControl extends \Nette\Application\UI\Control
     protected $pages;
     protected string $indexTemplate = __DIR__ . "/bookIndex.latte";
     protected string $pageTemplate = __DIR__ . "/bookPage.latte";
-    /** @var callable[] */
+    /**
+     * @var callable[]
+     * @deprecated Use a PSR-14 event dispatcher
+     */
     public array $onRender = [];
 
-    public function __construct(private readonly string $presenterName, private readonly string $folder)
-    {
+    public function __construct(
+        private readonly string $presenterName,
+        private readonly string $folder,
+        private readonly ?EventDispatcherInterface $eventDispatcher = null
+    ) {
         $this->pages = new BookPagesStorage();
     }
 
@@ -118,6 +127,7 @@ class BookControl extends \Nette\Application\UI\Control
             $this->template->current = $pages[$this->template->index];
         }
         $this->template->pages = $pages;
+        $this->eventDispatcher?->dispatch(new BookPageRendered($this, $page));
         $this->onRender($this, $page);
         $method = "render" . ucfirst($page);
         if (method_exists($this, $method)) {
