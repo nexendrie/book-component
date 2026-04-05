@@ -20,7 +20,7 @@ final readonly class ConditionCallback implements BookPageCondition
         if (!is_callable($parameter)) {
             throw new \InvalidArgumentException("Method " . __METHOD__ . " expects callback as parameter.");
         }
-        $result = call_user_func($parameter);
+        $result = $parameter();
         if (!is_bool($result)) {
             throw new \UnexpectedValueException(
                 "The callback for method " . __METHOD__ . " has to return boolean, " . gettype($result) . " returned."
