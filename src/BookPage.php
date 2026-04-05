@@ -18,10 +18,7 @@ class BookPage
     {
     }
 
-  /**
-     * @param mixed $parameter
-     */
-    public function addCondition(BookPageCondition $condition, $parameter): void
+    public function addCondition(BookPageCondition $condition, mixed $parameter): void
     {
         $this->conditions[] = [$condition, $parameter];
     }
