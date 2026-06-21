@@ -8,7 +8,7 @@ use Nette\Http\Session;
 
 final class FakeSessionExtension extends CompilerExtension
 {
-    public function beforeCompile()
+    public function beforeCompile(): void
     {
         $builder = $this->getContainerBuilder();
         $originalSessionName = $builder->getByType(Session::class);
