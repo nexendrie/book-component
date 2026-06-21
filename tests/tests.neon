@@ -1,7 +1,11 @@
 application:
     scanDirs: false
+    mapping:
+        *: Nexendrie\BookComponent\*Presenter
+routing:
+    routes:
+        "<presenter>[/<action>]": "Home:default"
 services:
-    testbench.presenterMock: Testbench\Mocks\PresenterMock
     - Nexendrie\BookComponent\Authenticator
     - Nexendrie\BookComponent\Authorizator
     - Nexendrie\BookComponent\ConditionCallback
@@ -10,6 +14,7 @@ services:
     - Nexendrie\BookComponent\ConditionUserLoggedIn
 extensions:
     translation: Nexendrie\Translation\Bridges\NetteDI\TranslationExtension
+    fakeSession: Nexendrie\BookComponent\FakeSession\FakeSessionExtension
 translation:
     default: en
     localeResolver: manual
@@ -17,3 +22,6 @@ translation:
         name: catalogue
         folders!:
             - %appDir%/../src/lang
+mytester:
+    colors: true
+    coverageFormat: cobertura

@@ -3,28 +3,32 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert;
+use MyTester\Attributes\AfterTest;
+use MyTester\Attributes\BeforeTest;
+use MyTester\Attributes\BeforeTestSuite;
+use MyTester\Attributes\TestSuite;
 use Nexendrie\Translation\Translator;
 
-require __DIR__ . "/../../bootstrap.php";
-
-/**
- * BookControlTest
- *
- * @author Jakub Konečný
- * @testCase
- */
-final class BookControlTest extends \Tester\TestCase
+#[TestSuite("BookControl")]
+final class BookControlTest extends \MyTester\TestCase
 {
-    use \Testbench\TComponent;
-    use \Testbench\TCompiledContainer;
+    use \MyTester\Bridges\NetteApplication\TComponent;
+    use \MyTester\Bridges\NetteDI\TCompiledContainer;
 
     private BookControl $control;
 
-    protected function setUp(): void
+    #[BeforeTest]
+    public function setUp(): void
     {
         $this->control = new BookControl2();
         $this->attachToPresenter($this->control);
+    }
+
+    #[AfterTest]
+    #[BeforeTestSuite]
+    public function rebuildContainer(): void
+    {
+        $this->refreshContainer();
     }
 
     public function testEmptyPages(): void
@@ -32,13 +36,13 @@ final class BookControlTest extends \Tester\TestCase
         $control = new BookControl("Book", "book");
         /** @var BookPagesStorage $pages */
         $pages = $control->pages;
-        Assert::type(BookPagesStorage::class, $pages);
-        Assert::count(0, $pages);
+        $this->assertType(BookPagesStorage::class, $pages);
+        $this->assertCount(0, $pages);
     }
 
     public function testInvalidPages(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->control->pages = function () {
                 return [];
             };
@@ -50,17 +54,17 @@ final class BookControlTest extends \Tester\TestCase
     {
         /** @var Translator $translator */
         $translator = $this->getService(Translator::class);
-        Assert::same("Content", $translator->translate("book.content"));
+        $this->assertSame("Content", $translator->translate("book.content"));
         $translator->lang = "cs";
-        Assert::same("Obsah", $translator->translate("book.content"));
+        $this->assertSame("Obsah", $translator->translate("book.content"));
     }
 
     public function testInvalidCustomTemplates(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->control->indexTemplate = "abc.latte";
         }, \RuntimeException::class);
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->control->pageTemplate = "abc.latte";
         }, \RuntimeException::class);
     }
@@ -69,44 +73,41 @@ final class BookControlTest extends \Tester\TestCase
     {
         $templateFile = __DIR__ . "/bookIndexCustom.latte";
         $this->control->indexTemplate = $templateFile;
-        Assert::same($templateFile, $this->control->indexTemplate);
+        $this->assertSame($templateFile, $this->control->indexTemplate);
         $filename = __DIR__ . "/bookIndexCustomExpected.latte";
-        $this->checkRenderOutput($this->control, $filename);
+        $this->assertRenderOutputFile($this->control, $filename);
     }
 
     public function testCustomPageTemplate(): void
     {
         $templateFile = __DIR__ . "/bookPageCustom.latte";
         $this->control->pageTemplate = $templateFile;
-        Assert::same($templateFile, $this->control->pageTemplate);
+        $this->assertSame($templateFile, $this->control->pageTemplate);
         $filename = __DIR__ . "/bookPageCustomExpected.latte";
-        $this->checkRenderOutput($this->control, $filename, ["slug1"]);
+        $this->assertRenderOutputFile($this->control, $filename, ["slug1"]);
     }
 
     public function testRenderI(): void
     {
         $filename = __DIR__ . "/bookIndexExpected.latte";
-        $this->checkRenderOutput($this->control, $filename);
+        $this->assertRenderOutputFile($this->control, $filename);
     }
 
     public function testRenderP1(): void
     {
         $filename = __DIR__ . "/bookPageExpected1.latte";
-        $this->checkRenderOutput($this->control, $filename, ["slug1"]);
+        $this->assertRenderOutputFile($this->control, $filename, ["slug1"]);
     }
 
     public function testRenderP2(): void
     {
         $filename = __DIR__ . "/bookPageExpected2.latte";
-        $this->checkRenderOutput($this->control, $filename, ["slug2"]);
+        $this->assertRenderOutputFile($this->control, $filename, ["slug2"]);
     }
 
     public function testRenderP3(): void
     {
         $filename = __DIR__ . "/bookPageExpected3.latte";
-        $this->checkRenderOutput($this->control, $filename, ["slug3"]);
+        $this->assertRenderOutputFile($this->control, $filename, ["slug3"]);
     }
 }
-
-$test = new BookControlTest();
-$test->run();

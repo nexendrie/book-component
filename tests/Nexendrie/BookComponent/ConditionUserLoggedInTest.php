@@ -3,35 +3,41 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert;
+use MyTester\Attributes\AfterTest;
+use MyTester\Attributes\BeforeTest;
+use MyTester\Attributes\BeforeTestSuite;
+use MyTester\Attributes\Group;
+use MyTester\Attributes\TestSuite;
 
-require __DIR__ . "/../../bootstrap.php";
-
-/**
- * @author Jakub Konečný
- * @testCase
- */
-final class ConditionUserLoggedInTest extends \Tester\TestCase
+#[TestSuite("ConditionUserLoggedIn")]
+#[Group("conditions")]
+#[Group("security")]
+final class ConditionUserLoggedInTest extends \MyTester\TestCase
 {
-    use \Testbench\TCompiledContainer;
+    use \MyTester\Bridges\NetteDI\TCompiledContainer;
 
     protected ConditionUserLoggedIn $condition;
 
+    #[BeforeTest]
     public function setUp(): void
     {
-        $this->condition = $this->getService(ConditionUserLoggedIn::class); // @phpstan-ignore assign.propertyType
+        $this->condition = $this->getService(ConditionUserLoggedIn::class);
+    }
+
+    #[AfterTest]
+    #[BeforeTestSuite]
+    public function rebuildContainer(): void
+    {
+        $this->refreshContainer();
     }
 
     public function testIsAllowed(): void
     {
-        Assert::true($this->condition->isAllowed());
-        Assert::exception(function () {
+        $this->assertTrue($this->condition->isAllowed());
+        $this->assertThrowsException(function () {
             $this->condition->isAllowed("yes"); // @phpstan-ignore argument.type
         }, \InvalidArgumentException::class);
-        Assert::false($this->condition->isAllowed(true));
-        Assert::true($this->condition->isAllowed(false));
+        $this->assertFalse($this->condition->isAllowed(true));
+        $this->assertTrue($this->condition->isAllowed(false));
     }
 }
-
-$test = new ConditionUserLoggedInTest();
-$test->run();

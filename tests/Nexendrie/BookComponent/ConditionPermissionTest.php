@@ -3,37 +3,43 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert;
+use MyTester\Attributes\AfterTest;
+use MyTester\Attributes\BeforeTest;
+use MyTester\Attributes\BeforeTestSuite;
+use MyTester\Attributes\Group;
+use MyTester\Attributes\TestSuite;
 
-require __DIR__ . "/../../bootstrap.php";
-
-/**
- * @author Jakub Konečný
- * @testCase
- */
-final class ConditionPermissionTest extends \Tester\TestCase
+#[TestSuite("ConditionPermission")]
+#[Group("conditions")]
+#[Group("security")]
+final class ConditionPermissionTest extends \MyTester\TestCase
 {
-    use \Testbench\TCompiledContainer;
+    use \MyTester\Bridges\NetteDI\TCompiledContainer;
 
     protected ConditionPermission $condition;
 
+    #[BeforeTest]
     public function setUp(): void
     {
-        $this->condition = $this->getService(ConditionPermission::class); // @phpstan-ignore assign.propertyType
+        $this->condition = $this->getService(ConditionPermission::class);
+    }
+
+    #[AfterTest]
+    #[BeforeTestSuite]
+    public function rebuildContainer(): void
+    {
+        $this->refreshContainer();
     }
 
     public function testIsAllowed(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->condition->isAllowed();
         }, \InvalidArgumentException::class);
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->condition->isAllowed("test");
         }, \OutOfBoundsException::class);
-        Assert::true($this->condition->isAllowed("resource:privilege"));
-        Assert::false($this->condition->isAllowed("resource:privilege2"));
+        $this->assertTrue($this->condition->isAllowed("resource:privilege"));
+        $this->assertFalse($this->condition->isAllowed("resource:privilege2"));
     }
 }
-
-$test = new ConditionPermissionTest();
-$test->run();

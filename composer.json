@@ -25,10 +25,12 @@
         "nexendrie/utils": "^1.11"
     },
     "require-dev": {
-        "nexendrie/code-quality": "dev-master",
+        "nexendrie/code-quality": "dev-mytester",
         "phpstan/phpstan-nette": "^2.0",
         "nexendrie/translation": "^2.7",
-        "konecnyjakub/event-dispatcher": "^2.2"
+        "konecnyjakub/event-dispatcher": "^2.2",
+        "nette/security": "^3.1",
+        "nette/bootstrap": "^3.2"
     },
     "autoload": {
         "psr-4": {

@@ -3,43 +3,39 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert;
+use MyTester\Attributes\BeforeTest;
+use MyTester\Attributes\Group;
+use MyTester\Attributes\TestSuite;
 
-require __DIR__ . "/../../bootstrap.php";
-
-/**
- * @author Jakub Konečný
- * @testCase
- */
-final class ConditionCallbackTest extends \Tester\TestCase
+#[TestSuite("ConditionCallback")]
+#[Group("conditions")]
+final class ConditionCallbackTest extends \MyTester\TestCase
 {
-    use \Testbench\TCompiledContainer;
+    use \MyTester\Bridges\NetteDI\TCompiledContainer;
 
     protected ConditionCallback $condition;
 
+    #[BeforeTest]
     public function setUp(): void
     {
-        $this->condition = $this->getService(ConditionCallback::class); // @phpstan-ignore assign.propertyType
+        $this->condition = $this->getService(ConditionCallback::class);
     }
 
     public function testIsAllowed(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->condition->isAllowed(null);
         }, \InvalidArgumentException::class);
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->condition->isAllowed(function () {
                 return null;
             });
         }, \UnexpectedValueException::class);
-        Assert::true($this->condition->isAllowed(function () {
+        $this->assertTrue($this->condition->isAllowed(function () {
             return true;
         }));
-        Assert::false($this->condition->isAllowed(function () {
+        $this->assertFalse($this->condition->isAllowed(function () {
             return false;
         }));
     }
 }
-
-$test = new ConditionCallbackTest();
-$test->run();

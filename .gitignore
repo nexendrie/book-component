@@ -1,9 +1,16 @@
 /nbproject/
 /.idea/
 /vendor/
-/tests/_temp/
+/tests/temp/
 /public/
 output/
 *.actual
 coverage.*
 /composer.lock
+
+# Errors in tests
+*.errors
+
+# Generated reports
+/coverage.*
+/junit.xml

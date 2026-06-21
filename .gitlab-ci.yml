@@ -6,8 +6,6 @@ stages:
     stage: test
     before_script:
         - composer update --prefer-dist --no-progress --no-interaction
-        - chmod +x tests/apply-dev-patches.sh
-        - ./tests/apply-dev-patches.sh
     script:
         - phing test
     cache:
@@ -22,6 +20,13 @@ test:cc:
     <<: *test_job
     image: nexendrie/php:8.3
     coverage: '/(\d+\%) covered/'
+    artifacts:
+        paths:
+            - coverage.xml
+        reports:
+            coverage_report:
+                coverage_format: cobertura
+                path: coverage.xml
 
 pages:
     stage: deploy

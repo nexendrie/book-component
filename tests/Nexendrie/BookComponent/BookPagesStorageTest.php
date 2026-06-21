@@ -3,21 +3,16 @@ declare(strict_types=1);
 
 namespace Nexendrie\BookComponent;
 
-use Tester\Assert;
+use MyTester\Attributes\BeforeTest;
+use MyTester\Attributes\TestSuite;
 
-require __DIR__ . "/../../bootstrap.php";
-
-/**
- * BookPagesStorageTest
- *
- * @author Jakub Konečný
- * @testCase
- */
-final class BookPagesStorageTest extends \Tester\TestCase
+#[TestSuite("BookPagesStorage")]
+final class BookPagesStorageTest extends \MyTester\TestCase
 {
     private BookPagesStorage $storage;
 
-    protected function setUp(): void
+    #[BeforeTest]
+    public function setUp(): void
     {
         $this->storage = new BookPagesStorage();
         $this->storage[] = new BookPage("slug1", "title1");
@@ -26,25 +21,22 @@ final class BookPagesStorageTest extends \Tester\TestCase
 
     public function testInvalidArgument(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->storage[] = new \stdClass();
         }, \InvalidArgumentException::class);
     }
 
     public function testDuplicateSlug(): void
     {
-        Assert::exception(function () {
+        $this->assertThrowsException(function () {
             $this->storage[] = new BookPage("slug2", "title2");
         }, \RuntimeException::class);
     }
 
     public function testHasPage(): void
     {
-        Assert::true($this->storage->hasPage("slug1"));
-        Assert::true($this->storage->hasPage("slug2"));
-        Assert::false($this->storage->hasPage("slug3"));
+        $this->assertTrue($this->storage->hasPage("slug1"));
+        $this->assertTrue($this->storage->hasPage("slug2"));
+        $this->assertFalse($this->storage->hasPage("slug3"));
     }
 }
-
-$test = new BookPagesStorageTest();
-$test->run();
