@@ -14,7 +14,6 @@ services:
     - Nexendrie\BookComponent\ConditionUserLoggedIn
 extensions:
     translation: Nexendrie\Translation\Bridges\NetteDI\TranslationExtension
-    fakeSession: Nexendrie\BookComponent\FakeSession\FakeSessionExtension
 translation:
     default: en
     localeResolver: manual
