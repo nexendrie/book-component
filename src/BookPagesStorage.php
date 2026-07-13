@@ -7,6 +7,7 @@ use Nexendrie\Utils\Collection;
 
 /**
  * @author Jakub Konečný
+ * @extends Collection<BookPage>
  */
 final class BookPagesStorage extends Collection
 {
@@ -23,7 +24,7 @@ final class BookPagesStorage extends Collection
     }
 
     /**
-     * @return BookPage[]
+     * @return list<BookPage>
      */
     public function getAllowedItems(): array
     {

@@ -22,7 +22,7 @@ final class BookPagesStorageTest extends \MyTester\TestCase
     public function testInvalidArgument(): void
     {
         $this->assertThrowsException(function () {
-            $this->storage[] = new \stdClass();
+            $this->storage[] = new \stdClass(); // @phpstan-ignore offsetAssign.valueType
         }, \InvalidArgumentException::class);
     }
 
