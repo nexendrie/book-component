@@ -1,3 +1,6 @@
+Version 2.5.1
+- allowed nexendrie/utils 2
+
 Version 2.5.0
 - raised minimal version of PHP to 8.3
 - deprecated methods BookControl::checkTemplatePath, getPages and setPages
