@@ -2,4 +2,6 @@ A new version of Book Component is out. It removes support for Latte 2 and nexen
 
 Conditions now throw TypeError instead of InvalidArgumentException.
 
+BookControl::$pages now accepts Closure or BookPagesStorage.
+
 For complete list of changes since previous version, see CHANGELOG.md.

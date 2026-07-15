@@ -10,13 +10,11 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  * BookControl
  *
  * @author Jakub Konečný
- * @property callable|BookPagesStorage $pages
  * @property \Nette\Bridges\ApplicationLatte\DefaultTemplate $template
  */
 class BookControl extends \Nette\Application\UI\Control
 {
-    /** @var callable|BookPagesStorage */
-    protected $pages;
+    public \Closure|BookPagesStorage $pages;
     public string $indexTemplate = __DIR__ . "/bookIndex.latte";
     public string $pageTemplate = __DIR__ . "/bookPage.latte";
 
@@ -44,14 +42,6 @@ class BookControl extends \Nette\Application\UI\Control
             );
         }
         return BookPagesStorage::fromArray($pages->getAllowedItems());
-    }
-
-    /**
-     * @internal
-     */
-    protected function setPages(callable $pages): void
-    {
-        $this->pages = $pages;
     }
 
     /**
