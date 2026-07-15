@@ -1,3 +1,6 @@
+Version 3.0.0-dev
+- dropped support for Latte 2
+
 Version 2.5.1
 - allowed nexendrie/utils 2
 
