@@ -10,8 +10,5 @@ namespace Nexendrie\BookComponent;
  */
 interface BookPageCondition
 {
-    /**
-     * @param mixed $parameter
-     */
-    public function isAllowed($parameter = null): bool;
+    public function isAllowed(mixed $parameter = null): bool;
 }

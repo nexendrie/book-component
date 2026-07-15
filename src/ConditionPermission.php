@@ -22,7 +22,7 @@ final readonly class ConditionPermission implements BookPageCondition
      * @throws TypeError
      * @throws \OutOfBoundsException
      */
-    public function isAllowed($parameter = null): bool
+    public function isAllowed(mixed $parameter = null): bool
     {
         if (!is_string($parameter)) {
             throw new TypeError("Method " . __METHOD__ . " expects string as parameter.");

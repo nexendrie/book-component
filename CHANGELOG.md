@@ -5,7 +5,7 @@ Version 3.0.0-dev
 - BC break: removed method BookControl::checkTemplatePath, template is checked by Latte on render
 - BC break: removed IBookPageCondition
 - possible BC break: conditions now throw TypeError instead of InvalidArgumentException
-- BC break: added type hint for parameter $parameter of method BookPage::addCondition
+- BC break: added type hint for parameter $parameter of method BookPage::addCondition and BookPageCondition::isAllowed
 - BC break: removed support for Nette style events
 - BC break: BookControl::$pages now accepts Closure or BookPagesStorage
 

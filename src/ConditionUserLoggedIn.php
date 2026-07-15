@@ -21,7 +21,7 @@ final readonly class ConditionUserLoggedIn implements BookPageCondition
      * @param bool|null $parameter
      * @throws TypeError
      */
-    public function isAllowed($parameter = null): bool
+    public function isAllowed(mixed $parameter = null): bool
     {
         if ($parameter === null) {
             return true;

@@ -17,7 +17,7 @@ final readonly class ConditionCallback implements BookPageCondition
      * @throws TypeError
      * @throws \UnexpectedValueException
      */
-    public function isAllowed($parameter = null): bool
+    public function isAllowed(mixed $parameter = null): bool
     {
         if (!is_callable($parameter)) {
             throw new TypeError("Method " . __METHOD__ . " expects callback as parameter.");
