@@ -27,7 +27,6 @@ class BookControl extends \Nette\Application\UI\Control
     }
 
     /**
-     * @internal
      * @throws \InvalidArgumentException
      */
     public function getPages(): BookPagesStorage
