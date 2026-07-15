@@ -8,9 +8,12 @@ use Nexendrie\Utils\Collection;
 /**
  * @author Jakub Konečný
  * @extends Collection<BookPage>
+ * @property-read list<BookPage> $allowedItems
  */
 final class BookPagesStorage extends Collection
 {
+    use \Nette\SmartObject;
+
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +29,7 @@ final class BookPagesStorage extends Collection
     /**
      * @return list<BookPage>
      */
-    public function getAllowedItems(): array
+    protected function getAllowedItems(): array
     {
         return $this->getItems(["allowed" => true]);
     }

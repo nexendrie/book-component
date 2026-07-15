@@ -40,7 +40,7 @@ class BookControl extends \Nette\Application\UI\Control
                 "Callback for pages for BookControl has to return " . BookPagesStorage::class . "."
             );
         }
-        return BookPagesStorage::fromArray($pages->getAllowedItems());
+        return BookPagesStorage::fromArray($pages->allowedItems);
     }
 
     /**

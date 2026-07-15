@@ -8,6 +8,7 @@ Version 3.0.0-dev
 - BC break: added type hint for parameter $parameter of method BookPage::addCondition and BookPageCondition::isAllowed
 - BC break: removed support for Nette style events
 - BC break: BookControl::$pages now accepts Closure or BookPagesStorage
+- BC break: replaced method BookPagesStorage::getAllowedItems with property $allowedItems
 
 Version 2.5.1
 - allowed nexendrie/utils 2

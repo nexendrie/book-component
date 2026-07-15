@@ -4,4 +4,6 @@ Conditions now throw TypeError instead of InvalidArgumentException.
 
 BookControl::$pages now accepts Closure or BookPagesStorage.
 
+Method BookPagesStorage::getAllowedItems was replaced with property $allowedItems.
+
 For complete list of changes since previous version, see CHANGELOG.md.
