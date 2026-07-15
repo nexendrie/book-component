@@ -29,7 +29,7 @@ class BookControl extends \Nette\Application\UI\Control
     }
 
     /**
-     * @deprecated Access the property directly
+     * @internal
      * @throws \InvalidArgumentException
      */
     public function getPages(): BookPagesStorage
@@ -47,9 +47,9 @@ class BookControl extends \Nette\Application\UI\Control
     }
 
     /**
-     * @deprecated Access the property directly
+     * @internal
      */
-    public function setPages(callable $pages): void
+    protected function setPages(callable $pages): void
     {
         $this->pages = $pages;
     }
@@ -61,7 +61,7 @@ class BookControl extends \Nette\Application\UI\Control
     {
         $this->template->presenterName = $this->presenterName;
         $this->template->folder = $this->folder;
-        $pages = $this->getPages(); // @phpstan-ignore method.deprecated
+        $pages = $this->getPages();
         if (!$pages->hasPage($page)) {
             $page = "index";
         }
