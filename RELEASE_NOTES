@@ -1,3 +1,5 @@
-A new version of Book Component is out. It removes support for Latte 2 and nexendrie/utils 1.
+A new version of Book Component is out. It removes support for Latte 2 and nexendrie/utils 1. It also removes previously deprecated stuff.
+
+Conditions now throw TypeError instead of InvalidArgumentException.
 
 For complete list of changes since previous version, see CHANGELOG.md.

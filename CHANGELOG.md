@@ -1,6 +1,12 @@
 Version 3.0.0-dev
 - dropped support for Latte 2
 - dropped support for nexendrie/utils 1
+- BC break: removed almost all getters and setters
+- BC break: removed method BookControl::checkTemplatePath, template is checked by Latte on render
+- BC break: removed IBookPageCondition
+- possible BC break: conditions now throw TypeError instead of InvalidArgumentException
+- BC break: added type hint for parameter $parameter of method BookPage::addCondition
+- BC break: removed support for Nette style events
 
 Version 2.5.1
 - allowed nexendrie/utils 2
