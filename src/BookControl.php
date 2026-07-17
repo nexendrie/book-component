@@ -27,7 +27,7 @@ class BookControl extends \Nette\Application\UI\Control
     }
 
     /**
-     * @throws \InvalidArgumentException
+     * @throws \TypeError
      */
     public function getPages(): BookPagesStorage
     {
@@ -36,7 +36,7 @@ class BookControl extends \Nette\Application\UI\Control
         }
         $pages = ($this->pages)();
         if (!$pages instanceof BookPagesStorage) {
-            throw new \InvalidArgumentException(
+            throw new \TypeError(
                 "Callback for pages for BookControl has to return " . BookPagesStorage::class . "."
             );
         }
@@ -44,7 +44,7 @@ class BookControl extends \Nette\Application\UI\Control
     }
 
     /**
-     * @throws \InvalidArgumentException
+     * @throws \TypeError
      */
     public function render(string $page = "index"): void
     {

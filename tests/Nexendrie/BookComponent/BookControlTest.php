@@ -47,7 +47,7 @@ final class BookControlTest extends \MyTester\TestCase
                 return [];
             };
             $this->control->render();
-        }, \InvalidArgumentException::class);
+        }, \TypeError::class);
     }
 
     public function testTranslator(): void
