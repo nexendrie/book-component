@@ -31,7 +31,6 @@ use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
 $control->pages[] = new Book\BookPage("introduction", "Úvod");
-?>
 ```
 
 It is possible to assign a callback to property $pages which returns Nexendrie\BookComponent\BookPagesStorage. It is a collection of pages.
@@ -43,12 +42,11 @@ declare(strict_types=1);
 use Nexendrie\BookComponent as Book;
 
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
-$control->pages = function() {
-  $storage = new Book\BookPagesStorage;
-  $storage[] = new Book\BookPage("introduction", "Úvod");
-  return $storage;
+$control->pages = static function() {
+    $storage = new Book\BookPagesStorage;
+    $storage[] = new Book\BookPage("introduction", "Úvod");
+    return $storage;
 };
-?>
 ```
 
 If you need to pass any variables to your page, you have to extend the BookControl class and define method renderSlug() which is called when page slug is shown.
@@ -61,38 +59,19 @@ declare(strict_types=1);
 
 use Nexendrie\BookComponent as Book;
 
-class HelpControl extends Book\BookControl {
-  function __construct() {
-    parent::__construct(":Front:Help", __DIR__ . "/help");
-    $this->pages[] = new Book\BookPage("introduction", "Úvod");
-  }
-  
-  function renderIntroduction() {
-    $this->template->myVariable = 13;
-  }
+final class HelpControl extends Book\BookControl {
+    public function __construct() {
+        parent::__construct(":Front:Help", __DIR__ . "/help");
+        $this->pages[] = new Book\BookPage("introduction", "Úvod");
+    }
+
+    public function renderIntroduction() {
+        $this->template->myVariable = 13;
+    }
 }
-?>
 ```
 
-Alternatively, you can set the variables in onRender event:
-
-```php
-<?php
-declare(strict_types=1);
-
-use Nexendrie\BookComponent as Book;
-
-$control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
-$control->pages[] = new Book\BookPage("introduction", "Úvod");
-$control->onRender[] = function(Book\BookControl $book, string $page) {
-  if($page === "introduction") {
-    $book->template->myVariable = 13;
-  }
-};
-?>
-```
-
-.
+Alternatively, you can use a PSR-14 compatible event dispatcher with an appropriate listener for event Nexendrie\BookComponent\Events\BookPageRendered and pass it to constructor.
 
 Translations
 ------------
@@ -115,12 +94,11 @@ use Nexendrie\BookComponent as Book;
 $control = new Book\BookControl(":Front:Help", __DIR__ . "/help");
 $control->indexTemplate = __DIR__ . "/customIndex.latte";
 $control->pageTemplate = __DIR__ . "/customPage.latte";
-?>
 ```
 
 Conditional pages
 -----------------
 
-Sometimes, you want to show certain pages only if a condition is met. Defining conditions is easy, just use method addCondition on a page. The method takes two arguments, first is an object implementing interface Nexendrie\BookComponent\IBookPageCondition, the second is additional parameter. Each condition is evaluated during template rendering and only if all of them are met, the page is shown (either in list of pages or the page itself).
+Sometimes, you want to show certain pages only if a condition is met. Defining conditions is easy, just use method addCondition on a page. The method takes two arguments, first is an object implementing interface Nexendrie\BookComponent\BookPageCondition, the second is additional parameter. Each condition is evaluated during template rendering and only if all of them are met, the page is shown (either in list of pages or the page itself).
 
 There are a few default condition types: callback (the callback is passed as additional parameter), current user's permission (in format resource:privilege), current user's role and login status (logged in = true/logged out = false).
