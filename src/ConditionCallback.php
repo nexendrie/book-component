@@ -15,7 +15,6 @@ final readonly class ConditionCallback implements BookPageCondition
     /**
      * @param callable $parameter
      * @throws TypeError
-     * @throws \UnexpectedValueException
      */
     public function isAllowed(mixed $parameter = null): bool
     {
@@ -24,7 +23,7 @@ final readonly class ConditionCallback implements BookPageCondition
         }
         $result = $parameter();
         if (!is_bool($result)) {
-            throw new \UnexpectedValueException(
+            throw new \TypeError(
                 "The callback for method " . __METHOD__ . " has to return boolean, " . gettype($result) . " returned."
             );
         }

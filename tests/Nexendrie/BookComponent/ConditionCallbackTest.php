@@ -31,7 +31,7 @@ final class ConditionCallbackTest extends \MyTester\TestCase
             $this->condition->isAllowed(function () {
                 return null;
             });
-        }, \UnexpectedValueException::class);
+        }, TypeError::class);
         $this->assertTrue($this->condition->isAllowed(function () {
             return true;
         }));
