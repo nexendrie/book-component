@@ -26,10 +26,7 @@ final class BookControl2 extends BookControl
             $storage[] = new BookPage("slug3", "title3");
             $conditionalPage = new BookPage("slug4", "title4");
             $conditionalPage->addCondition(new class () implements BookPageCondition {
-                /**
-                 * @param mixed $parameter
-                 */
-                public function isAllowed($parameter = null): bool
+                public function isAllowed(mixed $parameter = null): bool
                 {
                     return false;
                 }
