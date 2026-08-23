@@ -28,11 +28,6 @@ class BookPage
      */
     protected function isAllowed(): bool
     {
-        foreach ($this->conditions as $condition) {
-            if (!$condition[0]->isAllowed($condition[1])) {
-                return false;
-            }
-        }
-        return true;
+        return array_all($this->conditions, static fn (array $condition) => $condition[0]->isAllowed($condition[1]));
     }
 }
