@@ -39,4 +39,11 @@ final class BookPagesStorageTest extends \MyTester\TestCase
         $this->assertTrue($this->storage->hasPage("slug2"));
         $this->assertFalse($this->storage->hasPage("slug3"));
     }
+
+    public function testAllowedItems(): void
+    {
+        $this->assertCount(2, $this->storage->allowedItems);
+        $this->storage[1]->addCondition(new ConditionCallback(), static fn () => false);
+        $this->assertCount(1, $this->storage->allowedItems);
+    }
 }
