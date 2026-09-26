@@ -34,8 +34,7 @@ final class BookControlTest extends \MyTester\TestCase
     public function testEmptyPages(): void
     {
         $control = new BookControl("Book", "book");
-        /** @var BookPagesStorage $pages */
-        $pages = $control->pages;
+        $pages = $control->getPages();
         $this->assertType(BookPagesStorage::class, $pages);
         $this->assertCount(0, $pages);
     }
